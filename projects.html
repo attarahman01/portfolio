@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Atta Rahman - Product Designer</title>
+    <meta name="description"
+        content="View selected work by Atta Rahman, a Product Designer specializing in UI/UX design, design systems, and user-centered digital experiences.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Antonio:wght@100..700&family=Baumans&family=Inter:wght@300;400;500;600;700&family=Lexend:wght@100..900&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+
+<body class="projects-page">
+    <div id="cursor-dot" aria-hidden="true"></div>
+    <div id="cursor-outline" aria-hidden="true"></div>
+
+    <!-- Navigation -->
+    <!-- Navigation -->
+    <header class="header">
+        <a href="index.html" class="logo" aria-label="Atta Rahman Portfolio Home">Atta.</a>
+
+        <div class="hamburger" tabindex="0" aria-label="Menu" role="button">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+
+        <nav class="navbar" aria-label="Main Navigation">
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="projects.html" class="active">Portfolio</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+            <a href="https://docs.google.com/document/d/e/2PACX-1vRzCaOoOrogSTLAL45PbbqtKZOF7pA90JsbFpwQ_VXqHakTKE6fWCTqNZWYsKAVNmL06Aaf-HK9mB6l/pub"
+                target="_blank" rel="noopener noreferrer" class="nav-cta" aria-label="View Resume">Resume</a>
+        </nav>
+    </header>
+
+    <div class="project-filter">
+        <button class="filter-btn active" data-filter="all">All Projects</button>
+        <button class="filter-btn" data-filter="ui-ux">UI/UX Design</button>
+        <button class="filter-btn" data-filter="web">Web Design</button>
+        <button class="filter-btn" data-filter="branding">Branding</button>
+    </div>
+
+    <main>
+        <!-- Projects Section -->
+        <section class="projects-section">
+            <div class="container">
+                <h1 class="projects-title">Selected Work</h1>
+
+                <div class="projects-grid">
+                    <!-- Project 1: Loopin -->
+                    <article class="project-card work-item" data-category="ui-ux">
+                        <a href="loopin.html" class="project-link">
+                            <div class="project-image">
+                                <img src="images/loopin_thumb.webp"
+                                    alt="Loopin - Social networking app for university students" loading="lazy">
+                            </div>
+                            <div class="project-info">
+                                <span class="project-category">UI/UX Design</span>
+                                <h2 class="project-name">Loopin</h2>
+                            </div>
+                        </a>
+                    </article>
+
+                    <!-- Project 2: Receiptly -->
+                    <article class="project-card work-item" data-category="web">
+                        <a href="receiptly.html" class="project-link">
+                            <div class="project-image">
+                                <img src="images/receiptly_thumb.webp" alt="Receiptly - Receipt management platform"
+                                    loading="lazy">
+                            </div>
+                            <div class="project-info">
+                                <span class="project-category">Web Design</span>
+                                <h2 class="project-name">Receiptly</h2>
+                            </div>
+                        </a>
+                    </article>
+
+                    <!-- Project 3: MemoTrip -->
+                    <article class="project-card work-item" data-category="ui-ux">
+                        <a href="memotrip.html" class="project-link">
+                            <div class="project-image">
+                                <img src="images/memotrip_thumb.webp" alt="MemoTrip - Travel memory app" loading="lazy">
+                            </div>
+                            <div class="project-info">
+                                <span class="project-category">UI/UX Design</span>
+                                <h2 class="project-name">MemoTrip</h2>
+                            </div>
+                        </a>
+                    </article>
+
+                    <!-- Project 4: Veura -->
+                    <article class="project-card work-item" data-category="branding">
+                        <a href="veura.html" class="project-link">
+                            <div class="project-image">
+                                <img src="images/veura_thumb.webp" alt="Veura - Luxury skincare brand identity"
+                                    loading="lazy">
+                            </div>
+                            <div class="project-info">
+                                <span class="project-category">Branding</span>
+                                <h2 class="project-name">Veura</h2>
+                            </div>
+                        </a>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3 class="footer-logo">Atta.</h3>
+                <p>Product Designer crafting meaningful digital experiences in Vancouver.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <nav class="footer-nav" aria-label="Footer Navigation">
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About</a>
+                    <a href="projects.html">Portfolio</a>
+                    <a href="index.html#contact">Contact</a>
+                </nav>
+            </div>
+            <div class="footer-section">
+                <h4>Connect</h4>
+                <div class="footer-social">
+                    <a href="https://www.linkedin.com/in/atta-rahman/" target="_blank" rel="noopener noreferrer"
+                        aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="https://www.behance.net/attarahman" target="_blank" rel="noopener noreferrer"
+                        aria-label="Behance"><i class="fa-brands fa-behance"></i></a>
+                    <a href="mailto:attarahman406@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4>Get in Touch</h4>
+                <p><a href="mailto:attarahman406@gmail.com">attarahman406@gmail.com</a></p>
+                <p>Vancouver, BC</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Atta Rahman. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="JS/script.js"></script>
+</body>
+
+</html>

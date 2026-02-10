@@ -1,0 +1,381 @@
+/**
+ * loopin.css
+ * Fully optimized for Antigravity, responsive, performance-ready
+ * Scoped with .loopin body class
+ */
+
+/* ===========================
+   VARIABLES
+   =========================== */
+:root {
+    --color-primary: #fb5400;
+    --color-secondary: #ffd600;
+    --color-accent: #007aff;
+    --color-black: #000;
+    --text-main: #333;
+    --font-display: 'bauhaus', sans-serif;
+    --font-body: 'bauhaus', sans-serif;
+}
+
+/* ===========================
+   BODY & HERO
+   =========================== */
+body.loopin {
+    font-family: var(--font-body);
+    color: var(--text-main);
+    line-height: 1.6;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.loopin .hero-section {
+    padding: 12rem 2rem 6rem;
+    /* background: linear-gradient(180deg, #fff9f5 0%, #ffffff 100%); */
+    text-align: center;
+}
+
+.loopin .hero-title {
+    font-family: var(--font-display);
+    font-size: clamp(4rem, 10vw, 9rem);
+    line-height: 0.9;
+    margin-bottom: 3rem;
+    text-transform: uppercase;
+    letter-spacing: -4px;
+    font-weight: 700;
+    background: linear-gradient(135deg, #fb5400 0%, #ff7a33 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: var(--color-primary);
+    /* fallback */
+}
+
+.loopin .hero-description {
+    font-size: 1.4rem;
+    line-height: 1.7;
+    max-width: 800px;
+    margin: 0 auto 3rem;
+}
+
+.loopin .hero-cta-buttons {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    margin-bottom: 4rem;
+    flex-wrap: wrap;
+}
+
+.loopin .cta-button {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1rem;
+    text-decoration: none;
+    border: 2px solid transparent;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.loopin .cta-primary {
+    background: linear-gradient(135deg, #fb5400 0%, #ff6b1a 100%);
+    color: #fff;
+    box-shadow: 0 8px 24px rgba(251, 84, 0, 0.25);
+}
+
+.loopin .cta-primary:hover,
+.loopin .cta-primary:focus {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 32px rgba(251, 84, 0, 0.35);
+    outline: none;
+}
+
+.loopin .cta-secondary {
+    background: #fff;
+    color: var(--text-main);
+    border: 2px solid #e5e5e5;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.loopin .cta-secondary:hover,
+.loopin .cta-secondary:focus {
+    background: #fafafa;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    border-color: var(--color-primary);
+    outline: none;
+}
+
+/* ===========================
+   META GRID
+   =========================== */
+.loopin .meta-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 2rem;
+    margin: 4rem 0;
+    padding: 3rem;
+    background: #fff;
+    border-radius: 24px;
+    border: 1px solid #f0f0f0;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+}
+
+.loopin .meta-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.loopin .meta-label {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #999;
+    font-weight: 600;
+}
+
+.loopin .meta-value {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+
+
+/* ===========================
+   FEATURED IMAGE
+   =========================== */
+.loopin .hero-image-wrapper,
+.loopin .featured-image,
+.loopin .comparison-image {
+    width: 100%;
+    margin-top: 50px;
+    max-width: 100%;
+    height: auto;
+    border-radius: 32px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.loopin .featured-image:hover,
+.loopin .comparison-image:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.15);
+}
+
+/* ===========================
+   CONTENT BLOCKS
+   =========================== */
+.loopin .content-block {
+    margin: 6rem 0;
+    padding: 4rem;
+    background: #fafafa;
+    border-radius: 32px;
+    border: 1px solid #f0f0f0;
+}
+
+.loopin .content-heading {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.loopin .content-heading i {
+    font-size: 1.5rem;
+    opacity: 0.8;
+}
+
+.loopin .content-text {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: #555;
+}
+
+.loopin .solution-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.loopin .solution-list li {
+    padding: 1.5rem;
+    background: #fff;
+    border-radius: 16px;
+    border-left: 4px solid var(--color-primary);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* ===========================
+   PROCESS ITEMS
+   =========================== */
+.loopin .process-item {
+    padding: 2rem;
+    background: #fff;
+    border-radius: 20px;
+    border: 1px solid #f0f0f0;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.loopin .process-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+    border-color: var(--color-primary);
+}
+
+/* ===========================
+   BRANDING
+   =========================== */
+.loopin .branding-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2rem;
+}
+
+.loopin .swatch {
+    padding: 2rem;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    font-weight: 600;
+    color: #fff;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease;
+}
+
+.loopin .swatch:hover {
+    transform: translateY(-5px);
+}
+
+.loopin .swatch span {
+    font-size: 0.95rem;
+    opacity: 0.9;
+}
+
+.loopin .swatch code {
+    font-family: 'Monaco', monospace;
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+/* Color Swatches */
+.loopin .swatch-orange {
+    background: linear-gradient(135deg, #FF5C00 0%, #ff7a33 100%);
+}
+
+.loopin .swatch-yellow {
+    background: linear-gradient(135deg, #FFD600 0%, #ffe033 100%);
+    color: #333;
+}
+
+.loopin .swatch-blue {
+    background: linear-gradient(135deg, #007AFF 0%, #3395ff 100%);
+}
+
+.loopin .swatch-black {
+    background: linear-gradient(135deg, #000000 0%, #333333 100%);
+}
+
+/* ===========================
+   RESPONSIVE
+   =========================== */
+@media (max-width: 768px) {
+    .loopin .hero-section {
+        padding: 8rem 2rem 4rem;
+    }
+
+    .loopin .hero-title {
+        font-size: 3.5rem;
+        letter-spacing: -2px;
+        margin-bottom: 2rem;
+    }
+
+    .loopin .hero-description {
+        font-size: 1.2rem;
+    }
+
+    .loopin .content-block {
+        padding: 2rem;
+        margin: 3rem 0;
+    }
+
+    .loopin .meta-grid {
+        padding: 2rem;
+        gap: 1.5rem;
+    }
+
+    .loopin .process-item {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .loopin .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .loopin .cta-button {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* ===========================
+   MORE PROJECTS (MINI CARDS)
+   =========================== */
+.loopin .project-card-mini {
+    display: block;
+    background: #fff;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    text-decoration: none;
+    height: 100%;
+    position: relative;
+    top: 0;
+}
+
+.loopin .project-card-mini:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.loopin .mini-thumb {
+    height: 240px;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.5s ease;
+}
+
+.loopin .project-card-mini:hover .mini-thumb {
+    transform: scale(1.05);
+}
+
+.loopin .mini-info {
+    padding: 2rem;
+}
+
+.loopin .category {
+    display: block;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #999;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+.loopin .mini-info h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-main);
+    margin: 0;
+}

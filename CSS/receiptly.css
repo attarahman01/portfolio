@@ -1,0 +1,551 @@
+/**
+ * receiptly.css
+ * Project-specific styles for Receiptly
+ * Scoped with .receiptly body class
+ * Refactored to match Loopin quality and rhythm
+ */
+
+/* ===========================
+   VARIABLES
+   =========================== */
+:root {
+    --color-primary: #2E39E6;
+    --color-secondary: #10B981;
+    --color-dark: #0F172A;
+    --color-light: #F8FAFC;
+    --text-main: #333;
+
+    /* Typography per Loopin scale */
+    --font-display: 'metrosans';
+    --font-heading: 'metrosans';
+    --font-body: 'metrosans';
+
+    --space-section: 80px;
+    --space-block: 80px;
+}
+
+/* ===========================
+   BODY & LAYOUT
+   =========================== */
+body.receiptly {
+    font-family: var(--font-body);
+    color: var(--text-main);
+    line-height: 1.6;
+    margin: 0 auto;
+    /* global container controls width now */
+}
+
+/* ===========================
+   HERO SECTION
+   =========================== */
+.receiptly .hero-section {
+    padding: clamp(8rem, 15vh, 12rem) 2rem 6rem;
+    text-align: center;
+}
+
+.receiptly .hero-title {
+    font-family: var(--font-display);
+    font-size: clamp(4rem, 10vw, 9rem);
+    line-height: 0.9;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: -2px;
+    color: blue;
+    background: oklch(45.203% 0.3133 264.073);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.receiptly .hero-description {
+    font-size: clamp(1.1rem, 2vw, 1.4rem);
+    line-height: 1.6;
+    max-width: 900px;
+    margin: 0 auto 3rem;
+    color: #555;
+    font-family: var(--font-body);
+}
+
+/* CTA Buttons */
+.receiptly .hero-cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 4rem;
+    flex-wrap: wrap;
+}
+
+.receiptly .cta-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 2.5rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 50px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+}
+
+.receiptly .cta-primary {
+    background-color: white;
+    color: rgb(0, 0, 0);
+    box-shadow: 0 4px 15px rgba(45, 92, 254, 0.3);
+}
+
+.receiptly .cta-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(45, 92, 254, 0.4);
+}
+
+/* Meta Grid */
+.receiptly .meta-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 2rem;
+    max-width: 1400px;
+    margin: 4rem auto;
+    padding: 2.5rem;
+    background: white;
+    border-radius: 24px;
+    border: 1px solid #f0f0f0;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+}
+
+.receiptly .meta-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
+}
+
+.receiptly .meta-label {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #999;
+    font-weight: 700;
+}
+
+.receiptly .meta-value {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--color-dark);
+}
+
+/* ===========================
+   IMAGES & MEDIA
+   =========================== */
+.receiptly .hero-image-wrapper {
+    margin-top: 4rem;
+    border-radius: 32px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.receiptly .hero-image-wrapper:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.15);
+}
+
+.receiptly .featured-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 24px;
+    transition: transform 0.4s ease;
+}
+
+.design-process-image {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin: 0rem auto;
+    padding: 2.5rem;
+    background: white;
+    border-radius: 24px;
+    border: 1px solid #f0f0f0;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+}
+
+/* ===========================
+   STORYTELLING SECTIONS
+   =========================== */
+.receiptly .detail-section {
+    padding: 1rem 2rem;
+    margin-bottom: -2rem;
+    text-align: left;
+}
+
+.receiptly .section-label {
+    font-size: 2rem;
+    text-align: left;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--color-primary);
+    margin-bottom: 2rem;
+    font-weight: 700;
+}
+
+.receiptly .statement-text {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    line-height: 1.4;
+    text-align: left;
+    color: var(--color-dark);
+    font-weight: 500;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Alternating Content Layout */
+/* Alternating Content Layout */
+.receiptly .content-block {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    align-items: center;
+    margin: var(--space-section) 0;
+    padding: 0 2rem;
+    scroll-margin-top: 100px;
+    text-align: left;
+    border-radius: 24px;
+    border: 1px solid #f0f0f0;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    background: rgba(0, 37, 248, 0.054);
+}
+
+/* Even blocks: Swap order visually */
+.receiptly .content-block:nth-child(even) .block-text {
+    order: 2;
+}
+
+.receiptly .content-block:nth-child(even) img,
+.receiptly .content-block:nth-child(even) .content-image-stack {
+    order: 1;
+}
+
+.receiptly .block-text {
+    max-width: 100%;
+}
+
+.receiptly .content-heading {
+    font-family: var(--font-display);
+    font-size: 2.5rem;
+    color: #0000ff;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    line-height: 1.1;
+}
+
+.receiptly .content-heading i {
+    font-size: 0.7em;
+    color: #0000ff
+}
+
+.receiptly .content-text {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 1.5rem;
+    line-height: 1.7;
+}
+
+/* Image Stacks & Grids within blocks */
+.receiptly .content-image-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    border-radius: 24px;
+}
+
+.receiptly .content-image-stack img,
+.receiptly .featured-image {
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 24px;
+}
+
+.receiptly .content-image-stack img:hover,
+.receiptly .featured-image:hover {
+    transform: translateY(-5px) scale(1.01);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
+}
+
+/* Solution Grid & Cards */
+.receiptly .solution-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2.5rem;
+    margin-bottom: 2.5rem;
+    width: 100%;
+}
+
+.receiptly .solution-card {
+    background: #fff;
+    border-radius: 20px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+    border: 1px solid rgba(0, 0, 0, 0.03);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+}
+
+.receiptly .solution-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(45, 92, 254, 0.5);
+    border-color: rgba(45, 92, 254, 0.5);
+}
+
+.receiptly .card-content {
+    flex: 1;
+}
+
+.receiptly .card-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #0000ff;
+    margin-bottom: 0.5rem;
+    background: fff;
+    border-radius: 20px;
+    border: 1px solid #0000ff;
+    padding: 10px;
+}
+
+.receiptly .card-desc {
+    font-size: 0.95rem;
+    color: #64748b;
+    line-height: 1.5;
+}
+
+.receiptly .card-image-wrapper {
+    width: 100%;
+    height: 160px;
+    background: #f1f5f9;
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+}
+
+.receiptly .card-thumb {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    transition: transform 0.5s ease;
+}
+
+.receiptly .solution-card:hover .card-thumb {
+    transform: scale(1.05);
+}
+
+/* ===========================
+   PROCESS ITEMS
+   =========================== */
+.receiptly .process-item {
+    padding: 2rem;
+    background: #fff;
+    border-radius: 20px;
+    border: 1px solid #f0f0f0;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.receiptly .process-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 32px rgba(45, 92, 254, 0.1);
+    border-color: var(--color-primary);
+}
+
+/* ===========================
+   PERSONAS GRID
+   =========================== */
+.receiptly .personas-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    width: 100%;
+}
+
+.receiptly .personas-grid img {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+}
+
+.receiptly .personas-grid img:hover {
+    transform: translateY(-5px);
+}
+
+/* Branding Grid (inside a content block) */
+.receiptly .branding-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.receiptly .swatch {
+    padding: 2rem;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 140px;
+    font-weight: 500;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+}
+
+.receiptly .swatch:hover {
+    transform: translateY(-5px);
+}
+
+.receiptly .swatch-receiptly-primary {
+    background: var(--color-primary);
+    color: #fff;
+}
+
+.receiptly .swatch-receiptly-secondary {
+    background: var(--color-secondary);
+    color: #fff;
+}
+
+.receiptly .swatch-receiptly-dark {
+    background: var(--color-dark);
+    color: #fff;
+}
+
+.receiptly .swatch-receiptly-light {
+    background: var(--color-light);
+    color: #333;
+    border: 1px solid #e2e8f0;
+}
+
+.receiptly .font-block {
+    background: #f8fafc;
+    padding: 2rem;
+    border-radius: 20px;
+    height: 100%;
+    border: 1px solid #eef2f6;
+}
+
+/* ===========================
+   MORE PROJECTS (MINI CARDS)
+   =========================== */
+.receiptly .project-card-mini {
+    display: block;
+    background: #fff;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    text-decoration: none;
+    height: 100%;
+    position: relative;
+    top: 0;
+}
+
+.receiptly .project-card-mini:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.receiptly .mini-thumb {
+    height: 240px;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.5s ease;
+}
+
+.receiptly .project-card-mini:hover .mini-thumb {
+    transform: scale(1.05);
+}
+
+.receiptly .mini-info {
+    padding: 2rem;
+}
+
+.receiptly .category {
+    display: block;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #999;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+.receiptly .mini-info h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-main);
+    margin: 0;
+}
+
+/* ===========================
+   RESPONSIVE
+   =========================== */
+@media (max-width: 900px) {
+
+    .receiptly .content-block,
+    .receiptly .content-block:nth-child(even) {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        direction: ltr;
+        /* reset direction */
+    }
+
+    .receiptly .content-block:nth-child(even) .block-text {
+        order: 0;
+        /* Text first on mobile usually */
+    }
+
+    .receiptly .content-block:nth-child(even) img {
+        order: 1;
+    }
+
+    .receiptly .hero-title {
+        font-size: 3.5rem;
+    }
+
+    .receiptly .meta-grid {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .receiptly .meta-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .receiptly .personas-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .receiptly .branding-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .receiptly .hero-cta-buttons {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .receiptly .cta-button {
+        width: 100%;
+        text-align: center;
+    }
+}

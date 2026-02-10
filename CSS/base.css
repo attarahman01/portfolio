@@ -1,0 +1,229 @@
+/**
+ * base.css
+ * Global Resets, Variables, and Typography
+ */
+
+:root {
+    --primary: #6366f1;
+    --accent: #a855f7;
+    --bg-main: #FAF9F7;
+    --text-main: #000000;
+    --text-muted: #666666;
+    --border: rgba(0, 0, 0, 0.08);
+    --blue-accent: #0099FF;
+    --white: #ffffff;
+
+    --font-heading: 'Manrope', sans-serif;
+    --font-body: 'Manrope', sans-serif;
+
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --container-max: 1200px;
+    --section-padding: 120px 20px;
+
+    /* Spacing */
+    --space-xs: 0.5rem;
+    --space-sm: 1rem;
+    --space-md: 1.5rem;
+    --space-lg: 2rem;
+    --space-xl: 4rem;
+
+    /* Border Radius */
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 24px;
+
+    /* Project Specific Colors (MemoTrip) */
+    --memotrip-primary: #7C3AED;
+    --memotrip-accent: #FBBF24;
+    --memotrip-dark: #1E1B4B;
+
+    /* Missing Variables for Consistency */
+    --bg-dark: #ffffff;
+    /* Default background */
+    --bg-card: #f8f9fa;
+    /* Default card background */
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
+    --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.12);
+    /* --shadow-lg is already defined below at line 199 but let's keep definitions together if possible, or just add missing ones here */
+    --header-height: 80px;
+}
+
+/* Reset & Base */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    overflow-x: hidden;
+    cursor: none;
+}
+
+/* Typography Classes */
+.text-display {
+    font-family: var(--font-display);
+}
+
+.text-heading {
+    font-family: var(--font-heading);
+}
+
+.text-body {
+    font-family: var(--font-body);
+}
+
+.text-sub {
+    font-family: var(--font-sub);
+}
+
+.title-large {
+    font-size: 5rem;
+    font-weight: 800;
+    line-height: 1;
+}
+
+.title-medium {
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+.title-small {
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+p {
+    color: var(--text-muted);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: var(--transition);
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* Custom Cursor */
+#cursor-dot,
+#cursor-outline {
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    z-index: 9999;
+    pointer-events: none;
+}
+
+#cursor-dot {
+    width: 8px;
+    height: 8px;
+    background-color: var(--text-main);
+}
+
+#cursor-outline {
+    width: 40px;
+    height: 40px;
+    border: 1px solid var(--text-muted);
+    transition: width 0.2s, height 0.2s, background-color 0.2s;
+}
+
+/* Scroll Reveal Base */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Utility Classes */
+.mt-1 {
+    margin-top: var(--space-sm);
+}
+
+.mt-2 {
+    margin-top: var(--space-lg);
+}
+
+.mb-1 {
+    margin-bottom: var(--space-xs);
+}
+
+.mb-2 {
+    margin-bottom: var(--space-lg);
+}
+
+.my-2 {
+    margin-top: var(--space-lg);
+    margin-bottom: var(--space-lg);
+}
+
+.mt-4 {
+    margin-top: var(--space-xl);
+}
+
+.mb-4 {
+    margin-bottom: var(--space-xl);
+}
+
+.grid-responsive {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--space-lg);
+}
+
+.grid-sm {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.gallery-container {
+    max-width: 900px;
+    margin: var(--space-xl) auto 0;
+    padding: 0 var(--space-lg);
+}
+
+.text-memotrip-primary {
+    color: var(--memotrip-primary);
+}
+
+.radius-md {
+    border-radius: var(--radius-md);
+}
+
+.shadow-lg {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.w-full {
+    width: 100%;
+}
+
+/* Accessibility */
+:focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 4px;
+}
