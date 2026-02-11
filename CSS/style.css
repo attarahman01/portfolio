@@ -49,6 +49,9 @@
     /* Transitions */
     --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-slow: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+
+    /* Dynamic Text Height */
+    --dynamic-height: 3.5rem;
 }
 
 /* ==================== RESET & BASE ==================== */
@@ -71,7 +74,14 @@ body {
     font-family: var(--font-body);
     line-height: 1.6;
     overflow-x: hidden;
-    cursor: none;
+    cursor: auto;
+    /* Fallback for touch devices */
+}
+
+/* Ensure no horizontal scroll on mobile */
+.container,
+section {
+    overflow-x: hidden;
 }
 
 /* ==================== CUSTOM CURSOR ==================== */
@@ -85,6 +95,20 @@ body {
     z-index: 9999;
     pointer-events: none;
     transition: width 0.2s, height 0.2s, background-color 0.2s;
+    display: block;
+}
+
+@media (pointer: coarse),
+(max-width: 768px) {
+
+    #cursor-dot,
+    #cursor-outline {
+        display: none !important;
+    }
+
+    body {
+        cursor: auto !important;
+    }
 }
 
 #cursor-dot {
@@ -394,12 +418,14 @@ strong {
         transform: translateX(100%);
         transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         z-index: 1001;
-        /* Between header and logo/hamburger */
         padding-top: var(--header-height);
+        visibility: hidden;
+        /* Prevent interaction when hidden */
     }
 
     .navbar.active {
         transform: translateX(0);
+        visibility: visible;
         box-shadow: -5px 0 20px rgba(0, 0, 0, 0.05);
     }
 
@@ -517,7 +543,7 @@ strong {
     font-weight: 600;
     margin-bottom: 2rem;
     overflow: hidden;
-    height: 3.5rem;
+    height: var(--dynamic-height);
     align-items: center;
     animation: fadeInUp 0.8s ease-out 0.4s both;
 }
@@ -528,15 +554,22 @@ strong {
 }
 
 .dynamic-text {
-    line-height: 3.5rem;
-    height: 3.5rem;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    animation: slide 12s steps(4) infinite;
+    height: var(--dynamic-height);
+    /* Critical for vertical centering */
 }
 
 .dynamic-text li {
     color: var(--primary);
-    position: relative;
-    top: 0;
-    animation: slide 12s steps(4) infinite;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    height: var(--dynamic-height);
+    flex-shrink: 0;
 }
 
 .dynamic-text li span {
@@ -556,7 +589,7 @@ strong {
 
 @keyframes slide {
     100% {
-        top: -14rem;
+        transform: translateY(calc(-4 * var(--dynamic-height)));
     }
 }
 
@@ -615,6 +648,8 @@ strong {
     top: 15%;
     right: 10%;
     animation-delay: 0s;
+    max-width: 90vw;
+    /* Prevent horizontal overflow */
 }
 
 .blob-2 {
@@ -624,6 +659,8 @@ strong {
     bottom: 20%;
     right: 25%;
     animation-delay: 2s;
+    max-width: 90vw;
+    /* Prevent horizontal overflow */
 }
 
 @keyframes blobFloat {
@@ -1022,10 +1059,10 @@ strong {
 }
 
 .social-links a:hover {
-    background: linear-gradient(135deg, var(--primary), var(--accent));
-    border-color: transparent;
-    color: white;
-    transform: translateY(-5px);
+    background: rgba(99, 102, 241, 0.1);
+    border-color: var(--primary);
+    color: var(--primary) !important;
+    transform: translateY(-2px);
 }
 
 /* Contact Form */
@@ -1178,10 +1215,14 @@ strong {
 }
 
 .footer-social a:hover {
-    background: linear-gradient(135deg, var(--primary), var(--accent));
-    border-color: transparent;
-    color: white;
-    transform: translateY(-3px);
+    background: rgba(99, 102, 241, 0.1);
+    border-color: var(--primary);
+    color: var(--primary) !important;
+    transform: translateY(-2px);
+}
+
+.footer-social a:hover i {
+    color: var(--primary) !important;
 }
 
 .footer-section a {
@@ -1263,13 +1304,13 @@ strong {
 
     .dynamic-text-container {
         font-size: 1.8rem;
-        height: 3rem;
+        height: var(--dynamic-height);
+        --dynamic-height: 3rem;
         justify-content: center;
     }
 
     .dynamic-text {
-        line-height: 3rem;
-        height: 3rem;
+        height: var(--dynamic-height);
     }
 
     .about-grid,
@@ -1308,17 +1349,12 @@ strong {
     }
 
     .name {
-        font-size: 3rem;
+        font-size: 2.5rem;
     }
 
     .dynamic-text-container {
         font-size: 1.4rem;
-        height: 2.5rem;
-    }
-
-    .dynamic-text {
-        line-height: 2.5rem;
-        height: 2.5rem;
+        --dynamic-height: 2rem;
     }
 
     .hero-desc {
