@@ -63,7 +63,7 @@ body.memotrip {
  */
 .memotrip .page-container {
     width: 100%;
-    max-width: 1400px;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 0 var(--space-md);
     box-sizing: border-box;
@@ -584,6 +584,11 @@ body.memotrip {
 .memotrip .mini-info h3 {
     font-size: 1.25rem;
     color: var(--color-text-main);
+    text-align: center;
+}
+
+.memotrip .mini-info .category {
+    text-align: center;
 }
 
 /* ==========================================================================
@@ -596,7 +601,7 @@ body.memotrip {
     .memotrip .content-block.reverse {
         grid-template-columns: 1fr;
         gap: var(--space-md);
-        text-align: left;
+        text-align: center;
     }
 
     /* Reset Flex Order for Mobile: Text First always */
@@ -621,8 +626,25 @@ body.memotrip {
 
     .memotrip .text-centered,
     .memotrip .content-heading.centered {
-        text-align: left;
-        justify-content: flex-start;
+        text-align: center;
+        justify-content: center;
+    }
+
+    /* Fix text alignment for headings and role */
+    .memotrip h1,
+    .memotrip h2,
+    .memotrip h3,
+    .memotrip h4,
+    .memotrip .role-content p,
+    .memotrip .content-text,
+    .memotrip .content-heading {
+        text-align: center !important;
+        justify-content: center !important;
+        align-items: center !important;
+    }
+
+    .memotrip .project-meta-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 
     /* Summary Grid Stack */

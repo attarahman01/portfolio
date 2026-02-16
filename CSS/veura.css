@@ -62,7 +62,7 @@ body.veura {
  */
 .veura .page-container {
     width: 100%;
-    max-width: 1400px;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 0 var(--space-md);
     box-sizing: border-box;
@@ -118,7 +118,7 @@ body.veura {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 2rem;
-    max-width: 1400px;
+    max-width: 1200px;
     margin: 4rem auto;
     padding: 2.5rem;
     background: var(--color-bg-soft);
@@ -300,7 +300,7 @@ body.veura {
 /* Reverse Layout Utility */
 .veura .content-block.reverse {
     direction: ltr;
-    max-width: 1400px;
+    max-width: 1200px;
     margin: 0 auto;
     margin-top: 2rem;
     border-radius: 20px;
@@ -544,6 +544,11 @@ body.veura {
 .veura .mini-info h3 {
     font-size: 1.25rem;
     color: var(--color-text-main);
+    text-align: center;
+}
+
+.veura .mini-info .category {
+    text-align: center;
 }
 
 /* ==========================================================================
@@ -555,7 +560,7 @@ body.veura {
     .veura .content-block.reverse {
         grid-template-columns: 1fr;
         gap: var(--space-md);
-        text-align: left;
+        text-align: center;
     }
 
     .veura .content-block.reverse .content-text {
@@ -576,8 +581,25 @@ body.veura {
 
     .veura .text-centered,
     .veura .content-heading.centered {
-        text-align: left;
-        justify-content: flex-start;
+        text-align: center;
+        justify-content: center;
+    }
+
+    /* Fix text alignment for headings and role */
+    .veura h1,
+    .veura h2,
+    .veura h3,
+    .veura h4,
+    .veura .role-content p,
+    .veura .content-text,
+    .veura .content-heading {
+        text-align: center !important;
+        justify-content: center !important;
+        align-items: center !important;
+    }
+
+    .veura .project-meta-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 
     .veura .grid-3 {

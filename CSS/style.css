@@ -43,7 +43,7 @@
     /* 128px */
 
     /* Layout */
-    --container-width: 1400px;
+    --container-width: 1200px;
     --header-height: 80px;
 
     /* Transitions */
@@ -498,23 +498,36 @@ strong {
     .hamburger.active .bar:nth-child(3) {
         transform: translateY(-8px) rotate(-45deg);
     }
+
+    /* Mobile Nav CTA override */
+    .navbar .nav-cta {
+        margin: 1.5rem 0 0 !important;
+        width: 80%;
+        text-align: center;
+        padding: 1rem !important;
+        font-size: 1rem;
+    }
 }
 
 /* ==================== HERO SECTION ==================== */
 .hero {
     min-height: 100vh;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-between;
-    padding: 0 8%;
+    justify-content: center;
+    text-align: center;
+    padding: var(--header-height) 5% 0;
     position: relative;
     overflow: hidden;
-    padding-top: var(--header-height);
 }
 
 .hero-content {
-    max-width: 650px;
+    max-width: 800px;
     z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .greeting {
@@ -529,7 +542,7 @@ strong {
 }
 
 .name {
-    font-size: 5rem;
+    font-size: 6rem;
     font-weight: 800;
     margin-bottom: 1.5rem;
     line-height: 1;
@@ -539,12 +552,13 @@ strong {
 /* Dynamic Text Animation */
 .dynamic-text-container {
     display: flex;
-    font-size: 2.2rem;
+    font-size: 2.5rem;
     font-weight: 600;
     margin-bottom: 2rem;
     overflow: hidden;
     height: var(--dynamic-height);
     align-items: center;
+    justify-content: center;
     animation: fadeInUp 0.8s ease-out 0.4s both;
 }
 
@@ -606,9 +620,9 @@ strong {
 }
 
 .hero-desc {
-    font-size: 1.2rem;
+    font-size: 1.35rem;
     margin-bottom: 3rem;
-    max-width: 500px;
+    max-width: 600px;
     line-height: 1.8;
     animation: fadeInUp 0.8s ease-out 0.6s both;
 }
@@ -856,6 +870,19 @@ strong {
     gap: 1rem;
     margin-bottom: 4rem;
     flex-wrap: wrap;
+    padding: 0 1rem;
+}
+
+@media (max-width: 768px) {
+    .project-filter {
+        gap: 0.75rem;
+        margin-bottom: 2.5rem;
+    }
+
+    .filter-btn {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.85rem;
+    }
 }
 
 .filter-btn {
@@ -883,6 +910,8 @@ strong {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 3rem;
+    width: 100%;
+    margin: 0 auto;
 }
 
 .grid-3 {
@@ -896,6 +925,8 @@ strong {
     overflow: hidden;
     border-radius: 24px;
     transition: var(--transition-slow);
+    border: 1px solid transparent;
+    /* Fix for some browsers clipping */
 }
 
 .work-card {
@@ -911,7 +942,6 @@ strong {
     width: 100%;
     aspect-ratio: 4/3;
     overflow: hidden;
-    border-radius: 24px;
     background: var(--bg-card);
 }
 
@@ -1165,6 +1195,7 @@ strong {
 }
 
 .footer-logo {
+    display: inline-block;
     font-family: var(--font-heading);
     font-size: 1.8rem;
     font-weight: 800;
@@ -1172,6 +1203,7 @@ strong {
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
+    cursor: pointer;
 }
 
 .footer-section p {
@@ -1215,10 +1247,10 @@ strong {
 }
 
 .footer-social a:hover {
-    background: rgba(99, 102, 241, 0.1);
+    background: var(--primary);
     border-color: var(--primary);
-    color: var(--primary) !important;
-    transform: translateY(-2px);
+    color: white !important;
+    transform: translateY(-5px);
 }
 
 .footer-social a:hover i {
@@ -1472,7 +1504,7 @@ textarea:focus-visible {
 }
 
 .about-hero .container {
-    max-width: 1400px;
+    max-width: 1100px;
     margin: 0 auto;
 }
 
@@ -1600,10 +1632,10 @@ textarea:focus-visible {
 
 .tools-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-    gap: 2rem;
-    max-width: 1400px;
-    /* margin: 0 auto; */
+    grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+    gap: 1.5rem;
+    max-width: 1100px;
+    margin: 0 auto;
 }
 
 .tool-card {
@@ -1627,8 +1659,8 @@ textarea:focus-visible {
 }
 
 .tool-icon {
-    width: 48px;
-    height: 48px;
+    width: 40px;
+    height: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1642,7 +1674,7 @@ textarea:focus-visible {
 }
 
 .tool-icon i {
-    font-size: 48px;
+    font-size: 40px;
     color: var(--text-main);
     transition: var(--transition);
 }
@@ -1684,13 +1716,14 @@ textarea:focus-visible {
 
 .process-card {
     padding: 3rem 2.5rem;
-    background: linear-gradient(82deg, #ffffff, #6996f4);
+    background: white;
     border-radius: 24px;
-    border-color: transparent;
-    transition: green;
+    border: 1px solid var(--border);
+    transition: var(--transition);
     position: relative;
     overflow: hidden;
-    color: #ffffff;
+    color: var(--text-main);
+    box-shadow: var(--shadow-sm);
 }
 
 .process-card::before {
@@ -1716,15 +1749,14 @@ textarea:focus-visible {
 }
 
 .process-card-active {
-    background: linear-gradient(82deg, #ffffff, #6996f4);
-    border-color: transparent;
-    color: #ffffff;
+    background: rgba(99, 102, 241, 0.05);
+    border-color: var(--primary);
 }
 
 .process-card-active .step-number,
 .process-card-active h3,
 .process-card-active p {
-    color: #1013f5;
+    color: inherit;
 }
 
 .step-number {
@@ -1744,14 +1776,14 @@ textarea:focus-visible {
     font-size: 1.5rem;
     font-weight: 700;
     margin-bottom: 1rem;
-    color: #1013f5;
+    color: var(--text-main);
     font-family: var(--font-sub);
 }
 
 .process-card p {
     font-size: 1rem;
     line-height: 1.7;
-    color: #0a19f9;
+    color: var(--text-muted);
 }
 
 .process-card-active p {
@@ -1883,8 +1915,9 @@ textarea:focus-visible {
     }
 
     .tools-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
         gap: 1rem;
+        max-width: 100%;
     }
 
     .tool-card {
@@ -1971,9 +2004,14 @@ textarea:focus-visible {
     width: 100%;
     aspect-ratio: 4/3;
     overflow: hidden;
-    border-radius: 12px;
+    border-radius: 0;
     background: #f5f5f5;
     margin-bottom: 1.5rem;
+}
+
+/* Projects Page Specific Overrides */
+.projects-page .work-item {
+    border-radius: 0;
 }
 
 .project-image img {
