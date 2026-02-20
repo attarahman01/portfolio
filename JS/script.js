@@ -230,12 +230,18 @@ function initMobileMenu() {
 
     // Toggle Menu
     hamburger.addEventListener("click", () => {
-        hamburger.classList.toggle("active");
+        const isActive = hamburger.classList.toggle("active");
         navMenu.classList.toggle("active");
 
         // Accessibility
-        const isActive = hamburger.classList.contains("active");
         hamburger.setAttribute("aria-expanded", isActive);
+
+        // Lock scroll when menu is open
+        if (isActive) {
+            document.body.style.overflow = "hidden";
+        } else {
+            document.body.style.overflow = "";
+        }
     });
 
     // Close menu when link is clicked
@@ -244,9 +250,17 @@ function initMobileMenu() {
             hamburger.classList.remove("active");
             navMenu.classList.remove("active");
             hamburger.setAttribute("aria-expanded", false);
+            document.body.style.overflow = ""; // Unlock scroll
         });
     });
 
-    // Close on outside click is handled by CSS layout (full screen menu), 
-    // but we can add a document click listener if needed.
+    // Close menu on resize if above breakpoint
+    window.addEventListener('resize', () => {
+        if (window.innerWidth >= 1024) { // lg breakpoint
+            hamburger.classList.remove("active");
+            navMenu.classList.remove("active");
+            hamburger.setAttribute("aria-expanded", false);
+            document.body.style.overflow = "";
+        }
+    });
 }

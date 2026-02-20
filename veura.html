@@ -9,21 +9,24 @@
         href="https://fonts.googleapis.com/css2?family=Antonio:wght@100..700&family=Baumans&family=Inter:wght@300;400;500;600;700&family=Lexend:wght@100..900&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="CSS/style.css">
-    <link rel="stylesheet" href="CSS/veura.css">
+    <!-- Custom CSS (Tailwind Output) -->
+    <link rel="stylesheet" href="CSS/output.css">
 </head>
 
 <body class="veura">
     <div id="cursor-dot"></div>
     <div id="cursor-outline"></div>
 
+    <!-- Sticky Navigation -->
     <header class="header">
-        <a href="index.html" class="logo" aria-label="Atta Rahman Portfolio Home">Atta.</a>
+        <a href="index.html" class="logo group" aria-label="Atta Rahman Portfolio Home">
+            <span class="group-hover:text-primary transition-colors">Atta.</span>
+        </a>
 
         <div class="hamburger" tabindex="0" aria-label="Menu" role="button">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
+            <span></span>
+            <span></span>
+            <span></span>
         </div>
 
         <nav class="navbar" aria-label="Main Navigation">
@@ -34,264 +37,339 @@
                 <li><a href="index.html#contact">Contact</a></li>
             </ul>
             <a href="https://docs.google.com/document/d/e/2PACX-1vRzCaOoOrogSTLAL45PbbqtKZOF7pA90JsbFpwQ_VXqHakTKE6fWCTqNZWYsKAVNmL06Aaf-HK9mB6l/pub"
-                target="_blank" rel="noopener noreferrer" class="nav-cta" aria-label="View Resume">Resume</a>
+                target="_blank" rel="noopener noreferrer"
+                class="btn btn-secondary !py-2 !px-6 text-sm lg:ml-4 mt-8 lg:mt-0" aria-label="View Resume">Resume</a>
         </nav>
     </header>
 
     <main>
-        <div class="page-container">
+        <div class="max-w-6xl mx-auto px-6 lg:px-12">
             <!-- Project Hero -->
-            <section class="project-hero-new">
-                <h1 class="project-title-large">VEURA</h1>
-                <!-- <div class="project-category-pill">Branding & Identity</div> -->
-                <p class="hero-desc-large">Luxury scent branding built for mood, emotion, and sophisticated atmosphere.
-                </p>
+            <section class="pt-40 pb-20 text-center">
+                <h1
+                    class="text-[clamp(3.5rem,8vw,7rem)] font-bold leading-[0.9] uppercase tracking-tighter mb-8 text-[#C5A059]">
+                    Veura</h1>
+                <p class="text-xl lg:text-2xl text-text-muted max-w-3xl mx-auto mb-10 leading-relaxed">Luxury scent
+                    branding built for mood, emotion, and sophisticated atmosphere.</p>
 
-                <div class="hero-cta-buttons">
+                <div class="flex justify-center mb-16">
                     <a href="https://www.figma.com/design/09Bln7qiOQT3dB9y25YUOT/Veura--Atta-?node-id=3-4322&m=draw"
-                        target="_blank" rel="noopener noreferrer" class="cta-button cta-primary">
+                        target="_blank" rel="noopener noreferrer"
+                        class="btn bg-[#C5A059] text-white shadow-lg shadow-[#C5A059]/20">
                         View Figma File
                     </a>
                 </div>
 
-                <div class="project-meta-grid">
-                    <div class="meta-item">
-                        <span class="meta-label">Industry</span>
-                        <span class="meta-value">Luxury Goods</span>
+                <div
+                    class="grid grid-cols-2 lg:grid-cols-4 gap-8 p-10 bg-[#f9f9f9] rounded-[2.5rem] border border-border text-center shadow-sm mb-20">
+                    <div class="space-y-1">
+                        <span class="text-[10px] font-bold uppercase tracking-widest text-text-muted">Industry</span>
+                        <span class="block text-lg font-bold text-text-main">Luxury Goods</span>
                     </div>
-                    <div class="meta-item">
-                        <span class="meta-label">Client</span>
-                        <span class="meta-value">Concept Brand</span>
+                    <div class="space-y-1">
+                        <span class="text-[10px] font-bold uppercase tracking-widest text-text-muted">Client</span>
+                        <span class="block text-lg font-bold text-text-main">Concept Brand</span>
                     </div>
-                    <div class="meta-item">
-                        <span class="meta-label">Role</span>
-                        <span class="meta-value">Visual Designer</span>
+                    <div class="space-y-1">
+                        <span class="text-[10px] font-bold uppercase tracking-widest text-text-muted">Role</span>
+                        <span class="block text-lg font-bold text-text-main">Visual Designer</span>
                     </div>
-                    <div class="meta-item">
-                        <span class="meta-label">Duration</span>
-                        <span class="meta-value">4 Weeks</span>
+                    <div class="space-y-1">
+                        <span class="text-[10px] font-bold uppercase tracking-widest text-text-muted">Duration</span>
+                        <span class="block text-lg font-bold text-text-main">4 Weeks</span>
                     </div>
                 </div>
 
-                <div class="hero-image-container">
-                    <img src="images/veura_thumb.webp" alt="Veura Hero" class="hero-img-rounded">
+                <div
+                    class="rounded-[2.5rem] overflow-hidden shadow-2xl transition-transform duration-500 hover:scale-[1.01]">
+                    <img src="images/veura_thumb.webp" alt="Veura Hero" class="w-full h-auto">
                 </div>
             </section>
 
             <!-- My Role Section -->
-            <section class="role-section">
-                <div class="role-content">
-                    <h3 class="role-heading">MY ROLE</h3>
-                    <p>As the Lead Visual Designer, I defined the brand strategy and digital identity, focusing on
+            <section class="py-24 lg:py-32">
+                <div class="max-w-4xl mx-auto">
+                    <h3 class="text-xs font-bold uppercase tracking-[0.3em] text-[#C5A059] mb-8 text-center">My Role
+                    </h3>
+                    <p class="text-xl lg:text-3xl text-text-main leading-relaxed text-center font-medium">As the Lead
+                        Visual Designer, I defined the brand strategy and digital identity, focusing on
                         translating olfactory concepts into a cohesive visual experience.
-                        <br>
-
+                        <br><br>
                         My work encompassed color theory, typography selection, and high-fidelity UI design, moving
                         beyond functional UX to establish a premium, mood-driven brand atmosphere.
                     </p>
                 </div>
             </section>
 
-            <!-- Project Content -->
-            <section class="project-content-new">
+            <section class="space-y-32 mb-32">
                 <!-- Problem Section -->
-                <div id="problem" class="content-block">
-                    <div class="content-text">
-                        <h3 class="content-heading"><i class="fa-regular fa-triangle-exclamation"></i> THE PROBLEM</h3>
-                        <p class="text-body">Fragrance brands often rely on overly traditional or minimal web designs
-                            that don’t capture the scent, story, or emotion behind their products. Many lack a strong
-                            brand voice or visual flow that keeps users engaged past the first scroll.</p>
+                <div class="p-10 lg:p-20 bg-[#f9f9f9] rounded-[3rem] border border-border reveal shadow-sm">
+                    <div class="grid lg:grid-cols-1 gap-16 items-center text-center">
+                        <div class="max-w-3xl mx-auto">
+                            <h3 class="flex items-center justify-center gap-4 text-3xl font-bold text-[#C5A059] mb-8">
+                                <i class="fa-regular fa-triangle-exclamation" aria-hidden="true"></i>
+                                The Problem
+                            </h3>
+                            <p class="text-xl text-text-muted leading-relaxed">Fragrance brands often rely on overly
+                                traditional or minimal web designs
+                                that don’t capture the scent, story, or emotion behind their products. Many lack a
+                                strong
+                                brand voice or visual flow that keeps users engaged past the first scroll.</p>
+                        </div>
                     </div>
                 </div>
+
+                <!-- Solution Section -->
+                <div class="p-10 lg:p-20 bg-[#f9f9f9] rounded-[3rem] border border-border reveal shadow-sm">
+                    <h3 class="flex items-center justify-center gap-4 text-3xl font-bold text-[#C5A059] mb-4">
+                        <i class="fa-regular fa-lightbulb" aria-hidden="true"></i>
+                        Solution
+                    </h3>
+                    <p class="text-center text-text-muted mb-12 max-w-2xl mx-auto">A digital experience that evokes
+                        scent through visual storytelling.</p>
+
+                    <div class="grid md:grid-cols-3 gap-8 mb-16">
+                        <div
+                            class="group relative p-10 bg-white rounded-3xl border border-border transition-all hover:shadow-xl hover:shadow-[#C5A059]/10 hover:-translate-y-2 overflow-hidden min-h-[400px] flex flex-col justify-end">
+                            <img src="./Veura IMAGES/fragranace atta/EMotions.webp" alt="Emotions"
+                                class="absolute inset-0 w-full h-full object-cover opacity-10 group-hover:opacity-20 transition-opacity">
+                            <div class="relative z-10">
+                                <div
+                                    class="w-12 h-12 bg-[#C5A059] text-white rounded-xl flex items-center justify-center mb-6">
+                                    <i class="fa-solid fa-eye text-xl"></i>
+                                </div>
+                                <h4 class="text-xl font-bold mb-4">Emotive Design</h4>
+                                <p class="text-sm text-text-muted">Use color and texture to evoke scent digitally,
+                                    creating a sensory connection.</p>
+                            </div>
+                        </div>
+                        <div
+                            class="group relative p-10 bg-white rounded-3xl border border-border transition-all hover:shadow-xl hover:shadow-[#C5A059]/10 hover:-translate-y-2 overflow-hidden min-h-[400px] flex flex-col justify-end">
+                            <img src="./Veura IMAGES/fragranace atta/idea.webp" alt="Idea"
+                                class="absolute inset-0 w-full h-full object-cover opacity-10 group-hover:opacity-20 transition-opacity">
+                            <div class="relative z-10">
+                                <div
+                                    class="w-12 h-12 bg-[#C5A059] text-white rounded-xl flex items-center justify-center mb-6">
+                                    <i class="fa-solid fa-book-open text-xl"></i>
+                                </div>
+                                <h4 class="text-xl font-bold mb-4">Storytelling Flow</h4>
+                                <p class="text-sm text-text-muted">Guide users through an immersive brand narrative that
+                                    unfolds like a fragrance.</p>
+                            </div>
+                        </div>
+                        <div
+                            class="group relative p-10 bg-white rounded-3xl border border-border transition-all hover:shadow-xl hover:shadow-[#C5A059]/10 hover:-translate-y-2 overflow-hidden min-h-[400px] flex flex-col justify-end">
+                            <img src="./Veura IMAGES/fragranace atta/horiziumagency-perfume-9800422_1920.webp"
+                                alt="Perfume"
+                                class="absolute inset-0 w-full h-full object-cover opacity-10 group-hover:opacity-20 transition-opacity">
+                            <div class="relative z-10">
+                                <div
+                                    class="w-12 h-12 bg-[#C5A059] text-white rounded-xl flex items-center justify-center mb-6">
+                                    <i class="fa-solid fa-gem text-xl"></i>
+                                </div>
+                                <h4 class="text-xl font-bold mb-4">Modern Luxury</h4>
+                                <p class="text-sm text-text-muted">Blend high-end aesthetics with accessible interaction
+                                    for a premium feel.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <!-- Design Process Section -->
+                <div class="p-10 lg:p-20 bg-[#f9f9f9] rounded-[3rem] border border-border reveal shadow-sm">
+                    <h3 class="flex items-center justify-center gap-4 text-3xl font-bold text-[#C5A059] mb-12">
+                        <i class="fa-regular fa-compass" aria-hidden="true"></i>
+                        Design Process
+                    </h3>
+                    <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+                        <div
+                            class="p-8 bg-white rounded-3xl border border-border transition-all hover:border-[#C5A059] hover:-translate-y-1">
+                            <span class="text-xs font-black uppercase tracking-widest text-[#C5A059]/40 mb-4 block">01.
+                                Concept Art</span>
+                            <p class="text-sm">Explored visual metaphors for scent using macro photography and abstract
+                                textures.</p>
+                        </div>
+                        <div
+                            class="p-8 bg-white rounded-3xl border border-border transition-all hover:border-[#C5A059] hover:-translate-y-1">
+                            <span class="text-xs font-black uppercase tracking-widest text-[#C5A059]/40 mb-4 block">02.
+                                Color Theory</span>
+                            <p class="text-sm">Developed a palette that balances traditional luxury (Gold/Black) with
+                                modern softness.</p>
+                        </div>
+                        <div
+                            class="p-8 bg-white rounded-3xl border border-border transition-all hover:border-[#C5A059] hover:-translate-y-1">
+                            <span class="text-xs font-black uppercase tracking-widest text-[#C5A059]/40 mb-4 block">03.
+                                Layout Design</span>
+                            <p class="text-sm">Designed a homepage that prioritizes large-scale imagery and smooth
+                                scrolling.</p>
+                        </div>
+                        <div
+                            class="p-8 bg-white rounded-3xl border border-border transition-all hover:border-[#C5A059] hover:-translate-y-1">
+                            <span class="text-xs font-black uppercase tracking-widest text-[#C5A059]/40 mb-4 block">04.
+                                Refinement</span>
+                            <p class="text-sm">Polished interactions and typography to ensure every detail reinforced
+                                the brand.</p>
+                        </div>
+                    </div>
+                    <div
+                        class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center bg-white p-10 rounded-[2.5rem] border border-border">
+                        <img src="./Veura IMAGES/fragranace atta/Frame 53.webp" alt="Veura 1"
+                            class="rounded-3xl shadow-xl transition-transform hover:scale-[1.02] duration-500">
+                        <img src="./Veura IMAGES/fragranace atta/Frame 1000005015.webp" alt="Veura 2"
+                            class="rounded-3xl shadow-xl transition-transform hover:scale-[1.02] duration-500">
+                    </div>
+                </div>
+
+                <!-- Branding Section -->
+                <div class="p-10 lg:p-20 bg-white rounded-[3rem] border border-border reveal shadow-lg">
+                    <h3 class="flex items-center justify-center gap-4 text-3xl font-bold text-[#C5A059] mb-8">
+                        <i class="fa-regular fa-bookmark" aria-hidden="true"></i>
+                        Branding & Typography
+                    </h3>
+                    <p class="text-center text-text-muted mb-12 max-w-2xl mx-auto">A visual identity designed to feel
+                        invisible yet elegant.</p>
+                    <div class="grid md:grid-cols-3 gap-8 mb-16">
+                        <div
+                            class="p-8 bg-[#C5A059] text-white rounded-3xl shadow-lg transform hover:-translate-y-2 transition-all">
+                            <span class="block text-2xl font-bold mb-2">Gold</span>
+                            <p class="text-sm opacity-90">Represents luxury and warmth. Core brand color.</p>
+                        </div>
+                        <div
+                            class="p-8 bg-black text-white rounded-3xl shadow-lg transform hover:-translate-y-2 transition-all">
+                            <span class="block text-2xl font-bold mb-2">Black</span>
+                            <p class="text-sm opacity-90">Provides sophistication and contrast.</p>
+                        </div>
+                        <div
+                            class="p-8 bg-[#fdfaf5] text-text-main rounded-3xl border border-border shadow-lg transform hover:-translate-y-2 transition-all">
+                            <span class="block text-2xl font-bold mb-2">Cream</span>
+                            <p class="text-sm text-text-muted">Adds softness and modern appeal.</p>
+                        </div>
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-8 p-10 bg-[#f9f9f9] rounded-3xl border border-border">
+                        <img src="./Veura IMAGES/fragranace atta/Branding Slides.webp" alt="Branding 1"
+                            class="rounded-2xl shadow-sm">
+                        <img src="./Veura IMAGES/fragranace atta/Frame 1000005003.webp" alt="Branding 2"
+                            class="rounded-2xl shadow-sm">
+                    </div>
+                </div>
+
+
+                <!-- Summary Section -->
+                <div
+                    class="p-10 lg:p-20 bg-[#C5A059]/5 rounded-[3rem] border border-[#C5A059]/30 reveal shadow-sm text-center">
+                    <h3 class="flex items-center justify-center gap-4 text-3xl font-bold text-[#C5A059] mb-8">
+                        <i class="fa-regular fa-star" aria-hidden="true"></i>
+                        Summary
+                    </h3>
+                    <p class="text-xl lg:text-2xl text-text-main leading-relaxed max-w-4xl mx-auto font-medium">
+                        VEURA stands as a testament to the power of emotive storytelling in the luxury sector. By
+                        blending high-end aesthetics with modern digital interactions, we created a brand experience
+                        that feels as sophisticated as the scents themselves. The project resulted in a cohesive
+                        visual language that scales across all platforms.
+                    </p>
+                </div>
+            </section>
         </div>
-
-        <!-- Solution Section -->
-        <section id="solution" class="unified-card-section">
-            <h3 class="content-heading centered"><i class="fa-regular fa-lightbulb"></i> SOLUTION</h3>
-            <p class="text-centered mb-4">A digital experience that evokes scent through visual storytelling.
-            </p>
-
-            <div class="unified-card-grid">
-                <!-- Card 1 -->
-                <div class="unified-card with-bg"
-                    style="background-image: url('./Veura IMAGES/fragranace atta/EMotions.webp');">
-                    <div class="card-icon-wrapper">
-                        <i class="fa-solid fa-eye"></i>
-                    </div>
-                    <h4 class="card-title">Emotive Design</h4>
-                    <p class="card-desc">Use color and texture to evoke scent digitally, creating a sensory connection.
-                    </p>
-                </div>
-
-                <!-- Card 2 -->
-                <div class="unified-card with-bg"
-                    style="background-image: url('./Veura IMAGES/fragranace atta/idea.webp');">
-                    <div class="card-icon-wrapper">
-                        <i class="fa-solid fa-book-open"></i>
-                    </div>
-                    <h4 class="card-title">Storytelling Flow</h4>
-                    <p class="card-desc">Guide users through an immersive brand narrative that unfolds like a fragrance.
-                    </p>
-                </div>
-
-                <!-- Card 3 -->
-                <div class="unified-card with-bg"
-                    style="background-image: url('./Veura IMAGES/fragranace atta/horiziumagency-perfume-9800422_1920.webp');">
-                    <div class="card-icon-wrapper">
-                        <i class="fa-solid fa-gem"></i>
-                    </div>
-                    <h4 class="card-title">Modern Luxury</h4>
-                    <p class="card-desc">Blend high-end aesthetics with accessible interaction for a premium feel.</p>
-                </div>
-            </div>
-        </section>
-
-
-
-        <!-- Design Process Section -->
-        <section class="unified-card-section reveal">
-            <h3 class="content-heading centered">
-                <i class="fa-regular fa-compass"></i> DESIGN PROCESS
-            </h3>
-
-            <div class="unified-card-grid">
-
-                <div class="unified-card">
-                    <span class="process-step">01</span>
-                    <h4>Concept Art</h4>
-                    <p>Explored visual metaphors for scent using macro photography and abstract textures to build a
-                        unique brand mood.</p>
-                </div>
-
-                <div class="unified-card">
-                    <span class="process-step">02</span>
-                    <h4>Color Theory</h4>
-                    <p>Developed a palette that balances traditional luxury (Gold/Black) with modern softness
-                        (Cream).</p>
-                </div>
-
-                <div class="unified-card">
-                    <span class="process-step">03</span>
-                    <h4>Layout Design</h4>
-                    <p>Designed a homepage that prioritizes large-scale imagery and smooth scrolling animations.
-                    </p>
-                </div>
-
-                <div class="unified-card">
-                    <span class="process-step">04</span>
-                    <h4>Refinement</h4>
-                    <p>Polished interactions and typography to ensure every detail reinforced the premium brand.
-                    </p>
-                </div>
-            </div>
-
-
-            <div class="hero-image-container-grid-2">
-                <img src="./Veura IMAGES/fragranace atta/Frame 53.webp" alt="Veura Hero" class="hero-img-rounded">
-                <img src="./Veura IMAGES/fragranace atta/Frame 1000005015.webp" alt="Veura Hero"
-                    class="hero-img-rounded">
-            </div>
-        </section>
-
-        <!-- Branding Section (Reverse) -->
-        <div id="branding" class="content-block reverse">
-            <div class="content-text">
-                <h3 class="content-heading"><i class="fa-regular fa-bookmark"></i> BRANDING & TYPOGRAPHY
-                </h3>
-                <p class="mb-2">A visual identity designed to feel invisible yet elegant.</p>
-                <ul class="list-disc">
-                    <li><strong>Gold</strong>: Represents luxury and warmth.</li>
-                    <li><strong>Black</strong>: Provides sophistication and contrast.</li>
-                    <li><strong>Cream</strong>: Adds softness and modern appeal.</li>
-                </ul>
-            </div>
-
-        </div>
-        <div class="hero-image-container-grid-2">
-            <img src="./Veura IMAGES/fragranace atta/Branding Slides.webp" alt="Veura Hero" class="hero-img-rounded">
-            <img src="./Veura IMAGES/fragranace atta/Frame 1000005003.webp" alt="Veura Hero" class="hero-img-rounded">
-        </div>
-
-
-        <!-- Summary Section -->
-        <section id="veura-summary" class="content-block summary-section">
-            <div class="content-text">
-                <h3 class="content-heading"><i class="fa-regular fa-star"></i> SUMMARY</h3>
-                <p>VEURA stands as a testament to the power of emotive storytelling in the luxury sector. By
-                    blending high-end aesthetics with modern digital interactions, we created a brand experience
-                    that feels as sophisticated as the scents themselves. The project resulted in a cohesive
-                    visual language that scales across all platforms.</p>
-            </div>
-        </section>
-        </section>
 
         <!-- More Projects -->
-        <section class="more-projects-section">
-            <h2 class="section-title-large">MORE PROJECTS</h2>
-            <div class="more-projects-grid">
-                <!-- Loopin -->
-                <a href="loopin.html" class="project-card-mini">
-                    <div class="mini-thumb" style="background-image: url('images/loopin_thumb.webp');"></div>
-                    <div class="mini-info">
-                        <span class="category">UI/UX Design</span>
-                        <h3>Loopin</h3>
-                    </div>
-                </a>
-                <!-- Receiptly -->
-                <a href="receiptly.html" class="project-card-mini">
-                    <div class="mini-thumb" style="background-image: url('images/receiptly_thumb.webp');"></div>
-                    <div class="mini-info">
-                        <span class="category">Graphic Design</span>
-                        <h3>Receiptly</h3>
-                    </div>
-                </a>
-                <!-- MemoTrip -->
-                <a href="memotrip.html" class="project-card-mini">
-                    <div class="mini-thumb" style="background-image: url('images/memotrip_thumb.webp');"></div>
-                    <div class="mini-info">
-                        <span class="category">UI/UX Design</span>
-                        <h3>MemoTrip</h3>
-                    </div>
-                </a>
+        <section class="py-32 border-t border-border reveal">
+            <div class="max-w-6xl mx-auto px-6">
+                <h2 class="text-xs font-black uppercase tracking-[0.4em] text-primary text-center mb-16">More Projects
+                </h2>
+                <div class="grid md:grid-cols-3 gap-8 text-center">
+                    <a href="loopin.html"
+                        class="group block bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-2">
+                        <div class="aspect-video overflow-hidden">
+                            <img src="images/loopin_thumb.webp" alt="Loopin"
+                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                        </div>
+                        <div class="p-8">
+                            <span
+                                class="text-[10px] font-bold uppercase tracking-widest text-[#C5A059] mb-2 block">UI/UX
+                                Design</span>
+                            <h3 class="text-xl font-bold group-hover:text-primary transition-colors">Loopin</h3>
+                        </div>
+                    </a>
+                    <a href="receiptly.html"
+                        class="group block bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-2">
+                        <div class="aspect-video overflow-hidden">
+                            <img src="images/receiptly_thumb.webp" alt="Receiptly"
+                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                        </div>
+                        <div class="p-8">
+                            <span
+                                class="text-[10px] font-bold uppercase tracking-widest text-[#C5A059] mb-2 block">Graphic
+                                Design</span>
+                            <h3 class="text-xl font-bold group-hover:text-primary transition-colors">Receiptly</h3>
+                        </div>
+                    </a>
+                    <a href="memotrip.html"
+                        class="group block bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-2">
+                        <div class="aspect-video overflow-hidden">
+                            <img src="images/memotrip_thumb.webp" alt="MemoTrip"
+                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                        </div>
+                        <div class="p-8">
+                            <span
+                                class="text-[10px] font-bold uppercase tracking-widest text-[#C5A059] mb-2 block">UI/UX
+                                Design</span>
+                            <h3 class="text-xl font-bold group-hover:text-primary transition-colors">MemoTrip</h3>
+                        </div>
+                    </a>
+                </div>
             </div>
         </section>
         </div>
     </main>
 
-    <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-section">
-                <a href="index.html" class="footer-logo">Atta.</a>
-                <p>Product Designer crafting meaningful digital experiences in Vancouver.</p>
+    <footer class="bg-[#111827] text-white pt-20 pb-10" role="contentinfo">
+        <div class="container grid lg:grid-cols-4 gap-12 mb-16">
+            <div class="space-y-6 col-span-1 lg:col-span-1">
+                <a href="index.html" class="font-heading text-3xl font-bold tracking-tighter"
+                    aria-label="Atta Rahman Home">Atta.</a>
+                <p class="text-gray-400">Product Designer crafting meaningful digital experiences in Vancouver, BC.</p>
             </div>
-            <div class="footer-section">
-                <h4>Quick Links</h4>
-                <nav class="footer-nav">
-                    <a href="index.html">Home</a>
-                    <a href="about.html">About</a>
-                    <a href="projects.html">Portfolio</a>
-                    <a href="index.html#contact">Contact</a>
+            <div class="space-y-6">
+                <h4 class="text-lg font-bold uppercase tracking-widest text-primary">Quick Links</h4>
+                <nav class="flex flex-col gap-3" aria-label="Footer Navigation">
+                    <a href="index.html" class="text-gray-400 hover:text-white transition-colors">Home</a>
+                    <a href="about.html" class="text-gray-400 hover:text-white transition-colors">About</a>
+                    <a href="projects.html" class="text-gray-400 hover:text-white transition-colors">Portfolio</a>
+                    <a href="index.html#contact" class="text-gray-400 hover:text-white transition-colors">Contact</a>
                 </nav>
             </div>
-            <div class="footer-section">
-                <h4>Connect</h4>
-                <div class="footer-social">
+            <div class="space-y-6">
+                <h4 class="text-lg font-bold uppercase tracking-widest text-primary">Connect</h4>
+                <div class="flex gap-4">
                     <a href="https://www.linkedin.com/in/atta-rahman/" target="_blank" rel="noopener noreferrer"
+                        class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition-all duration-300"
                         aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
                     <a href="https://www.behance.net/attarahman" target="_blank" rel="noopener noreferrer"
+                        class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition-all duration-300"
                         aria-label="Behance"><i class="fa-brands fa-behance"></i></a>
-                    <a href="mailto:attarahman406@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+                    <a href="mailto:attarahman406@gmail.com"
+                        class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition-all duration-300"
+                        aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
                 </div>
             </div>
-            <div class="footer-section">
-                <h4>Get in Touch</h4>
-                <p><a href="mailto:attarahman406@gmail.com">attarahman406@gmail.com</a></p>
-                <p>Vancouver, BC, Canada</p>
-                <p>Willing to relocate</p>
+            <div class="space-y-6">
+                <h4 class="text-lg font-bold uppercase tracking-widest text-primary">Get in Touch</h4>
+                <div class="space-y-4 text-gray-400">
+                    <p><a href="mailto:attarahman406@gmail.com"
+                            class="hover:text-white transition-colors">attarahman406@gmail.com</a></p>
+                    <p>Vancouver, BC, Canada</p>
+                    <p
+                        class="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase">
+                        Willing to relocate</p>
+                </div>
             </div>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 Atta Rahman. All rights reserved.</p>
+        <div class="border-t border-gray-800 pt-10 text-center text-sm text-gray-500">
+            <div class="container">
+                <p>&copy; 2026 Atta Rahman. All rights reserved.</p>
+            </div>
         </div>
     </footer>
 

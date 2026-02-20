@@ -102,8 +102,8 @@
 }
 
 .footer-social a:hover {
-    background: linear-gradient(135deg, var(--primary), var(--accent));
-    border-color: transparent;
+    background: var(--primary);
+    border-color: var(--primary);
     color: white;
     transform: translateY(-3px);
 }

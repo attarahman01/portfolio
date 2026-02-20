@@ -13,8 +13,8 @@
     --blue-accent: #0099FF;
     --white: #ffffff;
 
-    --font-heading: 'Manrope', sans-serif;
-    --font-body: 'Manrope', sans-serif;
+    --font-heading: 'Antonio', sans-serif;
+    --font-body: 'Inter', sans-serif;
 
     --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     --container-max: 1200px;

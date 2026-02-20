@@ -11,12 +11,11 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Antonio:wght@100..700&family=Baumans&family=Inter:wght@300;400;500;600;700&family=Lexend:wght@100..900&display=swap"
         rel="stylesheet">
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <!-- Modular CSS -->
-    <!-- Modular CSS -->
-    <link rel="stylesheet" href="CSS/style.css">
-    <link rel="stylesheet" href="CSS/loopin.css">
+    <!-- Custom CSS (Tailwind Output) -->
+    <link rel="stylesheet" href="CSS/output.css">
 </head>
 
 <body class="loopin">
@@ -24,13 +23,16 @@
     <div id="cursor-dot" aria-hidden="true"></div>
     <div id="cursor-outline" aria-hidden="true"></div>
 
+    <!-- Sticky Navigation -->
     <header class="header">
-        <a href="index.html" class="logo" aria-label="Atta Rahman Portfolio Home">Atta.</a>
+        <a href="index.html" class="logo group" aria-label="Atta Rahman Portfolio Home">
+            <span class="group-hover:text-primary transition-colors">Atta.</span>
+        </a>
 
         <div class="hamburger" tabindex="0" aria-label="Menu" role="button">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
+            <span></span>
+            <span></span>
+            <span></span>
         </div>
 
         <nav class="navbar" aria-label="Main Navigation">
@@ -41,332 +43,378 @@
                 <li><a href="index.html#contact">Contact</a></li>
             </ul>
             <a href="https://docs.google.com/document/d/e/2PACX-1vRzCaOoOrogSTLAL45PbbqtKZOF7pA90JsbFpwQ_VXqHakTKE6fWCTqNZWYsKAVNmL06Aaf-HK9mB6l/pub"
-                target="_blank" rel="noopener noreferrer" class="nav-cta" aria-label="View Resume">Resume</a>
+                target="_blank" rel="noopener noreferrer"
+                class="btn btn-secondary !py-2 !px-6 text-sm lg:ml-4 mt-8 lg:mt-0" aria-label="View Resume">Resume</a>
         </nav>
     </header>
 
     <main>
-        <div class="page-container">
+        <div class="max-w-6xl mx-auto px-6 lg:px-12">
             <!-- Project Hero -->
-            <section class="project-hero-new">
-                <h1 class="project-title-large">Loopin</h1>
-                <p class="hero-desc-large">Loopin is a mobile app designed to help parents of neurodivergent
+            <section class="pt-40 pb-20 text-center">
+                <h1
+                    class="text-[clamp(4rem,10vw,8rem)] font-black leading-[0.9] uppercase tracking-tighter mb-8 bg-gradient-to-br from-[#fb5400] to-[#ff7a33] text-transparent bg-clip-text">
+                    Loopin</h1>
+                <p class="text-xl lg:text-2xl text-text-muted max-w-3xl mx-auto mb-10 leading-relaxed">Loopin is a
+                    mobile app designed to help parents of neurodivergent
                     children build stronger daily routines and emotional connection through simple, supportive
                     interactions.
                 </p>
 
-                <div class="hero-cta-buttons">
+                <div class="flex flex-wrap justify-center gap-4 mb-16">
                     <a href="https://www.figma.com/design/Qnx87NmqvgMcWEdoZzmzff/Looping-Design-file?node-id=1966-17774&p=f&m=draw"
-                        target="_blank" rel="noopener noreferrer" class="cta-button cta-primary">
+                        target="_blank" rel="noopener noreferrer"
+                        class="btn bg-gradient-to-br from-[#fb5400] to-[#ff6b1a] text-white shadow-lg shadow-[#fb5400]/20">
                         Visit Figma
                     </a>
                     <a href="https://drive.google.com/file/d/1dKevkGdn32G-nr9GSydryBvQmpBfa4Nk/view" target="_blank"
-                        rel="noopener noreferrer" class="cta-button cta-secondary">
+                        rel="noopener noreferrer" class="btn btn-secondary">
                         Business Proposal
                     </a>
                 </div>
 
-                <div class="project-meta-grid">
-                    <div class="meta-item">
-                        <span class="meta-label">Industry</span>
-                        <span class="meta-value">Health</span>
+                <div
+                    class="grid grid-cols-2 lg:grid-cols-4 gap-8 p-8 lg:p-12 bg-gray-50 rounded-[2.5rem] border border-border text-left shadow-sm mb-20">
+                    <div class="space-y-1">
+                        <span class="text-[10px] font-bold uppercase tracking-widest text-text-muted">Industry</span>
+                        <span class="block text-lg font-bold">Health</span>
                     </div>
-                    <div class="meta-item">
-                        <span class="meta-label">Client</span>
-                        <span class="meta-value">Fusion</span>
+                    <div class="space-y-1">
+                        <span class="text-[10px] font-bold uppercase tracking-widest text-text-muted">Client</span>
+                        <span class="block text-lg font-bold">Fusion</span>
                     </div>
-                    <div class="meta-item">
-                        <span class="meta-label">Role</span>
-                        <span class="meta-value">UI/UX Designer</span>
+                    <div class="space-y-1">
+                        <span class="text-[10px] font-bold uppercase tracking-widest text-text-muted">Role</span>
+                        <span class="block text-lg font-bold">UI/UX Designer</span>
                     </div>
-                    <div class="meta-item">
-                        <span class="meta-label">Duration</span>
-                        <span class="meta-value">12 Weeks</span>
+                    <div class="space-y-1">
+                        <span class="text-[10px] font-bold uppercase tracking-widest text-text-muted">Duration</span>
+                        <span class="block text-lg font-bold">12 Weeks</span>
                     </div>
                 </div>
 
-                <div class="hero-image-container">
+                <div
+                    class="rounded-[2.5rem] overflow-hidden shadow-2xl transition-transform duration-500 hover:scale-[1.01]">
                     <img src="images/loopin_hero_ref.webp" alt="Loopin Mobile App Interface Preview"
-                        class="hero-img-rounded">
+                        class="w-full h-auto">
                 </div>
             </section>
 
             <!-- My Role Section -->
-            <section class="role-section">
-                <div class="role-content">
-                    <h3 class="role-heading">MY ROLE</h3>
-                    <p>As a UI/UX Designer, I was involved throughout the project, from research and
+            <section class="py-24 lg:py-32">
+                <div class="max-w-4xl mx-auto">
+                    <h3 class="text-xs font-bold uppercase tracking-[0.3em] text-[#fb5400] mb-8 text-center">My Role
+                    </h3>
+                    <p class="text-xl lg:text-2xl text-text-main leading-relaxed text-center lg:text-left">As a UI/UX
+                        Designer, I was involved throughout the project, from research and
                         competitive analysis to visual design and system thinking.
-                        <br>
-
+                        <br><br>
                         I worked on user flows, wireframes, and
-                        high fidelity screens, with a focus on the dashboard, notifications experience, and shared
-                        design
-                        system components. I also contributed to branding assets used for presentations and promotion.
+                        high-fidelity screens, with a focus on the dashboard, notifications experience, and shared
+                        design system components. I also contributed to branding assets used for presentations and
+                        promotion.
                     </p>
                 </div>
             </section>
 
-            <!-- Project Content -->
-            <section class="project-content-new">
+            <section class="space-y-32 mb-32">
                 <!-- Problem Section -->
-                <div class="content-block reveal">
-                    <div class="block-text">
-                        <h3 class="content-heading"><i class="fa-regular fa-triangle-exclamation"
-                                aria-hidden="true"></i>
-                            The Problem</h3>
-                        <p class="content-text mb-2">Parents and children were struggling not because of a lack of care,
-                            but
-                            because daily routines and emotional communication were hard to manage consistently.</p>
-                        <div class="grid-2 mt-2">
-                            <p class="content-text"><strong>01.</strong> Kids feel misunderstood, overwhelmed, and are
-                                constantly struggling with daily expectations.</p>
-                            <p class="content-text"><strong>02.</strong> Parents feel overwhelmed, disconnected, and
-                                unsupported in their daily caregiving roles.</p>
+                <div class="p-10 lg:p-20 bg-gray-50 rounded-[3rem] border border-border reveal">
+                    <div class="grid lg:grid-cols-2 gap-16 items-center">
+                        <div>
+                            <h3 class="flex items-center gap-4 text-3xl font-bold text-[#fb5400] mb-8">
+                                <i class="fa-regular fa-triangle-exclamation" aria-hidden="true"></i>
+                                The Problem
+                            </h3>
+                            <p class="text-lg text-text-muted mb-8 leading-relaxed">Parents and children were struggling
+                                not because of a lack of care, but
+                                because daily routines and emotional communication were hard to manage consistently.</p>
+                            <div class="grid gap-6">
+                                <p class="text-sm p-6 bg-white rounded-2xl border border-border shadow-sm"><strong
+                                        class="text-black block mb-1">01.</strong> Kids feel misunderstood, overwhelmed,
+                                    and are constantly struggling with daily expectations.</p>
+                                <p class="text-sm p-6 bg-white rounded-2xl border border-border shadow-sm"><strong
+                                        class="text-black block mb-1">02.</strong> Parents feel overwhelmed,
+                                    disconnected, and unsupported in their daily caregiving roles.</p>
+                            </div>
+                        </div>
+                        <div class="rounded-3xl overflow-hidden shadow-xl">
+                            <img src="images/loopin_mockup_1.webp" alt="Visualization of challenges" class="w-full">
                         </div>
                     </div>
-                    <img src="images/loopin_mockup_1.webp"
-                        alt="Visualization of challenges faced by neurodivergent children and their parents"
-                        class="featured-image">
                 </div>
 
                 <!-- Solution Section -->
-                <div class="content-block reveal">
-                    <div class="block-text">
-                        <h3 class="content-heading"><i class="fa-regular fa-lightbulb" aria-hidden="true"></i> The
-                            Solution
-                        </h3>
-                        <ul class="solution-list reveal">
-                            <li class="content-text"><strong>Moodies</strong>: Allows children to express emotions
-                                quickly
-                                through emojis or voice notes, giving parents immediate emotional context.</li>
-                            <li class="content-text"><strong>Calmnest</strong>: Provides parents with simple self check
-                                tools to pause, reflect, and manage stress during busy routines.</li>
-                            <li class="content-text"><strong>Looping Moments</strong>: Encourages short, low pressure
-                                activities designed to strengthen parent child bonding without screen overload.</li>
-                        </ul>
+                <div class="p-10 lg:p-20 bg-gray-50 rounded-[3rem] border border-border reveal">
+                    <div class="grid lg:grid-cols-2 gap-16 items-center">
+                        <div class="order-2 lg:order-1 rounded-3xl overflow-hidden shadow-xl">
+                            <img src="images/loopin_solution_phone_features.webp" alt="Loopin Core Features"
+                                class="w-full">
+                        </div>
+                        <div class="order-1 lg:order-2">
+                            <h3 class="flex items-center gap-4 text-3xl font-bold text-[#fb5400] mb-8">
+                                <i class="fa-regular fa-lightbulb" aria-hidden="true"></i>
+                                The Solution
+                            </h3>
+                            <ul class="space-y-6">
+                                <li class="p-6 bg-white rounded-2xl border-l-4 border-l-[#fb5400] shadow-sm">
+                                    <p class="text-sm"><strong>Moodies</strong>: Allows children to express emotions
+                                        quickly through emojis or voice notes, giving parents immediate emotional
+                                        context.</p>
+                                </li>
+                                <li class="p-6 bg-white rounded-2xl border-l-4 border-l-[#fb5400] shadow-sm">
+                                    <p class="text-sm"><strong>Calmnest</strong>: Provides parents with simple self
+                                        check tools to pause, reflect, and manage stress during busy routines.</p>
+                                </li>
+                                <li class="p-6 bg-white rounded-2xl border-l-4 border-l-[#fb5400] shadow-sm">
+                                    <p class="text-sm"><strong>Looping Moments</strong>: Encourages short, low pressure
+                                        activities designed to strengthen parent child bonding without screen overload.
+                                    </p>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
-                    <img src="images/loopin_solution_phone_features.webp"
-                        alt="Loopin App Core Features: Moodies, Calmnest, and Looping Moments" class="featured-image">
                 </div>
 
                 <!-- Design Process Section -->
-                <div class="content-block reveal">
-                    <div class="block-text">
-                        <h3 class="content-heading"><i class="fa-regular fa-compass" aria-hidden="true"></i> Design
-                            Process
-                        </h3>
-                        <div class="grid-3 mt-2">
-                            <div class="process-item">
-                                <h4 class="title-small mb-1">01. Research & Direction</h4>
-                                <p class="content-text">Analyzed ADHD parenting apps to understand routine management
-                                    and
-                                    daily challenges. Focused on creating a calm, low-friction experience.</p>
-                            </div>
-                            <div class="process-item">
-                                <h4 class="title-small mb-1">02. Visual Exploration</h4>
-                                <p class="content-text">Explored layouts and interactions for routines and mood
-                                    tracking.
-                                    Prioritized clear hierarchy, simple navigation, and friendly visuals.</p>
-                            </div>
-                            <div class="process-item">
-                                <h4 class="title-small mb-1">03. Refinement</h4>
-                                <p class="content-text">Refined layouts and components to reduce cognitive load and
-                                    ensure
-                                    consistency.</p>
-                            </div>
+                <div class="p-10 lg:p-20 bg-gray-50 rounded-[3rem] border border-border reveal">
+                    <h3 class="flex items-center gap-4 text-3xl font-bold text-[#fb5400] mb-12">
+                        <i class="fa-regular fa-compass" aria-hidden="true"></i>
+                        Design Process
+                    </h3>
+                    <div class="grid md:grid-cols-3 gap-8 mb-16">
+                        <div
+                            class="p-8 bg-white rounded-2xl border border-border transition-all hover:border-[#fb5400] hover:-translate-y-1">
+                            <h4 class="text-xs font-black uppercase tracking-widest text-[#fb5400]/40 mb-4">01. Research
+                            </h4>
+                            <p class="text-sm">Analyzed ADHD parenting apps to understand routine management and daily
+                                challenges. Focused on creating a calm, low-friction experience.</p>
+                        </div>
+                        <div
+                            class="p-8 bg-white rounded-2xl border border-border transition-all hover:border-[#fb5400] hover:-translate-y-1">
+                            <h4 class="text-xs font-black uppercase tracking-widest text-[#fb5400]/40 mb-4">02.
+                                Exploration</h4>
+                            <p class="text-sm">Explored layouts and interactions for routines and mood tracking.
+                                Prioritized clear hierarchy, simple navigation, and friendly visuals.</p>
+                        </div>
+                        <div
+                            class="p-8 bg-white rounded-2xl border border-border transition-all hover:border-[#fb5400] hover:-translate-y-1">
+                            <h4 class="text-xs font-black uppercase tracking-widest text-[#fb5400]/40 mb-4">03.
+                                Refinement</h4>
+                            <p class="text-sm">Refined layouts and components to reduce cognitive load and ensure
+                                consistency across all touchpoints.</p>
                         </div>
                     </div>
-                    <div class="grid-2 mt-2">
-                        <img src="./LOOPIN IMAGES/loopin/competitors.webp"
-                            alt="Evolution of Loopin design process from research to final refinement"
-                            class="featured-image">
-                        <img src="./LOOPIN IMAGES/loopin/Capstone Figjam File.webp"
-                            alt="Evolution of Loopin design process from research to final refinement"
-                            class="featured-image">
-                        <img src="./LOOPIN IMAGES/loopin/persona 1.webp"
-                            alt="Evolution of Loopin design process from research to final refinement"
-                            class="featured-image">
-                        <img src="./LOOPIN IMAGES/loopin/persona 2.webp"
-                            alt="Evolution of Loopin design process from research to final refinement"
-                            class="featured-image">
-                        <img src="./images/loopin_summary_grid.webp"
-                            alt="Evolution of Loopin design process from research to final refinement"
-                            class="featured-image">
-                        <img src="./LOOPIN IMAGES/loopin/Frame 12.webp"
-                            alt="Evolution of Loopin design process from research to final refinement"
-                            class="featured-image">
+                    <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
+                        <img src="./LOOPIN IMAGES/loopin/competitors.webp" alt="Process"
+                            class="rounded-2xl shadow-md transition-transform hover:scale-105 duration-300">
+                        <img src="./LOOPIN IMAGES/loopin/Capstone Figjam File.webp" alt="Process"
+                            class="rounded-2xl shadow-md transition-transform hover:scale-105 duration-300">
+                        <img src="./LOOPIN IMAGES/loopin/persona 1.webp" alt="Process"
+                            class="rounded-2xl shadow-md transition-transform hover:scale-105 duration-300">
+                        <img src="./LOOPIN IMAGES/loopin/persona 2.webp" alt="Process"
+                            class="rounded-2xl shadow-md transition-transform hover:scale-105 duration-300">
+                        <img src="./images/loopin_summary_grid.webp" alt="Process"
+                            class="rounded-2xl shadow-md transition-transform hover:scale-105 duration-300">
+                        <img src="./LOOPIN IMAGES/loopin/Frame 12.webp" alt="Process"
+                            class="rounded-2xl shadow-md transition-transform hover:scale-105 duration-300">
                     </div>
                 </div>
 
                 <!-- Branding Section -->
-                <div class="content-block reveal">
-                    <div class="block-text">
-                        <h3 class="content-heading"><i class="fa-regular fa-bookmark" aria-hidden="true"></i> Branding &
-                            Typography</h3>
-                        <div class="branding-grid">
-                            <div class="swatch swatch-orange">
-                                <span>Primary Orange</span>
-                                <code>#FF5C00</code>
-                            </div>
-                            <div class="swatch swatch-yellow">
-                                <span>Secondary Yellow</span>
-                                <code>#FFD600</code>
-                            </div>
-                            <div class="swatch swatch-blue">
-                                <span>Accent Blue</span>
-                                <code>#007AFF</code>
-                            </div>
-                            <div class="swatch swatch-black">
-                                <span>Main Black</span>
-                                <code>#000000</code>
-                            </div>
+                <div class="p-10 lg:p-20 bg-gray-50 rounded-[3rem] border border-border reveal">
+                    <h3 class="flex items-center gap-4 text-3xl font-bold text-[#fb5400] mb-12">
+                        <i class="fa-regular fa-bookmark" aria-hidden="true"></i>
+                        Branding & Typography
+                    </h3>
+                    <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+                        <div class="p-6 rounded-2xl bg-[#FF5C00] text-white shadow-lg">
+                            <span class="text-xs font-bold opacity-70 block mb-2">Primary Orange</span>
+                            <code class="text-lg font-black tracking-wider">#FF5C00</code>
                         </div>
-                        <div class="grid-2 mt-4">
-                            <div class="font-block">
-                                <h4 class="text-body font-bold mb-1">Inter (Alt: Utendo)</h4>
-                                <p class="content-text">Used for headings and large display text to create a bold,
-                                    modern
-                                    feel that commands attention.</p>
-                            </div>
-                            <div class="font-block">
-                                <h4 class="text-sub font-bold mb-1">Lexend (Alt: Unageo)</h4>
-                                <p class="content-text">Used for body text and interface elements, ensuring maximum
-                                    readability and clarity for all users.</p>
-                            </div>
-
-                            <img src="./LOOPIN IMAGES/loopin/Branding bento grid.webp"
-                                alt="Loopin branding and typography" class="featured-image">
-                            <img src="./LOOPIN IMAGES/loopin/Branding bento grid (1).webp"
-                                alt="Loopin branding and typography" class="featured-image">
-                            <img src="./LOOPIN IMAGES/loopin/branding.webp" alt="Loopin branding and typography"
-                                class="featured-image">
-                            <img src="./LOOPIN IMAGES/loopin/ui kits.webp" alt="Loopin branding and typography"
-                                class="featured-image">
-
-
+                        <div class="p-6 rounded-2xl bg-[#FFD600] text-black shadow-lg">
+                            <span class="text-xs font-bold opacity-70 block mb-2">Secondary Yellow</span>
+                            <code class="text-lg font-black tracking-wider">#FFD600</code>
                         </div>
+                        <div class="p-6 rounded-2xl bg-[#007AFF] text-white shadow-lg">
+                            <span class="text-xs font-bold opacity-70 block mb-2">Accent Blue</span>
+                            <code class="text-lg font-black tracking-wider">#007AFF</code>
+                        </div>
+                        <div class="p-6 rounded-2xl bg-black text-white shadow-lg">
+                            <span class="text-xs font-bold opacity-70 block mb-2">Main Black</span>
+                            <code class="text-lg font-black tracking-wider">#000000</code>
+                        </div>
+                    </div>
+                    <div class="grid lg:grid-cols-2 gap-12 mb-12 text-black">
+                        <div class="p-8 bg-white rounded-2xl border border-border shadow-sm">
+                            <h4 class="text-2xl font-bold mb-4">Inter (Alt: Utendo)</h4>
+                            <p class="text-sm text-text-muted">Used for headings and large display text to create a
+                                bold, modern feel that commands attention.</p>
+                        </div>
+                        <div class="p-8 bg-white rounded-2xl border border-border shadow-sm">
+                            <h4 class="text-2xl font-bold mb-4" style="font-family: 'Lexend', sans-serif;">Lexend (Alt:
+                                Unageo)</h4>
+                            <p class="text-sm text-text-muted">Used for body text and interface elements, ensuring
+                                maximum readability and clarity for all users.</p>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-2 gap-6">
+                        <img src="./LOOPIN IMAGES/loopin/Branding bento grid.webp" alt="Branding"
+                            class="rounded-2xl shadow-md">
+                        <img src="./LOOPIN IMAGES/loopin/Branding bento grid (1).webp" alt="Branding"
+                            class="rounded-2xl shadow-md">
+                        <img src="./LOOPIN IMAGES/loopin/branding.webp" alt="Branding" class="rounded-2xl shadow-md">
+                        <img src="./LOOPIN IMAGES/loopin/ui kits.webp" alt="Branding" class="rounded-2xl shadow-md">
                     </div>
                 </div>
 
                 <!-- Usability & Testing Section -->
-                <div class="content-block reveal">
-                    <div class="block-text">
-                        <h3 class="content-heading"><i class="fa-regular fa-folder-open" aria-hidden="true"></i>
-                            Usability &
-                            Testing</h3>
-                        <p class="content-text">We conducted usability testing to evaluate how users interact with
-                            Loopin,
-                            focusing on clarity, efficiency, and ease of use. The goal was to ensure that key tasks like
-                            managing routines and tracking moods could be completed intuitively.</p>
-                    </div>
+                <div class="p-10 lg:p-20 bg-gray-50 rounded-[3rem] border border-border reveal">
+                    <h3 class="flex items-center gap-4 text-3xl font-bold text-[#fb5400] mb-12">
+                        <i class="fa-regular fa-folder-open" aria-hidden="true"></i>
+                        Usability & Testing
+                    </h3>
+                    <p class="text-lg text-text-muted leading-relaxed">We conducted usability testing to evaluate how
+                        users interact with
+                        Loopin,
+                        focusing on clarity, efficiency, and ease of use. The goal was to ensure that key tasks like
+                        managing routines and tracking moods could be completed intuitively.</p>
                 </div>
 
                 <!-- Dashboard Design Section -->
-                <div class="content-block reveal">
-                    <div class="block-text">
-                        <h3 class="content-heading"><i class="fa-regular fa-pen-to-square" aria-hidden="true"></i>
-                            Dashboard
-                            Design Iterations</h3>
-                        <div class="grid-2 mt-2 mb-4">
-                            <div class="iteration">
-                                <h5 class="title-small mb-1">First Iteration</h5>
-                                <p class="content-text">The initial dashboard displayed routines, mood updates, and
-                                    activity
-                                    cards simultaneously. Feedback showed the layout felt visually dense and
-                                    overwhelming.
-                                </p>
-                            </div>
-                            <div class="iteration">
-                                <h5 class="title-small mb-1">Final Iteration</h5>
-                                <p class="content-text">Reorganized to prioritize daily routines and mood indicators.
-                                    Refined hierarchy and spacing so parents could quickly understand the day's context.
-                                </p>
-                            </div>
+                <div class="p-10 lg:p-20 bg-gray-50 rounded-[3rem] border border-border reveal">
+                    <h3 class="flex items-center gap-4 text-3xl font-bold text-[#fb5400] mb-12">
+                        <i class="fa-regular fa-pen-to-square" aria-hidden="true"></i>
+                        Dashboard Design Iterations
+                    </h3>
+                    <div class="grid lg:grid-cols-2 gap-12 mb-12">
+                        <div class="p-8 bg-white rounded-2xl border border-border">
+                            <h5
+                                class="text-xs font-black uppercase tracking-widest text-text-muted mb-4 text-[#fb5400]/40">
+                                First Iteration</h5>
+                            <p class="text-sm">The initial dashboard displayed routines, mood updates, and activity
+                                cards simultaneously. Feedback showed the layout felt visually dense and overwhelming.
+                            </p>
+                        </div>
+                        <div class="p-8 bg-white rounded-2xl border border-border">
+                            <h5 class="text-xs font-black uppercase tracking-widest text-[#fb5400]/40 mb-4">Final
+                                Iteration</h5>
+                            <p class="text-sm text-text-muted">Reorganized to prioritize daily routines and mood
+                                indicators. Refined hierarchy and spacing so parents could quickly understand the day's
+                                context.</p>
                         </div>
                     </div>
-                    <img src="images/loopin_dashboard_ref.webp"
-                        alt="Comparison between initial and final dashboard designs for the Loopin app"
-                        class="comparison-image">
-                    <img src="./LOOPIN IMAGES/loopin/mockups 2.webp"
-                        alt="Comparison between initial and final dashboard designs for the Loopin app"
-                        class="comparison-image">
+                    <div class="grid gap-8">
+                        <img src="images/loopin_dashboard_ref.webp" alt="Dashboard Evolution"
+                            class="rounded-3xl shadow-xl">
+                        <img src="./LOOPIN IMAGES/loopin/mockups 2.webp" alt="Dashboard High-Fidelity"
+                            class="rounded-3xl shadow-xl">
+                    </div>
                 </div>
 
-                <!-- Full Width Collage -->
-                <div class="reveal mt-4">
-                    <img src="./LOOPIN IMAGES/loopin/mockups.webp"
-                        alt="Showcase of various Loopin mobile app screens in a collage" class="featured-image">
-                </div>
+                <img src="./LOOPIN IMAGES/loopin/mockups.webp" alt="Mockups Collage"
+                    class="rounded-[3rem] shadow-2xl reveal">
             </section>
 
             <!-- More Projects -->
-            <section class="more-projects-section">
-                <h2 class="section-title-large">MORE PROJECTS</h2>
-                <div class="more-projects-grid">
-                    <!-- Receiptly -->
-                    <a href="receiptly.html" class="project-card-mini">
-                        <div class="mini-thumb" style="background-image: url('images/receiptly_thumb.webp');"></div>
-                        <div class="mini-info">
-                            <span class="category">Graphic Design</span>
-                            <h3>Receiptly</h3>
-                        </div>
-                    </a>
-                    <!-- MemoTrip -->
-                    <a href="memotrip.html" class="project-card-mini">
-                        <div class="mini-thumb" style="background-image: url('images/memotrip_thumb.webp');"></div>
-                        <div class="mini-info">
-                            <span class="category">UI/UX Design</span>
-                            <h3>MemoTrip</h3>
-                        </div>
-                    </a>
-                    <!-- Veura -->
-                    <a href="veura.html" class="project-card-mini">
-                        <div class="mini-thumb" style="background-image: url('images/veura_thumb.webp');"></div>
-                        <div class="mini-info">
-                            <span class="category">Branding</span>
-                            <h3>Veura</h3>
-                        </div>
-                    </a>
+            <section class="py-32 border-t border-border reveal">
+                <div class="max-w-6xl mx-auto px-6">
+                    <h2 class="text-xs font-black uppercase tracking-[0.4em] text-primary text-center mb-16">More
+                        Projects</h2>
+                    <div class="grid md:grid-cols-3 gap-8">
+                        <!-- Receiptly -->
+                        <a href="receiptly.html"
+                            class="group block bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-2">
+                            <div class="aspect-video overflow-hidden">
+                                <img src="images/receiptly_thumb.webp" alt="Receiptly"
+                                    class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                            </div>
+                            <div class="p-8 text-center">
+                                <span
+                                    class="text-[10px] font-bold uppercase tracking-widest text-[#fb5400] mb-2 block">Graphic
+                                    Design</span>
+                                <h3 class="text-xl font-bold group-hover:text-primary transition-colors">Receiptly</h3>
+                            </div>
+                        </a>
+                        <!-- MemoTrip -->
+                        <a href="memotrip.html"
+                            class="group block bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-2">
+                            <div class="aspect-video overflow-hidden">
+                                <img src="images/memotrip_thumb.webp" alt="MemoTrip"
+                                    class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                            </div>
+                            <div class="p-8 text-center">
+                                <span
+                                    class="text-[10px] font-bold uppercase tracking-widest text-[#fb5400] mb-2 block">UI/UX
+                                    Design</span>
+                                <h3 class="text-xl font-bold group-hover:text-primary transition-colors">MemoTrip</h3>
+                            </div>
+                        </a>
+                        <!-- Veura -->
+                        <a href="veura.html"
+                            class="group block bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-2">
+                            <div class="aspect-video overflow-hidden">
+                                <img src="images/veura_thumb.webp" alt="Veura"
+                                    class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                            </div>
+                            <div class="p-8 text-center">
+                                <span
+                                    class="text-[10px] font-bold uppercase tracking-widest text-[#fb5400] mb-2 block">Branding</span>
+                                <h3 class="text-xl font-bold group-hover:text-primary transition-colors">Veura</h3>
+                            </div>
+                        </a>
+                    </div>
                 </div>
             </section>
         </div>
     </main>
 
-    <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-section">
-                <a href="index.html" class="footer-logo">Atta.</a>
-                <p>Product Designer crafting meaningful digital experiences in Vancouver.</p>
+    <footer class="bg-[#111827] text-white pt-20 pb-10" role="contentinfo">
+        <div class="container grid lg:grid-cols-4 gap-12 mb-16">
+            <div class="space-y-6 col-span-1 lg:col-span-1">
+                <a href="index.html" class="font-heading text-3xl font-bold tracking-tighter"
+                    aria-label="Atta Rahman Home">Atta.</a>
+                <p class="text-gray-400">Product Designer crafting meaningful digital experiences in Vancouver, BC.</p>
             </div>
-            <div class="footer-section">
-                <h4>Quick Links</h4>
-                <nav class="footer-nav">
-                    <a href="index.html">Home</a>
-                    <a href="about.html">About</a>
-                    <a href="projects.html">Portfolio</a>
-                    <a href="index.html#contact">Contact</a>
+            <div class="space-y-6">
+                <h4 class="text-lg font-bold uppercase tracking-widest text-primary">Quick Links</h4>
+                <nav class="flex flex-col gap-3" aria-label="Footer Navigation">
+                    <a href="index.html" class="text-gray-400 hover:text-white transition-colors">Home</a>
+                    <a href="about.html" class="text-gray-400 hover:text-white transition-colors">About</a>
+                    <a href="projects.html" class="text-gray-400 hover:text-white transition-colors">Portfolio</a>
+                    <a href="index.html#contact" class="text-gray-400 hover:text-white transition-colors">Contact</a>
                 </nav>
             </div>
-            <div class="footer-section">
-                <h4>Connect</h4>
-                <div class="footer-social">
+            <div class="space-y-6">
+                <h4 class="text-lg font-bold uppercase tracking-widest text-primary">Connect</h4>
+                <div class="flex gap-4">
                     <a href="https://www.linkedin.com/in/atta-rahman/" target="_blank" rel="noopener noreferrer"
+                        class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition-all duration-300"
                         aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
                     <a href="https://www.behance.net/attarahman" target="_blank" rel="noopener noreferrer"
+                        class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition-all duration-300"
                         aria-label="Behance"><i class="fa-brands fa-behance"></i></a>
-                    <a href="mailto:attarahman406@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+                    <a href="mailto:attarahman406@gmail.com"
+                        class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition-all duration-300"
+                        aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
                 </div>
             </div>
-            <div class="footer-section">
-                <h4>Get in Touch</h4>
-                <p><a href="mailto:attarahman406@gmail.com">attarahman406@gmail.com</a></p>
-                <p>Vancouver, BC, Canada</p>
-                <p>Willing to relocate</p>
+            <div class="space-y-6">
+                <h4 class="text-lg font-bold uppercase tracking-widest text-primary">Get in Touch</h4>
+                <div class="space-y-4 text-gray-400">
+                    <p><a href="mailto:attarahman406@gmail.com"
+                            class="hover:text-white transition-colors">attarahman406@gmail.com</a></p>
+                    <p>Vancouver, BC, Canada</p>
+                    <p
+                        class="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase">
+                        Willing to relocate</p>
+                </div>
             </div>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 Atta Rahman. All rights reserved.</p>
+        <div class="border-t border-gray-800 pt-10 text-center text-sm text-gray-500">
+            <div class="container">
+                <p>&copy; 2026 Atta Rahman. All rights reserved.</p>
+            </div>
         </div>
     </footer>
 
