@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rahmani - Atta Rahman</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Antonio:wght@100..700&family=Baumans&family=Inter:wght@300;400;500;600;700&family=Lexend:wght@100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS (Tailwind Output) -->
+    <link rel="stylesheet" href="CSS/output.css">
+</head>
+
+<body class="rahmani">
+    <div id="cursor-dot"></div>
+    <div id="cursor-outline"></div>
+
+    <!-- Sticky Navigation -->
+    <header class="header">
+        <a href="index.html" class="logo group" aria-label="Atta Rahman Portfolio Home">
+            <span class="group-hover:text-primary transition-colors">Atta.</span>
+        </a>
+
+        <div class="hamburger" tabindex="0" aria-label="Menu" role="button">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <nav class="navbar" aria-label="Main Navigation">
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="projects.html" class="active">Portfolio</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+            <a href="https://docs.google.com/document/d/e/2PACX-1vRzCaOoOrogSTLAL45PbbqtKZOF7pA90JsbFpwQ_VXqHakTKE6fWCTqNZWYsKAVNmL06Aaf-HK9mB6l/pub"
+                target="_blank" rel="noopener noreferrer"
+                class="btn btn-secondary !py-2 !px-6 text-sm lg:ml-4 mt-8 lg:mt-0" aria-label="View Resume">Resume</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="max-w-6xl mx-auto px-6 lg:px-12">
+            <!-- Project Hero -->
+            <section class="pt-40 pb-20 text-center">
+                <h1 class="text-[clamp(3.5rem,8vw,7rem)] font-bold leading-[0.9] uppercase tracking-tighter mb-8 text-[#5B2C6F]"
+                    style="color: #5B2C6F;">
+                    Rahmani</h1>
+                <p class="text-xl lg:text-2xl text-text-muted max-w-3xl mx-auto mb-16 leading-relaxed">A premium
+                    non-alcoholic wine redefining celebration with elegance and sophisticated flavor profiles, designed
+                    for the modern mindful drinker.</p>
+
+                <div
+                    class="grid grid-cols-2 lg:grid-cols-4 gap-8 p-10 bg-[#f9f9f9] rounded-[2.5rem] border border-border text-center shadow-sm mb-20">
+                    <div class="space-y-1">
+                        <span class="text-[10px] font-bold uppercase tracking-widest text-text-muted">Industry</span>
+                        <span class="block text-lg font-bold text-text-main">Food & Beverage</span>
+                    </div>
+                    <div class="space-y-1">
+                        <span class="text-[10px] font-bold uppercase tracking-widest text-text-muted">Client</span>
+                        <span class="block text-lg font-bold text-text-main">Rahmani</span>
+                    </div>
+                    <div class="space-y-1">
+                        <span class="text-[10px] font-bold uppercase tracking-widest text-text-muted">Role</span>
+                        <span class="block text-lg font-bold text-text-main">Brand Designer</span>
+                    </div>
+                    <div class="space-y-1">
+                        <span class="text-[10px] font-bold uppercase tracking-widest text-text-muted">Duration</span>
+                        <span class="block text-lg font-bold text-text-main">4 Weeks</span>
+                    </div>
+                </div>
+
+                <div
+                    class="rounded-[2.5rem] overflow-hidden shadow-2xl transition-transform duration-500 hover:scale-[1.01]">
+                    <img src="images/rahmani_thumb.webp" alt="Rahmani Hero" class="w-full h-auto">
+                </div>
+            </section>
+
+            <!-- Gallery Section -->
+            <section class="py-24 lg:py-32">
+                <div class="space-y-12">
+                    <h3 class="flex items-center justify-center gap-4 text-3xl font-bold text-[#5B2C6F] mb-12">
+                        <i class="fa-regular fa-image" aria-hidden="true"></i>
+                        Brand & Packaging Layouts
+                    </h3>
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div class="rounded-3xl overflow-hidden shadow-xl">
+                            <img src="images/BRANDING.webp" alt="Rahmani Branding Guide"
+                                class="w-full h-auto transition-transform hover:scale-105 duration-500">
+                        </div>
+                        <div class="rounded-3xl overflow-hidden shadow-xl relative aspect-[4/3]">
+                            <img src="images/PRODUCT LABEL.webp" alt="Rahmani Technical Label"
+                                class="w-full h-full object-cover transition-transform hover:scale-105 duration-500">
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div class="rounded-3xl overflow-hidden shadow-xl">
+                            <img src="images/Artboard 2@3x.webp" alt="Rahmani Packaging Mockup 1"
+                                class="w-full h-auto transition-transform hover:scale-105 duration-500">
+                        </div>
+                        <div class="rounded-3xl overflow-hidden shadow-xl relative aspect-[4/3]">
+                            <img src="images/3_Little_Bags_in_Hands_Free_PSD_Mockup_L_1@2x.webp"
+                                alt="Rahmani Packaging Mockup 2"
+                                class="w-full h-full object-cover transition-transform hover:scale-105 duration-500">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Lifestyle Section -->
+            <section class="pb-32 mb-16">
+                <div class="rounded-[3rem] overflow-hidden shadow-2xl">
+                    <img src="images/MockUp@2x.webp" alt="Rahmani Bottle in Hand"
+                        class="w-full md:h-[80vh] object-cover hover:scale-105 transition-transform duration-700">
+                </div>
+            </section>
+        </div>
+
+        <!-- More Projects -->
+        <section class="py-32 border-t border-border reveal">
+            <div class="max-w-6xl mx-auto px-6">
+                <h2 class="text-xs font-black uppercase tracking-[0.4em] text-primary text-center mb-16">More Projects
+                </h2>
+                <div class="grid md:grid-cols-3 gap-8 text-center">
+                    <a href="loopin.html"
+                        class="group block bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-2">
+                        <div class="aspect-video overflow-hidden">
+                            <img src="images/loopin_thumb.webp" alt="Loopin"
+                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                        </div>
+                        <div class="p-8">
+                            <span class="text-[10px] font-bold uppercase tracking-widest text-primary mb-2 block">UI/UX
+                                Design</span>
+                            <h3 class="text-xl font-bold group-hover:text-primary transition-colors">Loopin</h3>
+                        </div>
+                    </a>
+                    <a href="receiptly.html"
+                        class="group block bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-2">
+                        <div class="aspect-video overflow-hidden">
+                            <img src="images/receiptly_thumb.webp" alt="Receiptly"
+                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                        </div>
+                        <div class="p-8">
+                            <span
+                                class="text-[10px] font-bold uppercase tracking-widest text-primary mb-2 block">Graphic
+                                Design</span>
+                            <h3 class="text-xl font-bold group-hover:text-primary transition-colors">Receiptly</h3>
+                        </div>
+                    </a>
+                    <a href="memotrip.html"
+                        class="group block bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-2">
+                        <div class="aspect-video overflow-hidden">
+                            <img src="images/memotrip_thumb.webp" alt="MemoTrip"
+                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                        </div>
+                        <div class="p-8">
+                            <span class="text-[10px] font-bold uppercase tracking-widest text-primary mb-2 block">UI/UX
+                                Design</span>
+                            <h3 class="text-xl font-bold group-hover:text-primary transition-colors">MemoTrip</h3>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-[#111827] text-white pt-20 pb-10" role="contentinfo">
+        <div class="container grid lg:grid-cols-4 gap-12 mb-16">
+            <div class="space-y-6 col-span-1 lg:col-span-1">
+                <a href="index.html" class="font-heading text-3xl font-bold tracking-tighter"
+                    aria-label="Atta Rahman Home">Atta.</a>
+                <p class="text-gray-400">Product Designer crafting meaningful digital experiences in Vancouver, BC.</p>
+            </div>
+            <div class="space-y-6">
+                <h4 class="text-lg font-bold uppercase tracking-widest text-primary">Quick Links</h4>
+                <nav class="flex flex-col gap-3" aria-label="Footer Navigation">
+                    <a href="index.html" class="text-gray-400 hover:text-white transition-colors">Home</a>
+                    <a href="about.html" class="text-gray-400 hover:text-white transition-colors">About</a>
+                    <a href="projects.html" class="text-gray-400 hover:text-white transition-colors">Portfolio</a>
+                    <a href="index.html#contact" class="text-gray-400 hover:text-white transition-colors">Contact</a>
+                </nav>
+            </div>
+            <div class="space-y-6">
+                <h4 class="text-lg font-bold uppercase tracking-widest text-primary">Connect</h4>
+                <div class="flex gap-4">
+                    <a href="https://www.linkedin.com/in/atta-rahman/" target="_blank" rel="noopener noreferrer"
+                        class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition-all duration-300"
+                        aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="https://www.behance.net/attarahman" target="_blank" rel="noopener noreferrer"
+                        class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition-all duration-300"
+                        aria-label="Behance"><i class="fa-brands fa-behance"></i></a>
+                    <a href="mailto:attarahman406@gmail.com"
+                        class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition-all duration-300"
+                        aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+                </div>
+            </div>
+            <div class="space-y-6">
+                <h4 class="text-lg font-bold uppercase tracking-widest text-primary">Get in Touch</h4>
+                <div class="space-y-4 text-gray-400">
+                    <p><a href="mailto:attarahman406@gmail.com"
+                            class="hover:text-white transition-colors">attarahman406@gmail.com</a></p>
+                    <p>Vancouver, BC, Canada</p>
+                    <p
+                        class="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase">
+                        Willing to relocate</p>
+                </div>
+            </div>
+        </div>
+        <div class="border-t border-gray-800 pt-10 text-center text-sm text-gray-500">
+            <div class="container">
+                <p>&copy; 2026 Atta Rahman. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="JS/script.js"></script>
+</body>
+
+</html>
