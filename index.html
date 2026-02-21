@@ -59,23 +59,27 @@
                 <span
                     class="greeting text-accent font-semibold tracking-[0.3em] uppercase text-sm mb-6 animate-fade-in-down">Hello,
                     I'm</span>
-                <h1 class="name text-7xl lg:text-8xl font-black mb-6 leading-none animate-fade-in-up">Atta Rahman</h1>
+                <h1
+                    class="name text-[clamp(4rem,10vw,8rem)] font-black leading-[0.9] uppercase tracking-tighter mb-6 bg-gradient-to-br from-primary to-accent text-transparent bg-clip-text animate-fade-in-up">
+                    Atta Rahman</h1>
                 <div
-                    class="dynamic-text-container flex text-3xl lg:text-4xl font-semibold mb-8 h-[3.5rem] items-center justify-center overflow-hidden animate-fade-in-up">
-                    <span class="static-text mr-3 text-text-main">I am a</span>
-                    <ul class="dynamic-text flex flex-col animate-slide h-[3.5rem]">
-                        <li><span>Product Designer</span></li>
-                        <li><span>System Thinker</span></li>
-                        <li><span>Strategic Thinker</span></li>
-                        <li><span>Problem Solver</span></li>
+                    class="dynamic-text-container flex text-3xl lg:text-4xl font-semibold mb-8 h-14 justify-center overflow-hidden animate-fade-in-up items-start">
+                    <span class="static-text mr-3 text-text-main flex items-center h-14">I am a</span>
+                    <ul class="dynamic-text flex flex-col animate-slide m-0 p-0">
+                        <li class="h-14 flex items-center shrink-0 m-0 p-0"><span>Product Designer</span></li>
+                        <li class="h-14 flex items-center shrink-0 m-0 p-0"><span>System Thinker</span></li>
+                        <li class="h-14 flex items-center shrink-0 m-0 p-0"><span>Strategic Thinker</span></li>
+                        <li class="h-14 flex items-center shrink-0 m-0 p-0"><span>Problem Solver</span></li>
                     </ul>
                 </div>
                 <p
-                    class="hero-desc text-text-muted text-lg lg:text-xl max-w-2xl mb-12 leading-relaxed animate-fade-in-up">
+                    class="hero-desc text-xl lg:text-2xl text-text-muted max-w-3xl mx-auto mb-10 leading-relaxed animate-fade-in-up">
                     Designing intuitive digital products that solve complex problems with clarity and empathy.
                 </p>
-                <div class="cta-group flex flex-wrap justify-center gap-6 animate-fade-in-up">
-                    <a href="#work" class="btn btn-primary">View Work</a>
+                <div class="cta-group flex flex-wrap justify-center gap-4 mb-16 animate-fade-in-up">
+                    <a href="#work"
+                        class="btn bg-gradient-to-br from-primary to-accent text-white shadow-lg shadow-primary/20">View
+                        Work</a>
                     <a href="#contact" class="btn btn-secondary">Let's Talk</a>
                 </div>
             </div>
@@ -96,43 +100,53 @@
         </section>
 
         <!-- About Section -->
-        <section id="about" class="py-24 lg:py-32 bg-gradient-to-b from-bg-dark to-bg-card reveal">
-            <div class="container">
-                <h2 class="section-title">About Me</h2>
-                <div class="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
-                    <div class="about-image group">
-                        <div
-                            class="image-wrapper relative rounded-3xl overflow-hidden shadow-2xl transition-transform duration-500 group-hover:scale-[1.02]">
-                            <img src="images/profile_new.webp" alt="Atta Rahman - Product Designer based in Vancouver"
-                                class="w-full h-full object-cover" loading="lazy">
-                            <div
-                                class="absolute inset-0 bg-gradient-to-tr from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+        <section id="about" class="py-24 lg:py-32">
+            <div class="max-w-6xl mx-auto px-6 lg:px-12">
+                <div class="p-10 lg:p-20 bg-gray-50 rounded-[3rem] border border-border reveal">
+                    <div class="flex flex-col gap-16">
+                        <div class="text-center space-y-6">
+                            <h3
+                                class="flex items-center justify-center gap-4 text-3xl lg:text-4xl font-bold text-primary">
+                                <i class="fa-regular fa-user" aria-hidden="true"></i>
+                                About Me
+                            </h3>
+                        </div>
+                        <div class="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+                            <div class="about-image group">
+                                <div
+                                    class="image-wrapper relative rounded-[2.5rem] overflow-hidden shadow-2xl transition-transform duration-500 group-hover:scale-[1.02]">
+                                    <img src="images/profile_new.webp"
+                                        alt="Atta Rahman - Product Designer based in Vancouver"
+                                        class="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-700"
+                                        loading="lazy">
+                                    <div
+                                        class="absolute inset-0 bg-gradient-to-tr from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="about-text">
-                        <h3 class="text-3xl lg:text-4xl font-bold mb-8 leading-tight">Creating human-centered digital
-                            experiences</h3>
-                        <div class="space-y-6 text-lg text-text-muted leading-relaxed">
-                            <p><strong class="text-text-main">I'm a product designer who bridges creativity and
-                                    functionality.</strong> I
-                                specialize in UI/UX design, visual systems, and translating complex user needs into
-                                intuitive, accessible interfaces.</p>
-                            <p>With a Postgraduate Diploma in Web and Mobile App Design from Langara College, I bring
-                                both
-                                design thinking and technical understanding to every project.</p>
-                            <p>When I'm not designing, you'll find me gaming, sketching, or exploring Vancouver's
-                                creative
-                                scene.</p>
-                        </div>
+                            <div class="about-text">
+                                <h4 class="text-2xl lg:text-3xl font-bold mb-8 leading-tight text-text-main">Creating
+                                    human-centered digital experiences</h4>
+                                <div class="space-y-6 text-lg text-text-muted leading-relaxed">
+                                    <p><strong class="text-text-main">I'm a product designer who bridges creativity and
+                                            functionality.</strong> I specialize in UI/UX design, visual systems, and
+                                        translating complex user needs into intuitive, accessible interfaces.</p>
+                                    <p>With a Postgraduate Diploma in Web and Mobile App Design from Langara College, I
+                                        bring both design thinking and technical understanding to every project.</p>
+                                    <p>When I'm not designing, you'll find me gaming, sketching, or exploring
+                                        Vancouver's creative scene.</p>
+                                </div>
 
-                        <div class="mt-12">
-                            <a href="https://docs.google.com/document/d/e/2PACX-1vRzCaOoOrogSTLAL45PbbqtKZOF7pA90JsbFpwQ_VXqHakTKE6fWCTqNZWYsKAVNmL06Aaf-HK9mB6l/pub"
-                                target="_blank" rel="noopener noreferrer" class="btn btn-secondary group">
-                                <span>View Resume</span>
-                                <i
-                                    class="fa-solid fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
-                            </a>
+                                <div class="mt-12 flex flex-wrap gap-4">
+                                    <a href="https://docs.google.com/document/d/e/2PACX-1vRzCaOoOrogSTLAL45PbbqtKZOF7pA90JsbFpwQ_VXqHakTKE6fWCTqNZWYsKAVNmL06Aaf-HK9mB6l/pub"
+                                        target="_blank" rel="noopener noreferrer"
+                                        class="btn bg-gradient-to-br from-primary to-accent text-white shadow-lg shadow-primary/20 group">
+                                        <span>View Resume</span>
+                                        <i
+                                            class="fa-solid fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                                    </a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -140,33 +154,47 @@
         </section>
 
         <!-- Services Section -->
-        <section id="services" class="py-24 lg:py-32 bg-white reveal">
+        <section id="services" class="py-24 lg:py-32 mb-10">
             <div class="container">
-                <h2 class="section-title">What I Do</h2>
-                <div class="grid md:grid-cols-3 gap-10">
-                    <div class="service-card group">
-                        <div class="icon-box">
-                            <i class="fa-solid fa-pen-ruler"></i>
+                <div class="p-10 lg:p-20 bg-gray-50 rounded-[3rem] border border-border reveal">
+                    <div class="max-w-6xl mx-auto flex flex-col gap-10">
+                        <h3
+                            class="flex items-center justify-center gap-4 text-3xl lg:text-4xl font-bold text-[#6366f1] text-center">
+                            <i class="fa-regular fa-star" aria-hidden="true"></i>
+                            What I Do
+                        </h3>
+                        <div class="grid md:grid-cols-3 gap-6">
+                            <div
+                                class="p-8 bg-white rounded-3xl border-t-4 border-[#6366f1] shadow-sm hover:shadow-md transition-all duration-300">
+                                <div class="text-[#6366f1] text-2xl mb-4">
+                                    <i class="fa-solid fa-pen-ruler"></i>
+                                </div>
+                                <h4 class="text-xl font-bold text-gray-900 mb-3">Product Design</h4>
+                                <p class="text-gray-600 text-sm leading-relaxed">I transform ideas into polished,
+                                    user-tested products—from research and wireframes to high-fidelity prototypes that
+                                    drive measurable engagement.</p>
+                            </div>
+                            <div
+                                class="p-8 bg-white rounded-3xl border-t-4 border-[#6366f1] shadow-sm hover:shadow-md transition-all duration-300">
+                                <div class="text-[#6366f1] text-2xl mb-4">
+                                    <i class="fa-solid fa-layer-group"></i>
+                                </div>
+                                <h4 class="text-xl font-bold text-gray-900 mb-3">Design Systems</h4>
+                                <p class="text-gray-600 text-sm leading-relaxed">I build scalable design systems that
+                                    ensure visual consistency, accelerate development, and create cohesive brand
+                                    experiences across platforms.</p>
+                            </div>
+                            <div
+                                class="p-8 bg-white rounded-3xl border-t-4 border-[#6366f1] shadow-sm hover:shadow-md transition-all duration-300">
+                                <div class="text-[#6366f1] text-2xl mb-4">
+                                    <i class="fa-solid fa-code"></i>
+                                </div>
+                                <h4 class="text-xl font-bold text-gray-900 mb-3">Frontend Development</h4>
+                                <p class="text-gray-600 text-sm leading-relaxed">I bring designs to life with clean,
+                                    responsive code—bridging the gap between design vision and technical implementation
+                                    with HTML, CSS, and JavaScript.</p>
+                            </div>
                         </div>
-                        <h3 class="text-2xl font-bold mb-4">Product Design</h3>
-                        <p>I transform ideas into polished, user-tested products—from research and wireframes to
-                            high-fidelity prototypes that drive measurable engagement.</p>
-                    </div>
-                    <div class="service-card group">
-                        <div class="icon-box">
-                            <i class="fa-solid fa-layer-group"></i>
-                        </div>
-                        <h3 class="text-2xl font-bold mb-4">Design Systems</h3>
-                        <p>I build scalable design systems that ensure visual consistency, accelerate development, and
-                            create cohesive brand experiences across platforms.</p>
-                    </div>
-                    <div class="service-card group">
-                        <div class="icon-box">
-                            <i class="fa-solid fa-code"></i>
-                        </div>
-                        <h3 class="text-2xl font-bold mb-4">Frontend Development</h3>
-                        <p>I bring designs to life with clean, responsive code—bridging the gap between design vision
-                            and technical implementation with HTML, CSS, and JavaScript.</p>
                     </div>
                 </div>
             </div>

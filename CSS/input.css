@@ -27,7 +27,7 @@
 
     --animate-blob-float: blob-float 8s ease-in-out infinite;
     --animate-fade-scroll: fade-scroll 2s infinite;
-    --animate-slide: slide 12s steps(4) infinite;
+    --animate-slide: slide 8s steps(4) infinite;
 
     @keyframes blob-float {
 

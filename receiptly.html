@@ -73,22 +73,22 @@
                 </div>
 
                 <div
-                    class="grid grid-cols-2 lg:grid-cols-4 gap-8 p-10 bg-white rounded-[2.5rem] border border-border text-center shadow-sm mb-20">
+                    class="grid grid-cols-2 lg:grid-cols-4 gap-8 p-8 lg:p-12 bg-gray-50 rounded-[2.5rem] border border-border text-left shadow-sm mb-20">
                     <div class="space-y-1">
                         <span class="text-[10px] font-bold uppercase tracking-widest text-text-muted">Industry</span>
-                        <span class="block text-lg font-bold text-text-main">FinTech</span>
+                        <span class="block text-lg font-bold">FinTech</span>
                     </div>
                     <div class="space-y-1">
                         <span class="text-[10px] font-bold uppercase tracking-widest text-text-muted">Client</span>
-                        <span class="block text-lg font-bold text-text-main">Code & Canvas</span>
+                        <span class="block text-lg font-bold">Code & Canvas</span>
                     </div>
                     <div class="space-y-1">
                         <span class="text-[10px] font-bold uppercase tracking-widest text-text-muted">Role</span>
-                        <span class="block text-lg font-bold text-text-main">Product Design</span>
+                        <span class="block text-lg font-bold">Product Design</span>
                     </div>
                     <div class="space-y-1">
                         <span class="text-[10px] font-bold uppercase tracking-widest text-text-muted">Duration</span>
-                        <span class="block text-lg font-bold text-text-main">13 Weeks</span>
+                        <span class="block text-lg font-bold">13 Weeks</span>
                     </div>
                 </div>
 
@@ -100,9 +100,13 @@
 
             <!-- My Role Section -->
             <section class="py-24 lg:py-32">
-                <div class="max-w-4xl">
-                    <h3 class="text-xs font-bold uppercase tracking-[0.3em] text-[#2E39E6] mb-8">My Role</h3>
-                    <p class="text-xl lg:text-3xl text-text-main leading-relaxed font-medium">As lead Product Designer,
+                <div class="max-w-4xl mx-auto">
+                    <h3
+                        class="text-2xl lg:text-3xl font-bold uppercase tracking-[0.2rem] text-[#2E39E6] mb-8 text-center">
+                        My Role
+                    </h3>
+                    <p class="text-xl lg:text-2xl text-text-main leading-relaxed text-center lg:text-left">As lead
+                        Product Designer,
                         I was responsible for the end-to-end design process,
                         from user research and wireframing to the final visual interface.
                         <br><br>
@@ -115,213 +119,292 @@
             <section class="space-y-32 mb-32">
                 <!-- Problem Section -->
                 <div class="p-10 lg:p-20 bg-[#2E39E6]/5 rounded-[3rem] border border-border reveal">
-                    <div class="grid lg:grid-cols-2 gap-16 items-center">
-                        <div>
-                            <h3
-                                class="flex items-center gap-4 text-3xl lg:text-4xl font-bold text-[#2E39E6] mb-8 font-display italic">
-                                <i class="fa-regular fa-triangle-exclamation" aria-hidden="true"></i>
-                                The Problem
-                            </h3>
-                            <p class="text-lg text-text-muted mb-8 leading-relaxed">Startups and small businesses waste
-                                valuable time manually sorting
-                                receipts, tracking expenses, and preparing financial reports. This manual process
-                                increases
-                                the risk of errors and takes focus away from strategic growth.</p>
-                            <div
-                                class="grid sm:grid-cols-2 gap-8 ring-1 ring-border p-8 rounded-3xl bg-white shadow-sm">
-                                <div>
-                                    <span class="text-2xl font-black text-[#2E39E6] opacity-20 block mb-2">01.</span>
-                                    <p class="text-sm">Founders are overwhelmed by scattered financial data and lack
+                    <div class="max-w-6xl mx-auto flex flex-col gap-16">
+                        <!-- Text Content -->
+                        <div class="flex flex-col gap-10">
+                            <div class="text-center space-y-6">
+                                <h3
+                                    class="flex items-center justify-center gap-4 text-3xl lg:text-4xl font-bold text-[#2E39E6] font-display italic">
+                                    <i class="fa-regular fa-triangle-exclamation" aria-hidden="true"></i>
+                                    The Problem
+                                </h3>
+                                <p class="text-lg text-gray-900 max-w-3xl mx-auto leading-relaxed">Startups and small
+                                    businesses waste
+                                    valuable time manually sorting
+                                    receipts, tracking expenses, and preparing financial reports. This manual process
+                                    increases
+                                    the risk of errors and takes focus away from strategic growth.</p>
+                            </div>
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div
+                                    class="p-8 bg-white rounded-3xl border-t-4 border-[#2E39E6] shadow-sm hover:shadow-md transition-all duration-300">
+                                    <h4 class="text-xl font-bold text-gray-900 mb-3">01. Scattered Data</h4>
+                                    <p class="text-gray-600 text-sm leading-relaxed">Founders are overwhelmed by
+                                        scattered financial data and lack
                                         real-time visibility.</p>
                                 </div>
-                                <div>
-                                    <span class="text-2xl font-black text-[#2E39E6] opacity-20 block mb-2">02.</span>
-                                    <p class="text-sm">Manual entry errors lead to inaccurate reporting and compliance
+                                <div
+                                    class="p-8 bg-white rounded-3xl border-t-4 border-[#2E39E6] shadow-sm hover:shadow-md transition-all duration-300">
+                                    <h4 class="text-xl font-bold text-gray-900 mb-3">02. Manual Errors</h4>
+                                    <p class="text-gray-600 text-sm leading-relaxed">Manual entry errors lead to
+                                        inaccurate reporting and compliance
                                         risks.</p>
                                 </div>
                             </div>
                         </div>
-                        <div class="rounded-3xl overflow-hidden shadow-2xl">
+
+                        <!-- Image Content -->
+                        <div class="rounded-[2.5rem] overflow-hidden shadow-2xl mx-auto w-full group">
                             <img src="Receiptly IMAGES/Receiptly/Problem statement.webp"
-                                alt="Visualization of receipt chaos" class="w-full">
+                                alt="Visualization of receipt chaos"
+                                class="w-full h-auto object-cover group-hover:scale-[1.02] transition-transform duration-700">
                         </div>
                     </div>
                 </div>
 
                 <!-- Solution Section -->
                 <div class="p-10 lg:p-20 bg-[#2E39E6]/5 rounded-[3rem] border border-border reveal">
-                    <h3
-                        class="flex items-center justify-center gap-4 text-3xl lg:text-4xl font-bold text-[#2E39E6] mb-4 font-display italic text-center">
-                        <i class="fa-regular fa-lightbulb" aria-hidden="true"></i>
-                        Solution
+                    <div class="max-w-6xl mx-auto flex flex-col gap-16">
+                        <!-- Text Content -->
+                        <div class="flex flex-col gap-10">
+                            <div class="text-center space-y-6">
+                                <h3
+                                    class="flex items-center justify-center gap-4 text-3xl lg:text-4xl font-bold text-[#2E39E6] font-display italic">
+                                    <i class="fa-regular fa-lightbulb" aria-hidden="true"></i>
+                                    The Solution
+                                </h3>
+                                <p class="text-lg text-gray-900 max-w-3xl mx-auto leading-relaxed">Receiptly automates
+                                    receipt capture
+                                    and categorization using AI. It offers a simple, intuitive experience designed
+                                    specifically for
+                                    small teams.</p>
+                            </div>
+                            <div class="grid md:grid-cols-3 gap-6">
+                                <!-- Feature 1 -->
+                                <div
+                                    class="p-8 bg-white rounded-3xl border-t-4 border-[#2E39E6] shadow-sm hover:shadow-md transition-all duration-300">
+                                    <h4 class="text-xl font-bold text-gray-900 mb-3">Smart Capture</h4>
+                                    <p class="text-gray-600 text-sm leading-relaxed">AI instantly extracts data from
+                                        receipts,
+                                        eliminating manual entry and reducing human error in bookkeeping flows.</p>
+                                </div>
+                                <!-- Feature 2 -->
+                                <div
+                                    class="p-8 bg-white rounded-3xl border-t-4 border-[#2E39E6] shadow-sm hover:shadow-md transition-all duration-300">
+                                    <h4 class="text-xl font-bold text-gray-900 mb-3">Real-time Insights</h4>
+                                    <p class="text-gray-600 text-sm leading-relaxed">Founders get immediate visibility
+                                        into
+                                        cash flow and spending categories without waiting for end-of-month
+                                        reconciliations.</p>
+                                </div>
+                                <!-- Feature 3 -->
+                                <div
+                                    class="p-8 bg-white rounded-3xl border-t-4 border-[#2E39E6] shadow-sm hover:shadow-md transition-all duration-300">
+                                    <h4 class="text-xl font-bold text-gray-900 mb-3">Investor-Ready</h4>
+                                    <p class="text-gray-600 text-sm leading-relaxed">Generate clean, professional
+                                        financial
+                                        reports with one click. Always prepared for board meetings and tax seasons.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Image Content -->
+                        <div class="rounded-[2.5rem] overflow-hidden shadow-2xl mx-auto w-full group">
+                            <img src="./images/receiptly_savetime.webp" alt="Receiptly Interface"
+                                class="w-full h-auto object-cover group-hover:scale-[1.02] transition-transform duration-700">
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+                <!-- User Personas -->
+                <div class="p-10 lg:p-20 bg-[#2E39E6]/5 rounded-[3rem] border border-border reveal">
+                    <div class="max-w-6xl mx-auto flex flex-col gap-16">
+                        <!-- Text Content -->
+                        <div class="flex flex-col gap-10">
+                            <div class="text-center space-y-6">
+                                <h3
+                                    class="flex items-center justify-center gap-4 text-3xl lg:text-4xl font-bold text-[#2E39E6] font-display italic">
+                                    <i class="fa-regular fa-user" aria-hidden="true"></i>
+                                    User Personas
+                                </h3>
+                                <p class="text-lg text-gray-900 max-w-3xl mx-auto leading-relaxed">To understand the
+                                    needs of our users, we
+                                    created two distinct personas that represent the typical users of Receiptly.</p>
+                            </div>
+                        </div>
+
+                        <!-- Image Content -->
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div class="rounded-[2rem] overflow-hidden shadow-xl group">
+                                <img src="Receiptly IMAGES/Receiptly/persona 1.webp" alt="The Busy Founder"
+                                    class="w-full h-auto object-cover group-hover:scale-[1.02] transition-transform duration-700">
+                            </div>
+                            <div class="rounded-[2rem] overflow-hidden shadow-xl group">
+                                <img src="Receiptly IMAGES/Receiptly/persona 2.webp" alt="The Finance Manager"
+                                    class="w-full h-auto object-cover group-hover:scale-[1.02] transition-transform duration-700">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Design Process Section -->
+                <div class="p-10 lg:p-20 bg-[#2E39E6]/5 rounded-[3rem] border border-border reveal">
+                    <div class="max-w-6xl mx-auto flex flex-col gap-16">
+                        <!-- Text Content -->
+                        <div class="flex flex-col gap-10">
+                            <h3
+                                class="flex items-center justify-center gap-4 text-3xl lg:text-4xl font-bold text-[#2E39E6] font-display italic">
+                                <i class="fa-regular fa-compass" aria-hidden="true"></i>
+                                Design Process
+                            </h3>
+                            <div class="grid md:grid-cols-3 gap-6">
+                                <div
+                                    class="p-8 bg-white rounded-3xl border-t-4 border-[#2E39E6] shadow-sm hover:shadow-md transition-all duration-300">
+                                    <h4 class="text-xl font-bold text-gray-900 mb-3">01. Research</h4>
+                                    <p class="text-gray-600 text-sm leading-relaxed">Analyzed current workflows and pain
+                                        points
+                                        in manual data entry for small teams.</p>
+                                </div>
+                                <div
+                                    class="p-8 bg-white rounded-3xl border-t-4 border-[#2E39E6] shadow-sm hover:shadow-md transition-all duration-300">
+                                    <h4 class="text-xl font-bold text-gray-900 mb-3">02. Wireframing</h4>
+                                    <p class="text-gray-600 text-sm leading-relaxed">Iterated on dashboard layouts to
+                                        prioritize
+                                        quick access to financial summaries.</p>
+                                </div>
+                                <div
+                                    class="p-8 bg-white rounded-3xl border-t-4 border-[#2E39E6] shadow-sm hover:shadow-md transition-all duration-300">
+                                    <h4 class="text-xl font-bold text-gray-900 mb-3">03. Visual Design</h4>
+                                    <p class="text-gray-600 text-sm leading-relaxed">Developed a clean, professional
+                                        visual
+                                        language using blue and emerald to inspire trust.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Image Content -->
+                        <div class="grid grid-cols-2 lg:grid-cols-2 gap-6">
+                            <div class="rounded-[2rem] overflow-hidden shadow-xl group">
+                                <img src="Receiptly IMAGES/Receiptly/Receiptly Competitors.webp" alt="Competitors"
+                                    class="w-full h-auto object-cover group-hover:scale-[1.02] transition-transform duration-700">
+                            </div>
+                            <div class="rounded-[2rem] overflow-hidden shadow-xl group">
+                                <img src="Receiptly IMAGES/Receiptly/Receiptly flows (1) copy.webp" alt="Flows"
+                                    class="w-full h-auto object-cover group-hover:scale-[1.02] transition-transform duration-700">
+                            </div>
+                            <div class="rounded-[2rem] overflow-hidden shadow-xl group">
+                                <img src="Receiptly IMAGES/Receiptly/reports and insights.webp" alt="Reports"
+                                    class="w-full h-auto object-cover group-hover:scale-[1.02] transition-transform duration-700">
+                            </div>
+                            <div class="rounded-[2rem] overflow-hidden shadow-xl group">
+                                <img src="Receiptly IMAGES/Receiptly/receipt management copy.webp" alt="Management"
+                                    class="w-full h-auto object-cover group-hover:scale-[1.02] transition-transform duration-700">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Branding Section -->
+                <div class="p-10 lg:p-20 bg-[#2E39E6]/5 rounded-[3rem] border border-border reveal">
+                    <div class="max-w-6xl mx-auto flex flex-col gap-16">
+                        <!-- Text Content -->
+                        <div class="flex flex-col gap-10">
+                            <h3
+                                class="flex items-center justify-center gap-4 text-3xl lg:text-4xl font-bold text-[#2E39E6] font-display italic">
+                                <i class="fa-regular fa-bookmark" aria-hidden="true"></i>
+                                Branding & Typography
+                            </h3>
+                            <div class="grid grid-cols-2 lg:grid-cols-4 gap-6">
+                                <div class="p-6 rounded-2xl bg-[#2E39E6] text-white shadow-lg">
+                                    <span class="text-xs font-bold opacity-70 block mb-2">Primary Blue</span>
+                                    <code class="text-lg font-black tracking-wider">#2E39E6</code>
+                                </div>
+                                <div class="p-6 rounded-2xl bg-[#10B981] text-white shadow-lg">
+                                    <span class="text-xs font-bold opacity-70 block mb-2">Success Emerald</span>
+                                    <code class="text-lg font-black tracking-wider">#10B981</code>
+                                </div>
+                                <div class="p-6 rounded-2xl bg-white text-black shadow-lg border border-border">
+                                    <span class="text-xs font-bold opacity-70 block mb-2">Background Light</span>
+                                    <code class="text-lg font-black tracking-wider">#FFFFFF</code>
+                                </div>
+                                <div class="p-6 rounded-2xl bg-[#111827] text-white shadow-lg">
+                                    <span class="text-xs font-bold opacity-70 block mb-2">Text Dark</span>
+                                    <code class="text-lg font-black tracking-wider">#111827</code>
+                                </div>
+                            </div>
+                            <div class="grid lg:grid-cols-2 gap-6 text-black">
+                                <div
+                                    class="p-8 bg-white rounded-3xl border-t-4 border-[#2E39E6] shadow-sm hover:shadow-md transition-all duration-300">
+                                    <h4 class="text-xl font-bold text-gray-900 mb-3"
+                                        style="font-family: 'Inter', sans-serif;">
+                                        Inter</h4>
+                                    <p class="text-gray-600 text-sm leading-relaxed">Used for headings and large display
+                                        text to create a clean, modern feel that inspires trust.</p>
+                                </div>
+                                <div
+                                    class="p-8 bg-white rounded-3xl border-t-4 border-[#2E39E6] shadow-sm hover:shadow-md transition-all duration-300">
+                                    <h4 class="text-xl font-bold text-gray-900 mb-3"
+                                        style="font-family: 'Lexend', sans-serif;">
+                                        Lexend</h4>
+                                    <p class="text-gray-600 text-sm leading-relaxed">Used for body text and interface
+                                        elements, ensuring maximum readability for financial figures.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Image Content -->
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="rounded-[2rem] overflow-hidden shadow-xl group">
+                                <img src="Receiptly IMAGES/Receiptly/typography.webp" alt="Typography"
+                                    class="w-full h-auto object-cover group-hover:scale-[1.02] transition-transform duration-700">
+                            </div>
+                            <div class="rounded-[2rem] overflow-hidden shadow-xl group">
+                                <img src="Receiptly IMAGES/Receiptly/colors and componets.webp"
+                                    alt="Colors and Components"
+                                    class="w-full h-auto object-cover group-hover:scale-[1.02] transition-transform duration-700">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Summary & Final Mockups -->
+                <div class="p-10 lg:p-20 bg-[#2E39E6]/5 rounded-[3rem] border border-border reveal">
+                    <h3 class="flex items-center gap-4 text-3xl font-bold text-[#2E39E6] mb-8 font-display italic">
+                        <i class="fa-regular fa-circle-check" aria-hidden="true"></i>
+                        Summary
                     </h3>
-                    <p class="text-center text-text-muted mb-12 max-w-2xl mx-auto">Receiptly automates receipt capture
-                        and categorization using AI. It offers a simple, intuitive experience designed specifically for
-                        small teams.</p>
+                    <p class="text-xl text-text-muted mb-16 max-w-4xl leading-relaxed">
+                        Receiptly streamlines expense management for small teams, turning financial complexity into
+                        clarity.
+                        Automation reduces manual errors while maintaining transparency. The dashboard delivers quick
+                        insights
+                        at a glance, empowering founders to make confident decisions.
+                    </p>
 
-                    <div class="grid md:grid-cols-3 gap-8 mb-16">
-                        <div
-                            class="group relative p-10 bg-white rounded-3xl border border-border transition-all hover:shadow-xl hover:shadow-[#2E39E6]/10 hover:-translate-y-2 overflow-hidden min-h-[400px] flex flex-col justify-end">
-                            <img src="Receiptly IMAGES/Receiptly/quick scan.webp" alt="Quick Scan"
-                                class="absolute inset-0 w-full h-full object-cover opacity-10 group-hover:opacity-20 transition-opacity">
-                            <div class="relative z-10">
-                                <div
-                                    class="w-12 h-12 bg-[#2E39E6] text-white rounded-xl flex items-center justify-center mb-6">
-                                    <i class="fa-solid fa-bolt text-xl"></i>
-                                </div>
-                                <h4 class="text-xl font-bold mb-4">Smart Capture</h4>
-                                <p class="text-sm text-text-muted">AI instantly extracts data from receipts, eliminating
-                                    manual entry.</p>
-                            </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div class="group rounded-[2rem] overflow-hidden shadow-xl ring-1 ring-border">
+                            <img src="Receiptly IMAGES/Receiptly/receiptly_mobile.webp" alt="Mobile View"
+                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
                         </div>
-                        <div
-                            class="group relative p-10 bg-white rounded-3xl border border-border transition-all hover:shadow-xl hover:shadow-[#2E39E6]/10 hover:-translate-y-2 overflow-hidden min-h-[400px] flex flex-col justify-end">
-                            <img src="Receiptly IMAGES/Receiptly/Smart Categorize.webp" alt="Categorize"
-                                class="absolute inset-0 w-full h-full object-cover opacity-10 group-hover:opacity-20 transition-opacity">
-                            <div class="relative z-10">
-                                <div
-                                    class="w-12 h-12 bg-[#2E39E6] text-white rounded-xl flex items-center justify-center mb-6">
-                                    <i class="fa-solid fa-chart-line text-xl"></i>
-                                </div>
-                                <h4 class="text-xl font-bold mb-4">Real-time Insights</h4>
-                                <p class="text-sm text-text-muted">Founders get immediate visibility into cash flow and
-                                    spending categories.</p>
-                            </div>
+                        <div class="group rounded-[2rem] overflow-hidden shadow-xl ring-1 ring-border">
+                            <img src="Receiptly IMAGES/Receiptly Mockups/receiply new@1.25x.webp"
+                                alt="Receiptly Dashboard"
+                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
                         </div>
-                        <div
-                            class="group relative p-10 bg-white rounded-3xl border border-border transition-all hover:shadow-xl hover:shadow-[#2E39E6]/10 hover:-translate-y-2 overflow-hidden min-h-[400px] flex flex-col justify-end">
-                            <img src="Receiptly IMAGES/Receiptly/Investor ready report.webp" alt="Reports"
-                                class="absolute inset-0 w-full h-full object-cover opacity-10 group-hover:opacity-20 transition-opacity">
-                            <div class="relative z-10">
-                                <div
-                                    class="w-12 h-12 bg-[#2E39E6] text-white rounded-xl flex items-center justify-center mb-6">
-                                    <i class="fa-solid fa-file-invoice-dollar text-xl"></i>
-                                </div>
-                                <h4 class="text-xl font-bold mb-4">Investor-Ready</h4>
-                                <p class="text-sm text-text-muted">Generate clean, professional financial reports with
-                                    one click.</p>
-                            </div>
+                        <div class="group rounded-[2rem] overflow-hidden shadow-xl ring-1 ring-border">
+                            <img src="Receiptly IMAGES/Receiptly/full receipt page.webp" alt="Receipt Page"
+                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                        </div>
+                        <div class="group rounded-[2rem] overflow-hidden shadow-xl ring-1 ring-border">
+                            <img src="Receiptly IMAGES/Receiptly/Overview ( Existing User ).webp" alt="Overview"
+                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
                         </div>
                     </div>
-
-                    <div
-                        class="rounded-3xl overflow-hidden shadow-2xl transition-transform hover:scale-[1.01] duration-500">
-                        <img src="./images/receiptly_savetime.webp" alt="Receiptly Interface" class="w-full">
-                    </div>
                 </div>
-
-
-
-
-        </div> <!-- User Personas -->
-        <!-- User Personas -->
-        <div class="p-10 lg:p-20 bg-white rounded-[3rem] border border-border reveal">
-            <h3 class="flex items-center gap-4 text-3xl font-bold text-[#2E39E6] mb-8 font-display italic">
-                <i class="fa-regular fa-user" aria-hidden="true"></i>
-                User Personas
-            </h3>
-            <p class="text-lg text-text-muted mb-12 max-w-3xl leading-relaxed">To understand the needs of our users, we
-                created two distinct personas that represent the typical users of Receiptly.</p>
-
-            <div class="grid md:grid-cols-2 gap-12">
-                <div class="space-y-6">
-                    <img src="Receiptly IMAGES/Receiptly/persona 1.webp" alt="The Busy Founder"
-                        class="rounded-3xl shadow-lg w-full transition-transform hover:scale-105 duration-500">
-                </div>
-                <div class="space-y-6">
-                    <img src="Receiptly IMAGES/Receiptly/persona 2.webp" alt="The Finance Manager"
-                        class="rounded-3xl shadow-lg w-full transition-transform hover:scale-105 duration-500">
-                </div>
-            </div>
-        </div>
-
-        <!-- Design Process Section -->
-        <div class="p-10 lg:p-20 bg-[#2E39E6]/5 rounded-[3rem] border border-border reveal">
-            <h3
-                class="flex items-center justify-center gap-4 text-3xl lg:text-4xl font-bold text-[#2E39E6] mb-12 font-display italic text-center">
-                <i class="fa-regular fa-compass" aria-hidden="true"></i>
-                Design Process
-            </h3>
-            <div class="grid grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-                <div
-                    class="p-8 bg-white rounded-3xl border border-border transition-all hover:border-[#2E39E6] hover:-translate-y-1">
-                    <span class="text-xs font-black uppercase tracking-widest text-[#2E39E6]/40 mb-4 block">01.
-                        Research</span>
-                    <p class="text-sm">Analyzed current workflows and pain points in manual data entry for small teams.
-                    </p>
-                </div>
-                <div
-                    class="p-8 bg-white rounded-3xl border border-border transition-all hover:border-[#2E39E6] hover:-translate-y-1">
-                    <span class="text-xs font-black uppercase tracking-widest text-[#2E39E6]/40 mb-4 block">02.
-                        Wireframing</span>
-                    <p class="text-sm">Iterated on dashboard layouts to prioritize quick access to financial summaries.
-                    </p>
-                </div>
-                <div
-                    class="p-8 bg-white rounded-3xl border border-border transition-all hover:border-[#2E39E6] hover:-translate-y-1">
-                    <span class="text-xs font-black uppercase tracking-widest text-[#2E39E6]/40 mb-4 block">03. Visual
-                        Design</span>
-                    <p class="text-sm">Developed a clean, professional visual language using blue and emerald to inspire
-                        trust.</p>
-                </div>
-            </div>
-            <div class="grid grid-cols-2 gap-6">
-                <img src="Receiptly IMAGES/Receiptly/Receiptly Competitors.webp" alt="Competitors"
-                    class="rounded-2xl shadow-md transition-transform hover:scale-[1.02] duration-300">
-                <img src="Receiptly IMAGES/Receiptly/Receiptly flows (1) copy.webp" alt="Flows"
-                    class="rounded-2xl shadow-md transition-transform hover:scale-[1.02] duration-300">
-                <img src="Receiptly IMAGES/Receiptly/reports and insights.webp" alt="Reports"
-                    class="rounded-2xl shadow-md transition-transform hover:scale-[1.02] duration-300">
-                <img src="Receiptly IMAGES/Receiptly/receipt management copy.webp" alt="Management"
-                    class="rounded-2xl shadow-md transition-transform hover:scale-[1.02] duration-300">
-            </div>
-        </div>
-
-        <!-- Branding Section -->
-        <div class="p-10 lg:p-20 bg-white rounded-[3rem] border border-border reveal">
-            <h3 class="flex items-center gap-4 text-3xl font-bold text-[#2E39E6] mb-12 font-display italic">
-                <i class="fa-regular fa-bookmark" aria-hidden="true"></i>
-                Branding & Typography
-            </h3>
-            <div class="grid md:grid-cols-2 gap-8 ring-1 ring-border p-10 rounded-3xl shadow-sm bg-[#F8FAFC]">
-                <img src="Receiptly IMAGES/Receiptly/typography.webp" alt="Typography" class="rounded-2xl shadow-sm">
-                <img src="Receiptly IMAGES/Receiptly/colors and componets.webp" alt="Colors and Components"
-                    class="rounded-2xl shadow-sm">
-            </div>
-        </div>
-
-        <!-- Summary & Final Mockups -->
-        <div class="p-10 lg:p-20 bg-[#2E39E6]/5 rounded-[3rem] border border-border reveal">
-            <h3 class="flex items-center gap-4 text-3xl font-bold text-[#2E39E6] mb-8 font-display italic">
-                <i class="fa-regular fa-circle-check" aria-hidden="true"></i>
-                Summary
-            </h3>
-            <p class="text-xl text-text-muted mb-16 max-w-4xl leading-relaxed">
-                Receiptly streamlines expense management for small teams, turning financial complexity into clarity.
-                Automation reduces manual errors while maintaining transparency. The dashboard delivers quick insights
-                at a glance, empowering founders to make confident decisions.
-            </p>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="group rounded-[2rem] overflow-hidden shadow-xl ring-1 ring-border">
-                    <img src="Receiptly IMAGES/Receiptly/receiptly_mobile.webp" alt="Mobile View"
-                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
-                </div>
-                <div class="group rounded-[2rem] overflow-hidden shadow-xl ring-1 ring-border">
-                    <img src="Receiptly IMAGES/Receiptly Mockups/receiply new@1.25x.webp" alt="Receiptly Dashboard"
-                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
-                </div>
-                <div class="group rounded-[2rem] overflow-hidden shadow-xl ring-1 ring-border">
-                    <img src="Receiptly IMAGES/Receiptly/full receipt page.webp" alt="Receipt Page"
-                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
-                </div>
-                <div class="group rounded-[2rem] overflow-hidden shadow-xl ring-1 ring-border">
-                    <img src="Receiptly IMAGES/Receiptly/Overview ( Existing User ).webp" alt="Overview"
-                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
-                </div>
-            </div>
-        </div>
-        </section>
+            </section>
         </div>
 
 
@@ -337,7 +420,7 @@
         <!-- More Projects -->
         <section class="py-32 border-t border-border reveal">
             <div class="max-w-6xl mx-auto px-6">
-                <h2 class="text-xs font-black uppercase tracking-[0.4em] text-primary text-center mb-16">More Projects
+                <h2 class="text-2xl font-black uppercase tracking-[0.4em] text-primary text-center mb-16">More Projects
                 </h2>
                 <div class="grid md:grid-cols-3 gap-8 text-center">
                     <a href="loopin.html"
