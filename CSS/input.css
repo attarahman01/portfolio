@@ -68,7 +68,7 @@
 
 @layer base {
     body {
-        @apply bg-bg-dark text-text-main font-body leading-relaxed;
+        @apply bg-bg-dark text-text-main font-body text-[14px] md:text-[16px] leading-[1.5];
         overflow-x: hidden;
     }
 
@@ -96,15 +96,15 @@
     }
 
     .btn {
-        @apply inline-flex items-center justify-center px-8 py-4 rounded-full font-semibold transition-all duration-300 shadow-md transform hover:-translate-y-1 active:scale-95 cursor-pointer text-base;
+        @apply inline-flex items-center justify-center text-[16px] md:text-[18px] px-[24px] py-[14px] md:px-[32px] md:py-[16px] rounded-[12px] font-semibold transition-all duration-300 transform active:scale-95 cursor-pointer;
     }
 
     .btn-primary {
-        @apply bg-gradient-to-br from-primary to-accent text-white shadow-primary/30 hover:shadow-primary/50;
+        @apply bg-gradient-to-br from-primary to-accent text-white shadow-sm hover:shadow-lg hover:brightness-95 hover:-translate-y-1;
     }
 
     .btn-secondary {
-        @apply bg-white border border-border text-text-main hover:border-primary hover:bg-primary/5 shadow-sm;
+        @apply bg-white border border-border text-text-main shadow-sm hover:shadow-md hover:bg-gray-50 hover:border-gray-300 hover:-translate-y-1;
     }
 
     .section-title {
@@ -258,7 +258,7 @@
 
     .form-group input,
     .form-group textarea {
-        @apply px-4 py-3 rounded-lg border border-border bg-gray-50/50 focus:bg-white focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all duration-300;
+        @apply min-h-[48px] px-4 py-3 rounded-lg border border-border bg-gray-50/50 focus:bg-white focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all duration-300;
     }
 
     /* Filter Buttons */

@@ -227,3 +227,85 @@ img {
     outline: 2px solid var(--primary);
     outline-offset: 4px;
 }
+
+/* ==================== GLOBAL MOBILE RESPONSIVENESS OVERRIDES ==================== */
+@media (max-width: 767px) {
+    /* 1. Convert project grids to 1 column */
+    .grid-2, 
+    .grid-3, 
+    .grid-responsive, 
+    .process-grid-ref, 
+    .about-bio-ref, 
+    [class*="grid-cols-"],
+    .footer-content {
+        grid-template-columns: 1fr !important;
+    }
+    
+    /* 2. Ensure all project images and containers fill available width and scale properly */
+    .grid img, 
+    article img, 
+    .image-wrapper img, 
+    .work-image img,
+    [class*="overflow-hidden"] > img,
+    .work-item,
+    .work-card,
+    .image-wrapper {
+        width: 100% !important;
+        height: auto !important;
+        object-fit: cover !important;
+        flex-shrink: 0 !important;
+    }
+
+    /* 3. Reduce border radius on mobile to a subtle value (8px) globally */
+    .rounded-\[3rem\],
+    .rounded-\[2\.5rem\],
+    .rounded-\[2rem\],
+    .rounded-\[1\.5rem\],
+    .rounded-3xl,
+    .rounded-2xl,
+    .radius-lg {
+        border-radius: 8px !important;
+    }
+
+    /* 5. Ensure consistent spacing, padding, and typography scaling */
+    .section, 
+    .py-24, 
+    .py-32, 
+    .pt-40,
+    .pb-20,
+    .p-10, 
+    .p-20, 
+    .p-8,
+    .lg\:p-20,
+    .lg\:p-12,
+    .lg\:py-32 {
+        padding: 1.5rem 1rem !important;
+    }
+    
+    .gap-16,
+    .gap-24,
+    .gap-10,
+    .gap-12 {
+        gap: 1.5rem !important;
+    }
+
+    .title-large, 
+    h1[class*="text-\[clamp"] {
+        font-size: 3rem !important;
+        line-height: 1.1 !important;
+        margin-bottom: 1.5rem !important;
+    }
+
+    h2, h3 {
+        font-size: 1.8rem !important;
+        line-height: 1.2 !important;
+    }
+    
+    .mb-16, .mb-20, .mb-24, .mb-32 {
+        margin-bottom: 2rem !important;
+    }
+    
+    .mt-12, .mt-16, .mt-8 {
+        margin-top: 1.5rem !important;
+    }
+}
