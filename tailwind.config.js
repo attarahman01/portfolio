@@ -14,10 +14,10 @@ module.exports = {
                 border: 'rgba(0, 0, 0, 0.08)',
             },
             fontFamily: {
-                display: ['Inter', 'system-ui', 'sans-serif'],
-                heading: ['Inter', 'system-ui', 'sans-serif'],
-                body: ['Inter', 'system-ui', 'sans-serif'],
-                sub: ['Inter', 'system-ui', 'sans-serif'],
+                display: ['Baumans', 'cursive'],
+                heading: ['Antonio', 'sans-serif'],
+                body: ['Inter', 'sans-serif'],
+                sub: ['Inter', 'sans-serif'],
             },
             boxShadow: {
                 sm: '0 2px 8px rgba(0, 0, 0, 0.08)',
