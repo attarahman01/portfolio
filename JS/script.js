@@ -4,54 +4,11 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-    initCursor();
-    initScrollReveal();
     initStickyHeader();
     initProjectFilter();
     initContactForm();
-    initMobileMenu();
 });
 
-/**
- * Custom Cursor Interaction
- */
-function initCursor() {
-    const cursorDot = document.getElementById('cursor-dot');
-    const cursorOutline = document.getElementById('cursor-outline');
-
-    if (!cursorDot || !cursorOutline) return;
-
-    window.addEventListener('mousemove', (e) => {
-        const posX = e.clientX;
-        const posY = e.clientY;
-
-        // Dot interaction
-        cursorDot.style.translate = `${posX}px ${posY}px`;
-
-        // Outline interaction (smooth lag using animate API)
-        cursorOutline.animate({
-            translate: `${posX}px ${posY}px`
-        }, { duration: 400, fill: "forwards" });
-    });
-
-    // Hover Effects
-    const interactiveElements = 'a, button, .work-card, .service-card, .solution-card, input, textarea';
-    document.querySelectorAll(interactiveElements).forEach(item => {
-        item.addEventListener('mouseenter', () => {
-            cursorOutline.style.width = '60px';
-            cursorOutline.style.height = '60px';
-            cursorOutline.style.backgroundColor = 'rgba(99, 102, 241, 0.1)';
-            cursorDot.style.opacity = '0';
-        });
-
-        item.addEventListener('mouseleave', () => {
-            cursorOutline.style.width = '40px';
-            cursorOutline.style.height = '40px';
-            cursorOutline.style.backgroundColor = 'transparent';
-            cursorDot.style.opacity = '1';
-        });
-    });
-}
 
 /**
  * Sticky Header on Scroll
@@ -167,28 +124,6 @@ function showFormStatus(message, type) {
     }, 5000);
 }
 
-/**
- * Scroll Reveal Animation (Intersection Observer)
- */
-function initScrollReveal() {
-    const observerOptions = {
-        threshold: 0.15,
-        rootMargin: "0px"
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('active');
-            }
-        });
-    }, observerOptions);
-
-    // Observe all elements with .reveal class
-    document.querySelectorAll('.reveal').forEach(el => {
-        observer.observe(el);
-    });
-}
 
 /**
  * Smooth Scroll for Anchor Links
@@ -218,49 +153,4 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
 console.log("✨ Portfolio Logic Initialized");
 
-/**
- * Mobile Navigation Toggle
- */
-function initMobileMenu() {
-    const hamburger = document.querySelector(".hamburger");
-    const navMenu = document.querySelector(".navbar");
-    const navLinks = document.querySelectorAll(".nav-links li a");
-
-    if (!hamburger || !navMenu) return;
-
-    // Toggle Menu
-    hamburger.addEventListener("click", () => {
-        const isActive = hamburger.classList.toggle("active");
-        navMenu.classList.toggle("active");
-
-        // Accessibility
-        hamburger.setAttribute("aria-expanded", isActive);
-
-        // Lock scroll when menu is open
-        if (isActive) {
-            document.body.style.overflow = "hidden";
-        } else {
-            document.body.style.overflow = "";
-        }
-    });
-
-    // Close menu when link is clicked
-    navLinks.forEach(link => {
-        link.addEventListener("click", () => {
-            hamburger.classList.remove("active");
-            navMenu.classList.remove("active");
-            hamburger.setAttribute("aria-expanded", false);
-            document.body.style.overflow = ""; // Unlock scroll
-        });
-    });
-
-    // Close menu on resize if above breakpoint
-    window.addEventListener('resize', () => {
-        if (window.innerWidth >= 1024) { // lg breakpoint
-            hamburger.classList.remove("active");
-            navMenu.classList.remove("active");
-            hamburger.setAttribute("aria-expanded", false);
-            document.body.style.overflow = "";
-        }
-    });
-}
+console.log("✨ Portfolio Logic Initialized");

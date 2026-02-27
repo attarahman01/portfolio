@@ -20,35 +20,105 @@
 
     <!-- Custom CSS (Tailwind Output) -->
     <link rel="stylesheet" href="CSS/output.css">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@1" type="module"></script>
     <script src="JS/script.js"></script>
 </head>
 
 <body>
-    <div id="cursor-dot"></div>
-    <div id="cursor-outline"></div>
 
     <!-- Sticky Navigation -->
-    <header class="header">
-        <a href="index.html" class="logo group" aria-label="Atta Rahman Portfolio Home">
-            <span class="group-hover:text-primary transition-colors">Atta.</span>
-        </a>
+    <header class="header !p-0 !h-auto">
+        <nav
+            class="relative w-full bg-white/50 backdrop-blur-md after:pointer-events-none after:absolute after:inset-x-0 after:bottom-0 after:h-px after:bg-black/10 z-[1000]">
+            <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-12">
+                <div class="relative flex h-20 items-center justify-between">
+                    <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
+                        <!-- Mobile menu button-->
+                        <button type="button" command="--toggle" commandfor="mobile-menu"
+                            class="relative inline-flex items-center justify-center rounded-md p-2 text-text-muted hover:bg-primary/5 hover:text-primary focus:outline-2 focus:-outline-offset-1 focus:outline-primary">
+                            <span class="absolute -inset-0.5"></span>
+                            <span class="sr-only">Open main menu</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                                data-slot="icon" aria-hidden="true" class="size-6 in-aria-expanded:hidden">
+                                <path d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                                data-slot="icon" aria-hidden="true" class="size-6 not-in-aria-expanded:hidden">
+                                <path d="M6 18 18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
+                        <div class="flex shrink-0 items-center">
+                            <a href="index.html" class="logo group" aria-label="Atta Rahman Portfolio Home">
+                                <span class="group-hover:text-primary transition-colors">Atta.</span>
+                            </a>
+                        </div>
+                        <div class="hidden sm:ml-10 sm:block">
+                            <div class="flex space-x-8">
+                                <a href="index.html" aria-current="page"
+                                    class="text-primary font-medium hover:text-primary transition-colors py-2 relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-primary">Home</a>
+                                <a href="about.html"
+                                    class="text-text-main font-medium hover:text-primary transition-colors py-2">About</a>
+                                <a href="projects.html"
+                                    class="text-text-main font-medium hover:text-primary transition-colors py-2">Portfolio</a>
+                                <a href="index.html#contact"
+                                    class="text-text-main font-medium hover:text-primary transition-colors py-2">Contact</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+                        <a href="https://docs.google.com/document/d/1LX3_h0mV1NA9MzWzbkIfyMC9djO0lR0S/edit?usp=sharing&ouid=110229474297021354495&rtpof=true&sd=true"
+                            target="_blank" rel="noopener noreferrer"
+                            class="btn btn-secondary !py-2 !px-6 text-sm hidden sm:block"
+                            aria-label="View Resume">Resume</a>
 
-        <div class="hamburger" tabindex="0" aria-label="Menu" role="button">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
+                        <!-- Profile dropdown (Keep for layout, customize later) -->
+                        <el-dropdown class="relative ml-4">
+                            <button
+                                class="relative flex rounded-full focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary">
+                                <span class="absolute -inset-1.5"></span>
+                                <span class="sr-only">Open user menu</span>
+                                <img src="./images/profile_new.webp"
+                                    class="size-8 rounded-full bg-bg-card outline -outline-offset-1 outline-border" />
+                            </button>
 
-        <nav class="navbar" aria-label="Main Navigation">
-            <ul class="nav-links">
-                <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="projects.html">Portfolio</a></li>
-                <li><a href="index.html#contact">Contact</a></li>
-            </ul>
-            <a href="https://docs.google.com/document/d/1LX3_h0mV1NA9MzWzbkIfyMC9djO0lR0S/edit?usp=sharing&ouid=110229474297021354495&rtpof=true&sd=true"
-                target="_blank" rel="noopener noreferrer"
-                class="btn btn-secondary !py-2 !px-6 text-sm lg:ml-4 mt-8 lg:mt-0" aria-label="View Resume">Resume</a>
+                            <el-menu anchor="bottom end" popover
+                                class="w-48 origin-top-right rounded-xl bg-white p-2 shadow-lg border border-border transition transition-discrete [--anchor-gap:8px] data-closed:scale-95 data-closed:transform data-closed:opacity-0 data-enter:duration-100 data-enter:ease-out data-leave:duration-75 data-leave:ease-in">
+                                <a href="#"
+                                    class="block px-4 py-2 text-sm text-text-main hover:bg-primary/5 hover:text-primary rounded-lg transition-colors">Your
+                                    profile</a>
+                                <a href="#"
+                                    class="block px-4 py-2 text-sm text-text-main hover:bg-primary/5 hover:text-primary rounded-lg transition-colors">Settings</a>
+                                <a href="#"
+                                    class="block px-4 py-2 text-sm text-text-main hover:bg-primary/5 hover:text-primary rounded-lg transition-colors">Sign
+                                    out</a>
+                            </el-menu>
+                        </el-dropdown>
+                    </div>
+                </div>
+            </div>
+
+            <el-disclosure id="mobile-menu" hidden
+                class="block sm:hidden bg-white/95 backdrop-blur-xl border-t border-border">
+                <div class="space-y-4 px-6 pt-6 pb-8">
+                    <a href="index.html" aria-current="page" class="block text-2xl font-bold text-primary">Home</a>
+                    <a href="about.html"
+                        class="block text-2xl font-medium text-text-main hover:text-primary transition-colors">About</a>
+                    <a href="projects.html"
+                        class="block text-2xl font-medium text-text-main hover:text-primary transition-colors">Portfolio</a>
+                    <a href="index.html#contact"
+                        class="block text-2xl font-medium text-text-main hover:text-primary transition-colors">Contact</a>
+                    <div class="pt-4 border-t border-border mt-6">
+                        <a href="https://docs.google.com/document/d/1LX3_h0mV1NA9MzWzbkIfyMC9djO0lR0S/edit?usp=sharing&ouid=110229474297021354495&rtpof=true&sd=true"
+                            target="_blank" rel="noopener noreferrer" class="btn btn-primary w-full text-center"
+                            aria-label="View Resume">Resume</a>
+                    </div>
+                </div>
+                </div>
+            </el-disclosure>
         </nav>
     </header>
 
@@ -83,11 +153,17 @@
                         Work</a>
                     <a href="#contact" class="btn btn-secondary">Let's Talk</a>
                 </div>
+                <!--<div class="relative w-full aspect-[16/10] rounded-[2.5rem] overflow-hidden shadow-2xl reveal">
+                    <img src="images/receiptly_extra.webp" alt="Atta Rahman - Product Designer based in Vancouver"
+                        class="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-700"
+                        loading="lazy" width="600" height="600">
+                </div>-->
+            </div>
             </div>
             <div class="hero-visual absolute inset-0 pointer-events-none">
                 <!-- Abstract Blobs -->
-                <div
-                    class="blob absolute rounded-full blur-[100px] opacity-20 animate-blob-float w-[500px] h-[500px] bg-gradient-to-br from-primary to-accent top-[15%] right-[10%]">
+                <div class="blob absolute rounded-full blur-[100px] opacity-20 animate-blob-float w-[500px] h-[500px] bg-gradient-to-br from-primary to-accent top-[15%] right-[10%] bg-cover bg-center"
+                    style="background-image: url('images/receiptly_header.webp');">
                 </div>
                 <div
                     class="blob absolute rounded-full blur-[100px] opacity-20 animate-blob-float w-[350px] h-[350px] bg-gradient-to-br from-secondary to-accent bottom-[20%] left-[15%] animation-delay-2000">
@@ -119,7 +195,7 @@
                                     <img src="images/profile_new.webp"
                                         alt="Atta Rahman - Product Designer based in Vancouver"
                                         class="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-700"
-                                        loading="lazy">
+                                        loading="lazy" width="600" height="600">
                                     <div
                                         class="absolute inset-0 bg-gradient-to-tr from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                                     </div>
@@ -155,7 +231,7 @@
         </section>
 
         <!-- Services Section -->
-        <section id="services" class="py-24 lg:py-32 mb-10">
+        <section id="services" class="section-spacing mb-10">
             <div class="container">
                 <div class="p-10 lg:p-20 bg-gray-50 rounded-[3rem] border border-border reveal">
                     <div class="max-w-6xl mx-auto flex flex-col gap-10">
@@ -202,7 +278,7 @@
         </section>
 
         <!-- Work/Portfolio Section -->
-        <section id="work" class="py-24 lg:py-32 bg-bg-card reveal">
+        <section id="work" class="section-spacing bg-bg-card reveal">
             <div class="container">
                 <h2 class="section-title">Featured Work</h2>
 
@@ -230,7 +306,7 @@
                                 <img src="images/loopin_thumb.webp"
                                     alt="Loopin - App for parents and neurodivergent children"
                                     class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                                    loading="lazy">
+                                    loading="lazy" width="800" height="600">
                                 <div
                                     class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
                                     <span class="text-primary font-bold tracking-wider text-sm mb-2 uppercase">UI/UX
@@ -255,7 +331,7 @@
                                 <img src="images/receiptly_thumb.webp"
                                     alt="Receiptly - Receipt management and expense tracking platform"
                                     class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                                    loading="lazy">
+                                    loading="lazy" width="800" height="600">
                                 <div
                                     class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
                                     <span class="text-primary font-bold tracking-wider text-sm mb-2 uppercase">Web
@@ -280,7 +356,7 @@
                                 <img src="images/memotrip_thumb.webp"
                                     alt="MemoTrip - Travel memory and itinerary planning app"
                                     class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                                    loading="lazy">
+                                    loading="lazy" width="800" height="600">
                                 <div
                                     class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
                                     <span class="text-primary font-bold tracking-wider text-sm mb-2 uppercase">UI/UX
@@ -305,7 +381,7 @@
                                 <img src="images/veura_thumb.webp"
                                     alt="Veura - Luxury skincare brand identity and packaging"
                                     class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                                    loading="lazy">
+                                    loading="lazy" width="800" height="600">
                                 <div
                                     class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
                                     <span
@@ -329,7 +405,7 @@
                             <div class="work-image relative aspect-[4/3]">
                                 <img src="images/rahmani_thumb.webp" alt="Rahmani - Non-Alcoholic Wine"
                                     class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                                    loading="lazy">
+                                    loading="lazy" width="800" height="600">
                                 <div
                                     class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
                                     <span
@@ -350,7 +426,7 @@
         </section>
 
         <!-- Contact Section -->
-        <section id="contact" class="py-24 lg:py-32 bg-white reveal">
+        <section id="contact" class="section-spacing bg-white reveal">
             <div class="container">
                 <div class="max-w-6xl mx-auto flex flex-col lg:flex-row gap-16 lg:gap-24">
                     <div class="lg:w-1/2">
@@ -359,7 +435,7 @@
                         <p class="text-lg text-text-muted mb-12 leading-relaxed">Have a project in mind? I'm
                             always open to discussing new ideas, creative collaborations, or opportunities to be part of
                             your vision. Whether you have a specific proposal or just want to chat about design, feel
-                            free to reach out.</p>
+                            reach out.</p>
                         <div class="space-y-6">
                             <div class="flex items-center gap-4 text-lg">
                                 <div

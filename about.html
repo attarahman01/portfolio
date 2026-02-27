@@ -20,34 +20,104 @@
 
     <!-- Custom CSS (Tailwind Output) -->
     <link rel="stylesheet" href="CSS/output.css">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@1" type="module"></script>
 </head>
 
 <body class="about-page">
-    <div id="cursor-dot" aria-hidden="true"></div>
-    <div id="cursor-outline" aria-hidden="true"></div>
 
     <!-- Sticky Navigation -->
-    <header class="header">
-        <a href="index.html" class="logo group" aria-label="Atta Rahman Portfolio Home">
-            <span class="group-hover:text-primary transition-colors">Atta.</span>
-        </a>
+    <header class="header !p-0 !h-auto">
+        <nav
+            class="relative w-full bg-white/50 backdrop-blur-md after:pointer-events-none after:absolute after:inset-x-0 after:bottom-0 after:h-px after:bg-black/10 z-[1000]">
+            <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-12">
+                <div class="relative flex h-20 items-center justify-between">
+                    <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
+                        <!-- Mobile menu button-->
+                        <button type="button" command="--toggle" commandfor="mobile-menu"
+                            class="relative inline-flex items-center justify-center rounded-md p-2 text-text-muted hover:bg-primary/5 hover:text-primary focus:outline-2 focus:-outline-offset-1 focus:outline-primary">
+                            <span class="absolute -inset-0.5"></span>
+                            <span class="sr-only">Open main menu</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                                data-slot="icon" aria-hidden="true" class="size-6 in-aria-expanded:hidden">
+                                <path d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                                data-slot="icon" aria-hidden="true" class="size-6 not-in-aria-expanded:hidden">
+                                <path d="M6 18 18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
+                        <div class="flex shrink-0 items-center">
+                            <a href="index.html" class="logo group" aria-label="Atta Rahman Portfolio Home">
+                                <span class="group-hover:text-primary transition-colors">Atta.</span>
+                            </a>
+                        </div>
+                        <div class="hidden sm:ml-10 sm:block">
+                            <div class="flex space-x-8">
+                                <a href="index.html"
+                                    class="text-text-main font-medium hover:text-primary transition-colors py-2">Home</a>
+                                <a href="about.html" aria-current="page"
+                                    class="text-primary font-medium hover:text-primary transition-colors py-2 relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-primary">About</a>
+                                <a href="projects.html"
+                                    class="text-text-main font-medium hover:text-primary transition-colors py-2">Portfolio</a>
+                                <a href="index.html#contact"
+                                    class="text-text-main font-medium hover:text-primary transition-colors py-2">Contact</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+                        <a href="https://docs.google.com/document/d/e/2PACX-1vRzCaOoOrogSTLAL45PbbqtKZOF7pA90JsbFpwQ_VXqHakTKE6fWCTqNZWYsKAVNmL06Aaf-HK9mB6l/pub"
+                            target="_blank" rel="noopener noreferrer"
+                            class="btn btn-secondary !py-2 !px-6 text-sm hidden sm:block"
+                            aria-label="View Resume">Resume</a>
 
-        <div class="hamburger" tabindex="0" aria-label="Menu" role="button">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
+                        <!-- Profile dropdown -->
+                        <el-dropdown class="relative ml-4">
+                            <button
+                                class="relative flex rounded-full focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary">
+                                <span class="absolute -inset-1.5"></span>
+                                <span class="sr-only">Open user menu</span>
+                                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                                    alt=""
+                                    class="size-8 rounded-full bg-bg-card outline -outline-offset-1 outline-border" />
+                            </button>
 
-        <nav class="navbar" aria-label="Main Navigation">
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html" class="active">About</a></li>
-                <li><a href="projects.html">Portfolio</a></li>
-                <li><a href="index.html#contact">Contact</a></li>
-            </ul>
-            <a href="https://docs.google.com/document/d/e/2PACX-1vRzCaOoOrogSTLAL45PbbqtKZOF7pA90JsbFpwQ_VXqHakTKE6fWCTqNZWYsKAVNmL06Aaf-HK9mB6l/pub"
-                target="_blank" rel="noopener noreferrer"
-                class="btn btn-secondary !py-2 !px-6 text-sm lg:ml-4 mt-8 lg:mt-0" aria-label="View Resume">Resume</a>
+                            <el-menu anchor="bottom end" popover
+                                class="w-48 origin-top-right rounded-xl bg-white p-2 shadow-lg border border-border transition transition-discrete [--anchor-gap:8px] data-closed:scale-95 data-closed:transform data-closed:opacity-0 data-enter:duration-100 data-enter:ease-out data-leave:duration-75 data-leave:ease-in">
+                                <a href="#"
+                                    class="block px-4 py-2 text-sm text-text-main hover:bg-primary/5 hover:text-primary rounded-lg transition-colors">Your
+                                    profile</a>
+                                <a href="#"
+                                    class="block px-4 py-2 text-sm text-text-main hover:bg-primary/5 hover:text-primary rounded-lg transition-colors">Settings</a>
+                                <a href="#"
+                                    class="block px-4 py-2 text-sm text-text-main hover:bg-primary/5 hover:text-primary rounded-lg transition-colors">Sign
+                                    out</a>
+                            </el-menu>
+                        </el-dropdown>
+                    </div>
+                </div>
+            </div>
+
+            <el-disclosure id="mobile-menu" hidden
+                class="block sm:hidden bg-white/95 backdrop-blur-xl border-t border-border">
+                <div class="space-y-4 px-6 pt-6 pb-8">
+                    <a href="index.html"
+                        class="block text-2xl font-medium text-text-main hover:text-primary transition-colors">Home</a>
+                    <a href="about.html" aria-current="page" class="block text-2xl font-bold text-primary">About</a>
+                    <a href="projects.html"
+                        class="block text-2xl font-medium text-text-main hover:text-primary transition-colors">Portfolio</a>
+                    <a href="index.html#contact"
+                        class="block text-2xl font-medium text-text-main hover:text-primary transition-colors">Contact</a>
+                    <div class="pt-4 border-t border-border mt-6">
+                        <a href="https://docs.google.com/document/d/e/2PACX-1vRzCaOoOrogSTLAL45PbbqtKZOF7pA90JsbFpwQ_VXqHakTKE6fWCTqNZWYsKAVNmL06Aaf-HK9mB6l/pub"
+                            target="_blank" rel="noopener noreferrer" class="btn btn-primary w-full text-center"
+                            aria-label="View Resume">Resume</a>
+                    </div>
+                </div>
+            </el-disclosure>
         </nav>
     </header>
 
@@ -66,7 +136,7 @@
         </section>
 
         <!-- Bio Section -->
-        <section class="py-24 lg:py-32 bg-white reveal">
+        <section class="section-spacing bg-white reveal">
             <div class="container max-w-6xl mx-auto px-6 lg:px-12">
                 <div class="grid lg:grid-cols-12 gap-16 lg:gap-24 items-start">
 
@@ -106,13 +176,14 @@
                             class="col-span-2 rounded-[2rem] overflow-hidden bg-gray-50 border border-gray-100 shadow-sm transition-transform hover:scale-[1.01] duration-500">
                             <img src="https://framerusercontent.com/images/yxvxgPZ9hsGY075O88xO3ayFN5M.jpg?width=2419&height=1361"
                                 alt="Atta Rahman working on design projects at desk"
-                                class="w-full aspect-[4/3] object-cover" loading="lazy">
+                                class="w-full aspect-[4/3] object-cover" loading="lazy" width="2419" height="1361">
                         </div>
                         <div
                             class="col-span-1 rounded-[2rem] overflow-hidden bg-gray-50 border border-gray-100 shadow-sm transition-transform hover:scale-[1.02] duration-500">
                             <img src="https://framerusercontent.com/images/kbvGZ9Jpk2dNIRmc62qud6CxA.png?width=839&height=957"
                                 alt="Professional portrait of Atta Rahman"
-                                class="w-full aspect-[4/5] object-cover object-top" loading="lazy">
+                                class="w-full aspect-[4/5] object-cover object-top" loading="lazy" width="839"
+                                height="957">
                         </div>
                         <div
                             class="col-span-1 rounded-[2rem] border border-gray-100 bg-gray-50 flex flex-col justify-center items-center text-center p-6 shadow-sm">
@@ -131,7 +202,7 @@
         </section>
 
         <!-- Tools Section -->
-        <section class="py-16 lg:py-20 bg-bg-card reveal">
+        <section class="section-spacing bg-bg-card reveal">
             <div class="container max-w-5xl mx-auto">
                 <h2 class="section-title mb-6">Tools I Use</h2>
                 <p class="text-lg text-text-muted mb-12 max-w-2xl text-center lg:text-left mx-auto lg:mx-0">A focused
@@ -229,7 +300,7 @@
         </section>
 
         <!-- Process Section -->
-        <section class="py-24 lg:py-32 bg-white reveal">
+        <section class="section-spacing bg-white reveal">
             <div class="container">
                 <h2 class="section-title">How I Work</h2>
                 <p class="text-lg text-text-muted mb-16 max-w-2xl text-center lg:text-left">My design process is
@@ -279,7 +350,7 @@
         </section>
 
         <!-- Journey Section -->
-        <section class="py-24 lg:py-32 bg-bg-card reveal">
+        <section class="section-spacing bg-bg-card reveal">
             <div class="container">
                 <h2 class="section-title">My Journey</h2>
                 <p class="text-lg text-text-muted mb-16 max-w-3xl text-center lg:text-left">I didn't start in design. I
@@ -378,7 +449,7 @@
         </section>
 
         <!-- CTA Section -->
-        <section class="py-24 lg:py-32 bg-white text-center reveal">
+        <section class="section-spacing bg-white text-center reveal">
             <div class="container">
                 <h2 class="text-4xl lg:text-5xl font-black mb-6">Let's create something amazing together</h2>
                 <p class="text-lg text-text-muted mb-8 max-w-2xl mx-auto">I'm always open to discussing new projects,

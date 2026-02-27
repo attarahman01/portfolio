@@ -14,38 +14,106 @@
 
     <!-- Custom CSS (Tailwind Output) -->
     <link rel="stylesheet" href="CSS/output.css">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@1" type="module"></script>
 
     <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body class="receiptly">
-    <!-- Custom Cursor -->
-    <div id="cursor-dot" aria-hidden="true"></div>
-    <div id="cursor-outline" aria-hidden="true"></div>
-
     <!-- Sticky Navigation -->
-    <header class="header">
-        <a href="index.html" class="logo group" aria-label="Atta Rahman Portfolio Home">
-            <span class="group-hover:text-primary transition-colors">Atta.</span>
-        </a>
+    <header class="header !p-0 !h-auto">
+        <nav
+            class="relative w-full bg-white/50 backdrop-blur-md after:pointer-events-none after:absolute after:inset-x-0 after:bottom-0 after:h-px after:bg-black/10 z-[1000]">
+            <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-12">
+                <div class="relative flex h-20 items-center justify-between">
+                    <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
+                        <!-- Mobile menu button-->
+                        <button type="button" command="--toggle" commandfor="mobile-menu"
+                            class="relative inline-flex items-center justify-center rounded-md p-2 text-text-muted hover:bg-primary/5 hover:text-primary focus:outline-2 focus:-outline-offset-1 focus:outline-primary">
+                            <span class="absolute -inset-0.5"></span>
+                            <span class="sr-only">Open main menu</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                                data-slot="icon" aria-hidden="true" class="size-6 in-aria-expanded:hidden">
+                                <path d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                                data-slot="icon" aria-hidden="true" class="size-6 not-in-aria-expanded:hidden">
+                                <path d="M6 18 18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
+                        <div class="flex shrink-0 items-center">
+                            <a href="index.html" class="logo group" aria-label="Atta Rahman Portfolio Home">
+                                <span class="group-hover:text-primary transition-colors">Atta.</span>
+                            </a>
+                        </div>
+                        <div class="hidden sm:ml-10 sm:block">
+                            <div class="flex space-x-8">
+                                <a href="index.html"
+                                    class="text-text-main font-medium hover:text-primary transition-colors py-2">Home</a>
+                                <a href="about.html"
+                                    class="text-text-main font-medium hover:text-primary transition-colors py-2">About</a>
+                                <a href="projects.html" aria-current="page"
+                                    class="text-primary font-medium hover:text-primary transition-colors py-2 relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-primary">Portfolio</a>
+                                <a href="index.html#contact"
+                                    class="text-text-main font-medium hover:text-primary transition-colors py-2">Contact</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+                        <a href="https://docs.google.com/document/d/e/2PACX-1vRzCaOoOrogSTLAL45PbbqtKZOF7pA90JsbFpwQ_VXqHakTKE6fWCTqNZWYsKAVNmL06Aaf-HK9mB6l/pub"
+                            target="_blank" rel="noopener noreferrer"
+                            class="btn btn-secondary !py-2 !px-6 text-sm hidden sm:block"
+                            aria-label="View Resume">Resume</a>
 
-        <div class="hamburger" tabindex="0" aria-label="Menu" role="button">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
+                        <!-- Profile dropdown -->
+                        <el-dropdown class="relative ml-4">
+                            <button
+                                class="relative flex rounded-full focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary">
+                                <span class="absolute -inset-1.5"></span>
+                                <span class="sr-only">Open user menu</span>
+                                <img src="./images/profile_new.webp" alt=""
+                                    class="size-8 rounded-full bg-bg-card outline -outline-offset-1 outline-border" />
+                            </button>
 
-        <nav class="navbar" aria-label="Main Navigation">
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="projects.html" class="active">Portfolio</a></li>
-                <li><a href="index.html#contact">Contact</a></li>
-            </ul>
-            <a href="https://docs.google.com/document/d/e/2PACX-1vRzCaOoOrogSTLAL45PbbqtKZOF7pA90JsbFpwQ_VXqHakTKE6fWCTqNZWYsKAVNmL06Aaf-HK9mB6l/pub"
-                target="_blank" rel="noopener noreferrer"
-                class="btn btn-secondary !py-2 !px-6 text-sm lg:ml-4 mt-8 lg:mt-0" aria-label="View Resume">Resume</a>
+                            <el-menu anchor="bottom end" popover
+                                class="w-48 origin-top-right rounded-xl bg-white p-2 shadow-lg border border-border transition transition-discrete [--anchor-gap:8px] data-closed:scale-95 data-closed:transform data-closed:opacity-0 data-enter:duration-100 data-enter:ease-out data-leave:duration-75 data-leave:ease-in">
+                                <a href="#"
+                                    class="block px-4 py-2 text-sm text-text-main hover:bg-primary/5 hover:text-primary rounded-lg transition-colors">Your
+                                    profile</a>
+                                <a href="#"
+                                    class="block px-4 py-2 text-sm text-text-main hover:bg-primary/5 hover:text-primary rounded-lg transition-colors">Settings</a>
+                                <a href="#"
+                                    class="block px-4 py-2 text-sm text-text-main hover:bg-primary/5 hover:text-primary rounded-lg transition-colors">Sign
+                                    out</a>
+                            </el-menu>
+                        </el-dropdown>
+                    </div>
+                </div>
+            </div>
+
+            <el-disclosure id="mobile-menu" hidden
+                class="block sm:hidden bg-white/95 backdrop-blur-xl border-t border-border">
+                <div class="space-y-4 px-6 pt-6 pb-8">
+                    <a href="index.html"
+                        class="block text-2xl font-medium text-text-main hover:text-primary transition-colors">Home</a>
+                    <a href="about.html"
+                        class="block text-2xl font-medium text-text-main hover:text-primary transition-colors">About</a>
+                    <a href="projects.html" aria-current="page"
+                        class="block text-2xl font-bold text-primary">Portfolio</a>
+                    <a href="index.html#contact"
+                        class="block text-2xl font-medium text-text-main hover:text-primary transition-colors">Contact</a>
+                    <div class="pt-4 border-t border-border mt-6">
+                        <a href="https://docs.google.com/document/d/e/2PACX-1vRzCaOoOrogSTLAL45PbbqtKZOF7pA90JsbFpwQ_VXqHakTKE6fWCTqNZWYsKAVNmL06Aaf-HK9mB6l/pub"
+                            target="_blank" rel="noopener noreferrer" class="btn btn-primary w-full text-center"
+                            aria-label="View Resume">Resume</a>
+                    </div>
+                </div>
+            </el-disclosure>
         </nav>
     </header>
 
@@ -94,12 +162,13 @@
 
                 <div
                     class="rounded-[2.5rem] overflow-hidden shadow-2xl transition-transform duration-500 hover:scale-[1.01]">
-                    <img src="images/receiptly_header.webp" alt="Receiptly Dashboard Overview" class="w-full h-auto">
+                    <img src="images/receiptly_thumb.webp" alt="Receiptly Hero" class="w-full h-auto" width="1200"
+                        height="800" loading="lazy">
                 </div>
             </section>
 
             <!-- My Role Section -->
-            <section class="py-24 lg:py-32">
+            <section class="section-spacing">
                 <div class="max-w-4xl mx-auto">
                     <h3
                         class="text-2xl lg:text-3xl font-bold uppercase tracking-[0.2rem] text-[#2E39E6] mb-8 text-center">
@@ -190,9 +259,10 @@
 
                         <!-- Image Content -->
                         <div class="rounded-[2.5rem] overflow-hidden shadow-2xl mx-auto w-full group">
-                            <img src="Receiptly IMAGES/Receiptly/Problem statement.webp"
+                            <img src="images/projects/Receiptly/Problem statement.webp"
                                 alt="Visualization of receipt chaos"
-                                class="w-full h-auto object-cover group-hover:scale-[1.02] transition-transform duration-700">
+                                class="w-full h-auto object-cover group-hover:scale-[1.02] transition-transform duration-700"
+                                loading="lazy" width="1200" height="800">
                         </div>
                     </div>
                 </div>
@@ -259,8 +329,9 @@
 
                         <!-- Image Content -->
                         <div class="rounded-[2.5rem] overflow-hidden shadow-2xl mx-auto w-full group">
-                            <img src="./images/receiptly_savetime.webp" alt="Receiptly Interface"
-                                class="w-full h-auto object-cover group-hover:scale-[1.02] transition-transform duration-700">
+                            <img src="images/receiptly_savetime.webp" alt="Receiptly Interface"
+                                class="w-full h-auto object-cover group-hover:scale-[1.02] transition-transform duration-700"
+                                loading="lazy" width="1200" height="800">
                         </div>
                     </div>
                 </div>
@@ -288,12 +359,14 @@
                         <!-- Image Content -->
                         <div class="grid md:grid-cols-2 gap-6">
                             <div class="rounded-[2rem] overflow-hidden shadow-xl group">
-                                <img src="Receiptly IMAGES/Receiptly/persona 1.webp" alt="The Busy Founder"
-                                    class="w-full h-auto object-cover group-hover:scale-[1.02] transition-transform duration-700">
+                                <img src="images/projects/Receiptly/persona 1.webp" alt="The Busy Founder"
+                                    class="w-full h-auto object-cover group-hover:scale-[1.02] transition-transform duration-700"
+                                    loading="lazy" width="800" height="600">
                             </div>
                             <div class="rounded-[2rem] overflow-hidden shadow-xl group">
-                                <img src="Receiptly IMAGES/Receiptly/persona 2.webp" alt="The Finance Manager"
-                                    class="w-full h-auto object-cover group-hover:scale-[1.02] transition-transform duration-700">
+                                <img src="images/projects/Receiptly/persona 2.webp" alt="The Finance Manager"
+                                    class="w-full h-auto object-cover group-hover:scale-[1.02] transition-transform duration-700"
+                                    loading="lazy" width="800" height="600">
                             </div>
                         </div>
                     </div>
@@ -337,20 +410,24 @@
                         <!-- Image Content -->
                         <div class="grid grid-cols-2 lg:grid-cols-2 gap-6">
                             <div class="rounded-[2rem] overflow-hidden shadow-xl group">
-                                <img src="Receiptly IMAGES/Receiptly/Receiptly Competitors.webp" alt="Competitors"
-                                    class="w-full h-auto object-cover group-hover:scale-[1.02] transition-transform duration-700">
+                                <img src="images/projects/Receiptly/Receiptly Competitors.webp" alt="Competitors"
+                                    class="w-full h-auto object-cover group-hover:scale-[1.02] transition-transform duration-700"
+                                    loading="lazy" width="800" height="600">
                             </div>
                             <div class="rounded-[2rem] overflow-hidden shadow-xl group">
-                                <img src="Receiptly IMAGES/Receiptly/Receiptly flows (1) copy.webp" alt="Flows"
-                                    class="w-full h-auto object-cover group-hover:scale-[1.02] transition-transform duration-700">
+                                <img src="images/projects/Receiptly/Receiptly flows (1) copy.webp" alt="Flows"
+                                    class="w-full h-auto object-cover group-hover:scale-[1.02] transition-transform duration-700"
+                                    loading="lazy" width="800" height="600">
                             </div>
                             <div class="rounded-[2rem] overflow-hidden shadow-xl group">
-                                <img src="Receiptly IMAGES/Receiptly/reports and insights.webp" alt="Reports"
-                                    class="w-full h-auto object-cover group-hover:scale-[1.02] transition-transform duration-700">
+                                <img src="images/projects/Receiptly/reports and insights.webp" alt="Reports"
+                                    class="w-full h-auto object-cover group-hover:scale-[1.02] transition-transform duration-700"
+                                    loading="lazy" width="800" height="600">
                             </div>
                             <div class="rounded-[2rem] overflow-hidden shadow-xl group">
-                                <img src="Receiptly IMAGES/Receiptly/receipt management copy.webp" alt="Management"
-                                    class="w-full h-auto object-cover group-hover:scale-[1.02] transition-transform duration-700">
+                                <img src="images/projects/Receiptly/receipt management copy.webp" alt="Management"
+                                    class="w-full h-auto object-cover group-hover:scale-[1.02] transition-transform duration-700"
+                                    loading="lazy" width="800" height="600">
                             </div>
                         </div>
                     </div>
@@ -405,13 +482,15 @@
                         <!-- Image Content -->
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div class="rounded-[2rem] overflow-hidden shadow-xl group">
-                                <img src="Receiptly IMAGES/Receiptly/typography.webp" alt="Typography"
-                                    class="w-full h-auto object-cover group-hover:scale-[1.02] transition-transform duration-700">
+                                <img src="images/projects/Receiptly/typography.webp" alt="Typography"
+                                    class="w-full h-auto object-cover group-hover:scale-[1.02] transition-transform duration-700"
+                                    loading="lazy" width="800" height="600">
                             </div>
                             <div class="rounded-[2rem] overflow-hidden shadow-xl group">
-                                <img src="Receiptly IMAGES/Receiptly/colors and componets.webp"
+                                <img src="images/projects/Receiptly/colors and componets.webp"
                                     alt="Colors and Components"
-                                    class="w-full h-auto object-cover group-hover:scale-[1.02] transition-transform duration-700">
+                                    class="w-full h-auto object-cover group-hover:scale-[1.02] transition-transform duration-700"
+                                    loading="lazy" width="800" height="600">
                             </div>
                         </div>
                     </div>
@@ -433,21 +512,25 @@
 
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                         <div class="group rounded-[2rem] overflow-hidden shadow-xl ring-1 ring-border">
-                            <img src="Receiptly IMAGES/Receiptly/receiptly_mobile.webp" alt="Mobile View"
-                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                            <img src="images/projects/Receiptly/receiptly_mobile.webp" alt="Mobile View"
+                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                                loading="lazy" width="800" height="600">
                         </div>
                         <div class="group rounded-[2rem] overflow-hidden shadow-xl ring-1 ring-border">
-                            <img src="Receiptly IMAGES/Receiptly Mockups/receiply new@1.25x.webp"
+                            <img src="images/projects/Receiptly Mockups/receiply new@1.25x.webp"
                                 alt="Receiptly Dashboard"
-                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                                loading="lazy" width="800" height="600">
                         </div>
                         <div class="group rounded-[2rem] overflow-hidden shadow-xl ring-1 ring-border">
-                            <img src="Receiptly IMAGES/Receiptly/full receipt page.webp" alt="Receipt Page"
-                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                            <img src="images/projects/Receiptly/full receipt page.webp" alt="Receipt Page"
+                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                                loading="lazy" width="800" height="600">
                         </div>
                         <div class="group rounded-[2rem] overflow-hidden shadow-xl ring-1 ring-border">
-                            <img src="Receiptly IMAGES/Receiptly/Overview ( Existing User ).webp" alt="Overview"
-                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                            <img src="images/projects/Receiptly/Overview ( Existing User ).webp" alt="Overview"
+                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                                loading="lazy" width="800" height="600">
                         </div>
                     </div>
                 </div>
@@ -465,7 +548,7 @@
 
 
         <!-- More Projects -->
-        <section class="py-32 border-t border-border reveal">
+        <section class="section-spacing border-t border-border reveal">
             <div class="max-w-6xl mx-auto px-6">
                 <h2 class="text-2xl font-black uppercase tracking-[0.4em] text-primary text-center mb-16">More Projects
                 </h2>
@@ -474,7 +557,8 @@
                         class="group block bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-2">
                         <div class="aspect-video overflow-hidden">
                             <img src="images/loopin_thumb.webp" alt="Loopin"
-                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                                width="800" height="450">
                         </div>
                         <div class="p-8">
                             <span
@@ -487,7 +571,8 @@
                         class="group block bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-2">
                         <div class="aspect-video overflow-hidden">
                             <img src="images/memotrip_thumb.webp" alt="MemoTrip"
-                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                                width="800" height="450">
                         </div>
                         <div class="p-8">
                             <span
@@ -500,7 +585,8 @@
                         class="group block bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-2">
                         <div class="aspect-video overflow-hidden">
                             <img src="images/veura_thumb.webp" alt="Veura"
-                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                                width="800" height="450">
                         </div>
                         <div class="p-8">
                             <span

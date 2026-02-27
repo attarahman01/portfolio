@@ -88,15 +88,16 @@
     a {
         @apply no-underline transition-all duration-300;
     }
+
 }
 
 @layer components {
     .container {
-        @apply max-w-[1200px] mx-auto px-4;
+        @apply max-w-[1200px] mx-auto px-6 lg:px-12;
     }
 
     .btn {
-        @apply inline-flex items-center justify-center px-8 py-4 rounded-full font-semibold transition-all duration-300 shadow-md transform hover:-translate-y-1 active:scale-95 cursor-pointer text-base;
+        @apply inline-flex items-center justify-center px-8 py-4 rounded-full font-semibold transition-all duration-300 shadow-md transform hover:-translate-y-1 active:scale-95 cursor-pointer text-base select-none;
     }
 
     .btn-primary {
@@ -108,7 +109,7 @@
     }
 
     .section-title {
-        @apply text-4xl lg:text-5xl font-bold mb-16 text-center lg:text-left relative inline-block;
+        @apply text-4xl lg:text-5xl font-bold mb-12 lg:mb-16 text-center lg:text-left relative inline-block;
     }
 
     .section-title::after {
@@ -118,7 +119,7 @@
 
     /* Header & Navigation */
     .header {
-        @apply fixed top-0 w-full h-20 flex items-center justify-between px-6 lg:px-12 bg-transparent z-50 transition-all duration-500;
+        @apply fixed top-0 w-full h-20 flex items-center justify-between px-6 lg:px-12 bg-transparent z-[1000] transition-all duration-500;
     }
 
     .header.scrolled {
@@ -127,46 +128,6 @@
 
     .logo {
         @apply font-heading text-2xl font-bold tracking-tight;
-    }
-
-    .hamburger {
-        @apply relative z-[100] flex flex-col justify-between w-6 h-4 cursor-pointer lg:hidden;
-    }
-
-    .hamburger span {
-        @apply block w-full h-0.5 bg-text-main transition-all duration-300;
-    }
-
-    .hamburger.active span:nth-child(1) {
-        @apply translate-y-[7px] rotate-45;
-    }
-
-    .hamburger.active span:nth-child(2) {
-        @apply opacity-0;
-    }
-
-    .hamburger.active span:nth-child(3) {
-        @apply -translate-y-[7px] -rotate-45;
-    }
-
-    .navbar {
-        @apply fixed inset-0 bg-white/98 backdrop-blur-xl flex flex-col items-center justify-center translate-x-full transition-transform duration-500 z-40 lg:static lg:inset-auto lg:bg-transparent lg:flex-row lg:translate-x-0 lg:backdrop-blur-none;
-    }
-
-    .navbar.active {
-        @apply translate-x-0;
-    }
-
-    .nav-links {
-        @apply flex flex-col items-center gap-8 lg:flex-row lg:gap-12;
-    }
-
-    .nav-links li a {
-        @apply text-text-main font-medium hover:text-primary transition-colors duration-300 py-2 text-2xl lg:text-base;
-    }
-
-    .nav-links li a.active {
-        @apply text-primary relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-primary;
     }
 
     /* About Section */
@@ -273,10 +234,14 @@
 
 @layer utilities {
     .reveal {
-        @apply opacity-0 translate-y-8 transition-all duration-1000 ease-out;
+        @apply opacity-100 translate-y-0 transition-none;
     }
 
     .reveal.active {
         @apply opacity-100 translate-y-0;
+    }
+
+    .section-spacing {
+        @apply py-24 lg:py-32;
     }
 }
