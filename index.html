@@ -390,7 +390,9 @@
                                 aria-label="Behance"><i class="fa-brands fa-behance" aria-hidden="true"></i></a>
                         </div>
                     </div>
-                    <form class="lg:w-1/2 space-y-6" id="contactForm" action="#" method="post">
+                    <form class="lg:w-1/2 space-y-6" id="contactForm" action="https://api.web3forms.com/submit"
+                        method="POST">
+                        <input type="hidden" name="access_key" value="629d37cc-e7fa-4b29-a305-b0c158d1dcb1">
                         <div class="form-group">
                             <label for="name">Name *</label>
                             <input type="text" id="name" name="name" placeholder="What's your name?" required>

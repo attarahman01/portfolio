@@ -88,22 +88,31 @@ function initContactForm() {
             return;
         }
 
-        // Simulate form submission (replace with actual backend endpoint)
+        // Handle form submission to Web3Forms
         try {
-            // Example: await fetch('/api/contact', { method: 'POST', body: JSON.stringify(data) });
+            const object = Object.fromEntries(formData);
+            const json = JSON.stringify(object);
 
-            // For now, show success message
-            showFormStatus('Thank you! Your message has been sent successfully.', 'success');
-            form.reset();
+            const response = await fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: json
+            });
 
-            // In production, you would send to a backend like:
-            // - Formspree
-            // - Netlify Forms
-            // - Custom API endpoint
-            // - EmailJS
+            const result = await response.json();
 
-            console.log('Form data:', data);
+            if (response.status === 200) {
+                showFormStatus('Thank you! Your message has been sent successfully.', 'success');
+                form.reset();
+            } else {
+                console.error(result);
+                showFormStatus(result.message || 'Oops! Something went wrong. Please try again.', 'error');
+            }
         } catch (error) {
+            console.error(error);
             showFormStatus('Oops! Something went wrong. Please try again.', 'error');
         }
     });
