@@ -4,11 +4,15 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-    initStickyHeader();
-    initProjectFilter();
-    initContactForm();
-    initNavHighlighting();
-    initLightbox();
+    try {
+        initStickyHeader();
+        initProjectFilter();
+        initContactForm();
+        initNavHighlighting();
+        initLightbox();
+    } catch (error) {
+        console.error("Initialization error:", error);
+    }
 });
 
 /**
@@ -18,37 +22,40 @@ function initLightbox() {
     const lightbox = document.getElementById('image-lightbox');
     const lightboxImg = document.getElementById('lightbox-img');
     const closeBtn = document.getElementById('lightbox-close');
-    const triggers = document.querySelectorAll('.lightbox-trigger');
 
-    if (!lightbox || !lightboxImg || !closeBtn) return;
+    if (!lightbox || !lightboxImg || !closeBtn) {
+        console.warn("Lightbox elements not found. Skipping initialization.");
+        return;
+    }
 
-    // Open lightbox
-    triggers.forEach(trigger => {
-        trigger.addEventListener('click', () => {
+    // Use event delegation for opening lightbox - more robust than individual listeners
+    document.addEventListener('click', (e) => {
+        const trigger = e.target.closest('.lightbox-trigger');
+        if (trigger) {
             const imageSrc = trigger.getAttribute('src');
             const imageAlt = trigger.getAttribute('alt');
             
             if (imageSrc) {
-                // Determine layout behavior, optional loading state could be added here
+                // Set image attributes
                 lightboxImg.setAttribute('src', imageSrc);
                 lightboxImg.setAttribute('alt', imageAlt || 'Full size preview');
                 
-                // Show lightbox and animate
+                // Show lightbox container
                 lightbox.classList.remove('hidden');
                 lightbox.classList.add('flex');
                 
-                // Slight delay to allow display flex to apply before opacity transition
-                requestAnimationFrame(() => {
+                // Trigger animations with a small delay for reliable transitions
+                setTimeout(() => {
                     lightbox.classList.remove('opacity-0');
                     lightbox.classList.add('opacity-100');
                     lightboxImg.classList.remove('scale-95');
                     lightboxImg.classList.add('scale-100');
-                });
+                }, 10);
                 
                 // Prevent body scroll
                 document.body.style.overflow = 'hidden';
             }
-        });
+        }
     });
 
     // Close lightbox function
@@ -63,19 +70,22 @@ function initLightbox() {
         setTimeout(() => {
             lightbox.classList.remove('flex');
             lightbox.classList.add('hidden');
-            lightboxImg.setAttribute('src', ''); // Clear src
-        }, 300); // match duration-300
+            lightboxImg.setAttribute('src', ''); // Clear src for next time
+        }, 300); 
         
         // Restore body scroll
         document.body.style.overflow = '';
     };
 
     // Close on button click
-    closeBtn.addEventListener('click', closeLightbox);
+    closeBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        closeLightbox();
+    });
 
-    // Close on click outside image
+    // Close on click outside image (on the backdrop or container padding)
     lightbox.addEventListener('click', (e) => {
-        if (e.target === lightbox || e.target.closest('.relative') && e.target !== lightboxImg) {
+        if (e.target === lightbox || e.target.id === 'image-lightbox' || (e.target.classList.contains('p-4') && e.target.closest('#image-lightbox'))) {
             closeLightbox();
         }
     });
