@@ -7,7 +7,95 @@ document.addEventListener('DOMContentLoaded', () => {
     initStickyHeader();
     initProjectFilter();
     initContactForm();
+    initNavHighlighting();
 });
+
+
+/**
+ * Dynamic Navigation Highlighting & Scroll Spy
+ */
+function initNavHighlighting() {
+    let page = window.location.pathname.split('/').pop() || 'index.html';
+    
+    // Select all navigation links
+    const desktopLinks = document.querySelectorAll('.flex.space-x-8 a');
+    const mobileLinks = document.querySelectorAll('#mobile-menu .space-y-4 > a:not(.btn)');
+
+    const desktopInactiveClasses = ['text-text-main', 'font-medium', 'hover:text-primary', 'transition-colors', 'py-2'];
+    const desktopActiveClasses = ['text-primary', 'font-medium', 'hover:text-primary', 'transition-colors', 'py-2', 'relative', 'after:absolute', 'after:bottom-0', 'after:left-0', 'after:w-full', 'after:h-0.5', 'after:bg-primary'];
+    
+    const mobileInactiveClasses = ['block', 'text-2xl', 'font-medium', 'text-text-main', 'hover:text-primary', 'transition-colors'];
+    const mobileActiveClasses = ['block', 'text-2xl', 'font-bold', 'text-primary'];
+
+    function updateNav(activeHref) {
+        desktopLinks.forEach(link => {
+            const href = link.getAttribute('href');
+            if (!href) return;
+            
+            // Clean up old classes
+            link.classList.remove(...desktopInactiveClasses, ...desktopActiveClasses);
+            
+            if (href === activeHref || (activeHref === 'index.html' && href === './')) {
+                link.classList.add(...desktopActiveClasses);
+                link.setAttribute('aria-current', 'page');
+            } else {
+                link.classList.add(...desktopInactiveClasses);
+                link.removeAttribute('aria-current');
+            }
+        });
+
+        mobileLinks.forEach(link => {
+            const href = link.getAttribute('href');
+            if (!href) return;
+
+            link.classList.remove(...mobileInactiveClasses, ...mobileActiveClasses);
+            
+            if (href === activeHref || (activeHref === 'index.html' && href === './')) {
+                link.classList.add(...mobileActiveClasses);
+                link.setAttribute('aria-current', 'page');
+            } else {
+                link.classList.add(...mobileInactiveClasses);
+                link.removeAttribute('aria-current');
+            }
+        });
+    }
+
+    function checkScrollSpy() {
+        // Default highlight logic based on page
+        let activeHref = page;
+
+        // Portfolio project pages should highlight the "Portfolio" link (projects.html)
+        const projectPages = ['loopin.html', 'memotrip.html', 'veura.html', 'receiptly.html', 'rahmani-wine.html'];
+        if (projectPages.includes(page)) {
+            activeHref = 'projects.html';
+        }
+
+        // Specifically for index.html, check if the contact section is in view
+        if (page === 'index.html' || page === '') {
+            const contactSection = document.getElementById('contact');
+            if (contactSection) {
+                const rect = contactSection.getBoundingClientRect();
+                const isAtBottom = (window.innerHeight + window.scrollY) >= document.body.offsetHeight - 50;
+                // If top of contact section is within upper half of viewport or scrolled to bottom
+                if (rect.top <= window.innerHeight / 2 || isAtBottom) {
+                    activeHref = 'index.html#contact';
+                } else {
+                    activeHref = 'index.html';
+                }
+            }
+        }
+
+        updateNav(activeHref);
+    }
+
+    // Run on load
+    checkScrollSpy();
+
+    // Run on scroll
+    window.addEventListener('scroll', () => {
+        window.requestAnimationFrame(checkScrollSpy);
+    }, { passive: true });
+}
 
 
 /**
@@ -137,29 +225,36 @@ function showFormStatus(message, type) {
 /**
  * Smooth Scroll for Anchor Links
  */
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+document.querySelectorAll('a[href*="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         const href = this.getAttribute('href');
 
         // Skip if it's just "#"
         if (href === '#') return;
 
-        e.preventDefault();
-        const target = document.querySelector(href);
+        const [path, hash] = href.split('#');
+        let page = window.location.pathname.split('/').pop() || 'index.html';
 
-        if (target) {
-            const headerOffset = 80;
-            const elementPosition = target.getBoundingClientRect().top;
-            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+        // ONLY intercept if link points to the same page
+        if (path === '' || path === page || (path === 'index.html' && page === '')) {
+            e.preventDefault();
+            const target = document.querySelector('#' + hash);
 
-            window.scrollTo({
-                top: offsetPosition,
-                behavior: 'smooth'
-            });
+            if (target) {
+                const headerOffset = 80;
+                const elementPosition = target.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
+                });
+                
+                // Update URL without jumping
+                history.pushState(null, null, '#' + hash);
+            }
         }
     });
 });
-
-console.log("✨ Portfolio Logic Initialized");
 
 console.log("✨ Portfolio Logic Initialized");
