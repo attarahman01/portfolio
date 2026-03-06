@@ -4,15 +4,11 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-    try {
-        initStickyHeader();
-        initProjectFilter();
-        initContactForm();
-        initNavHighlighting();
-        initLightbox();
-    } catch (error) {
-        console.error("Initialization error:", error);
-    }
+    initStickyHeader();
+    initProjectFilter();
+    initContactForm();
+    initNavHighlighting();
+    initLightbox();
 });
 
 /**
@@ -22,40 +18,37 @@ function initLightbox() {
     const lightbox = document.getElementById('image-lightbox');
     const lightboxImg = document.getElementById('lightbox-img');
     const closeBtn = document.getElementById('lightbox-close');
+    const triggers = document.querySelectorAll('.lightbox-trigger');
 
-    if (!lightbox || !lightboxImg || !closeBtn) {
-        console.warn("Lightbox elements not found. Skipping initialization.");
-        return;
-    }
+    if (!lightbox || !lightboxImg || !closeBtn) return;
 
-    // Use event delegation for opening lightbox - more robust than individual listeners
-    document.addEventListener('click', (e) => {
-        const trigger = e.target.closest('.lightbox-trigger');
-        if (trigger) {
+    // Open lightbox
+    triggers.forEach(trigger => {
+        trigger.addEventListener('click', () => {
             const imageSrc = trigger.getAttribute('src');
             const imageAlt = trigger.getAttribute('alt');
             
             if (imageSrc) {
-                // Set image attributes
+                // Determine layout behavior, optional loading state could be added here
                 lightboxImg.setAttribute('src', imageSrc);
                 lightboxImg.setAttribute('alt', imageAlt || 'Full size preview');
                 
-                // Show lightbox container
+                // Show lightbox and animate
                 lightbox.classList.remove('hidden');
                 lightbox.classList.add('flex');
                 
-                // Trigger animations with a small delay for reliable transitions
-                setTimeout(() => {
+                // Slight delay to allow display flex to apply before opacity transition
+                requestAnimationFrame(() => {
                     lightbox.classList.remove('opacity-0');
                     lightbox.classList.add('opacity-100');
                     lightboxImg.classList.remove('scale-95');
                     lightboxImg.classList.add('scale-100');
-                }, 10);
+                });
                 
                 // Prevent body scroll
                 document.body.style.overflow = 'hidden';
             }
-        }
+        });
     });
 
     // Close lightbox function
@@ -70,22 +63,19 @@ function initLightbox() {
         setTimeout(() => {
             lightbox.classList.remove('flex');
             lightbox.classList.add('hidden');
-            lightboxImg.setAttribute('src', ''); // Clear src for next time
-        }, 300); 
+            lightboxImg.setAttribute('src', ''); // Clear src
+        }, 300); // match duration-300
         
         // Restore body scroll
         document.body.style.overflow = '';
     };
 
     // Close on button click
-    closeBtn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        closeLightbox();
-    });
+    closeBtn.addEventListener('click', closeLightbox);
 
-    // Close on click outside image (on the backdrop or container padding)
+    // Close on click outside image
     lightbox.addEventListener('click', (e) => {
-        if (e.target === lightbox || e.target.id === 'image-lightbox' || (e.target.classList.contains('p-4') && e.target.closest('#image-lightbox'))) {
+        if (e.target === lightbox || e.target.closest('.relative') && e.target !== lightboxImg) {
             closeLightbox();
         }
     });
