@@ -8,7 +8,86 @@ document.addEventListener('DOMContentLoaded', () => {
     initProjectFilter();
     initContactForm();
     initNavHighlighting();
+    initLightbox();
 });
+
+/**
+ * Image Lightbox Functionality
+ */
+function initLightbox() {
+    const lightbox = document.getElementById('image-lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const closeBtn = document.getElementById('lightbox-close');
+    const triggers = document.querySelectorAll('.lightbox-trigger');
+
+    if (!lightbox || !lightboxImg || !closeBtn) return;
+
+    // Open lightbox
+    triggers.forEach(trigger => {
+        trigger.addEventListener('click', () => {
+            const imageSrc = trigger.getAttribute('src');
+            const imageAlt = trigger.getAttribute('alt');
+            
+            if (imageSrc) {
+                // Determine layout behavior, optional loading state could be added here
+                lightboxImg.setAttribute('src', imageSrc);
+                lightboxImg.setAttribute('alt', imageAlt || 'Full size preview');
+                
+                // Show lightbox and animate
+                lightbox.classList.remove('hidden');
+                lightbox.classList.add('flex');
+                
+                // Slight delay to allow display flex to apply before opacity transition
+                requestAnimationFrame(() => {
+                    lightbox.classList.remove('opacity-0');
+                    lightbox.classList.add('opacity-100');
+                    lightboxImg.classList.remove('scale-95');
+                    lightboxImg.classList.add('scale-100');
+                });
+                
+                // Prevent body scroll
+                document.body.style.overflow = 'hidden';
+            }
+        });
+    });
+
+    // Close lightbox function
+    const closeLightbox = () => {
+        // Animate out
+        lightbox.classList.remove('opacity-100');
+        lightbox.classList.add('opacity-0');
+        lightboxImg.classList.remove('scale-100');
+        lightboxImg.classList.add('scale-95');
+        
+        // Hide after transition ends
+        setTimeout(() => {
+            lightbox.classList.remove('flex');
+            lightbox.classList.add('hidden');
+            lightboxImg.setAttribute('src', ''); // Clear src
+        }, 300); // match duration-300
+        
+        // Restore body scroll
+        document.body.style.overflow = '';
+    };
+
+    // Close on button click
+    closeBtn.addEventListener('click', closeLightbox);
+
+    // Close on click outside image
+    lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox || e.target.closest('.relative') && e.target !== lightboxImg) {
+            closeLightbox();
+        }
+    });
+
+    // Close on Escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && !lightbox.classList.contains('hidden')) {
+            closeLightbox();
+        }
+    });
+}
+
 
 
 /**
