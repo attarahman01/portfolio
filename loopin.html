@@ -151,41 +151,211 @@
                 </div>
             </section>
 
-            <!-- Project Video / Meet Loopin -->
+            <!-- Project Video / Product Walkthrough -->
             <section class="section-spacing reveal">
                 <div class="max-w-4xl mx-auto px-6 text-center">
-                    <!-- Modern Label -->
-                    <div class="inline-block px-4 py-1.5 mb-6 rounded-full bg-[#fb5400]/10 border border-[#fb5400]/20">
-                        <span class="text-xs font-bold uppercase tracking-widest text-[#fb5400]">Product
-                            Walkthrough</span>
-                    </div>
 
-                    <!-- Heading -->
-                    <h2 class="text-3xl lg:text-5xl font-black uppercase tracking-tighter text-gray-900 mb-8">
-                        Meet <span class="text-[#fb5400]">Loopin</span>
+                    <!-- Section Heading -->
+                    <h2 class="text-3xl lg:text-5xl font-black uppercase tracking-tighter text-gray-900 mb-4">
+                        Product Walkthrough
                     </h2>
 
-                    <!-- Description -->
-                    <p class="text-xl lg:text-2xl font-light text-text-main leading-relaxed max-w-3xl mx-auto mb-16">
-                        Loopin is designed to help parents of neurodivergent children build daily routines and emotional
-                        connections through simple, supportive interactions. Discover how our platform transforms daily
-                        challenges into growth opportunities for the whole family.
+                    <!-- Supporting subtitle -->
+                    <p class="text-lg text-text-muted max-w-xl mx-auto mb-16 leading-relaxed">
+                        A quick look at how Loopin helps parents manage routines and emotions
                     </p>
 
-                    <!-- Video Container -->
-                    <div class="relative max-w-[800px] md:max-w-[860px] mx-auto">
-                        <div
-                            class="rounded-[3rem] overflow-hidden shadow-2xl border-[8px] border-white bg-black aspect-[9/16] transition-transform duration-500 hover:scale-[1.01]">
-                            <iframe class="w-full h-full pointer-events-auto"
-                                src="https://www.youtube-nocookie.com/embed/9-VNSJGpwII?si=RDFNI0MHSeqZhwMk"
-                                title="Loopin Intro" frameborder="0"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
-                            </iframe>
+                    <!-- iPhone Mockup Wrapper -->
+                    <div class="flex justify-center">
+                        <div class="phone-mockup-showcase">
+                            <!-- Phone shell -->
+                            <div class="phone-shell">
+                                <!-- Side buttons (left) -->
+                                <div class="phone-btn-volume-up"></div>
+                                <div class="phone-btn-volume-down"></div>
+                                <!-- Side button (right) -->
+                                <div class="phone-btn-power"></div>
+
+                                <!-- Screen area -->
+                                <div class="phone-screen">
+                                    <!-- Notch / Dynamic Island -->
+                                    <div class="phone-notch">
+                                        <div class="phone-notch-inner">
+                                            <div class="phone-camera"></div>
+                                            <div class="phone-speaker"></div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Video iframe -->
+                                    <iframe src="https://www.youtube-nocookie.com/embed/9-VNSJGpwII?si=RDFNI0MHSeqZhwMk"
+                                        title="Loopin Product Walkthrough" frameborder="0"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen
+                                        class="phone-video">
+                                    </iframe>
+
+                                    <!-- Home indicator -->
+                                    <div class="phone-home-bar"></div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </section>
+
+            <style>
+                /* ── Phone Mockup Showcase ─────────────────────────── */
+                .phone-mockup-showcase {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    padding: 40px 20px 60px;
+                }
+
+                .phone-shell {
+                    position: relative;
+                    width: min(320px, 80vw);
+                    background: #1a1a1a;
+                    border-radius: 52px;
+                    padding: 14px;
+                    box-shadow:
+                        0 0 0 2px #3a3a3a,
+                        0 0 0 4px #111,
+                        0 40px 80px rgba(0, 0, 0, 0.35),
+                        0 20px 40px rgba(0, 0, 0, 0.25),
+                        0 8px 16px rgba(0, 0, 0, 0.15),
+                        0 0 60px rgba(251, 84, 0, 0.06);
+                    transition: transform 0.5s ease, box-shadow 0.5s ease;
+                }
+
+                .phone-shell:hover {
+                    transform: translateY(-6px) scale(1.01);
+                    box-shadow:
+                        0 0 0 2px #3a3a3a,
+                        0 0 0 4px #111,
+                        0 60px 100px rgba(0, 0, 0, 0.4),
+                        0 30px 50px rgba(0, 0, 0, 0.3),
+                        0 10px 20px rgba(0, 0, 0, 0.15),
+                        0 0 80px rgba(251, 84, 0, 0.1);
+                }
+
+                /* Volume buttons (left side) */
+                .phone-btn-volume-up,
+                .phone-btn-volume-down {
+                    position: absolute;
+                    left: -4px;
+                    width: 4px;
+                    border-radius: 2px 0 0 2px;
+                    background: #2e2e2e;
+                }
+
+                .phone-btn-volume-up {
+                    top: 120px;
+                    height: 36px;
+                }
+
+                .phone-btn-volume-down {
+                    top: 170px;
+                    height: 36px;
+                }
+
+                /* Power button (right side) */
+                .phone-btn-power {
+                    position: absolute;
+                    right: -4px;
+                    top: 140px;
+                    width: 4px;
+                    height: 56px;
+                    border-radius: 0 2px 2px 0;
+                    background: #2e2e2e;
+                }
+
+                /* Screen */
+                .phone-screen {
+                    position: relative;
+                    background: #000;
+                    border-radius: 42px;
+                    overflow: hidden;
+                    aspect-ratio: 9 / 19.5;
+                    display: flex;
+                    flex-direction: column;
+                }
+
+                /* Notch / Dynamic Island */
+                .phone-notch {
+                    position: absolute;
+                    top: 10px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    z-index: 10;
+                    background: #000;
+                    border-radius: 20px;
+                    padding: 6px 12px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+
+                .phone-notch-inner {
+                    display: flex;
+                    align-items: center;
+                    gap: 8px;
+                }
+
+                .phone-camera {
+                    width: 10px;
+                    height: 10px;
+                    border-radius: 50%;
+                    background: #1c1c1e;
+                    border: 2px solid #2a2a2c;
+                }
+
+                .phone-speaker {
+                    width: 52px;
+                    height: 6px;
+                    border-radius: 3px;
+                    background: #1c1c1e;
+                }
+
+                /* Video fills the screen */
+                .phone-video {
+                    width: 100%;
+                    flex: 1;
+                    display: block;
+                    border: none;
+                    pointer-events: auto;
+                }
+
+                /* Home indicator */
+                .phone-home-bar {
+                    position: absolute;
+                    bottom: 8px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    width: 36%;
+                    height: 5px;
+                    background: rgba(255, 255, 255, 0.35);
+                    border-radius: 3px;
+                    z-index: 10;
+                }
+
+                /* Responsive scale-down */
+                @media (max-width: 480px) {
+                    .phone-shell {
+                        width: min(270px, 78vw);
+                        border-radius: 44px;
+                        padding: 10px;
+                    }
+
+                    .phone-screen {
+                        border-radius: 36px;
+                    }
+
+                    .phone-notch {
+                        top: 8px;
+                    }
+                }
+            </style>
 
             <!-- My Role Section -->
             <section class="section-spacing">
