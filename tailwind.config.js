@@ -7,10 +7,10 @@ module.exports = {
                 primary: '#6366f1',
                 accent: '#a855f7',
                 secondary: '#14b8a6',
-                'text-main': '#111827',
+                'text-main': '#1D1D1F',
                 'text-muted': '#6b7280',
                 'bg-dark': '#ffffff',
-                'bg-card': '#f8f9fa',
+                'bg-card': '#FBFBFB',
                 border: 'rgba(0, 0, 0, 0.08)',
             },
             fontFamily: {
@@ -23,6 +23,8 @@ module.exports = {
                 sm: '0 2px 8px rgba(0, 0, 0, 0.08)',
                 md: '0 4px 16px rgba(0, 0, 0, 0.12)',
                 lg: '0 8px 32px rgba(0, 0, 0, 0.16)',
+                elevation: '0 10px 30px rgba(0, 0, 0, 0.05)',
+                'elevation-hover': '0 20px 40px rgba(0, 0, 0, 0.08)',
             },
             spacing: {
                 'xs': '0.5rem',
