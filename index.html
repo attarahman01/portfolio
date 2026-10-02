@@ -1,432 +1,962 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Atta Rahman | Product Designer & UX Specialist</title>
+    <title>Atta Rahman | Product Designer</title>
     <meta name="description"
-        content="Atta Rahman is a Product Designer based in Vancouver, specializing in UI/UX design, design systems, and user-centered digital experiences.">
+        content="Atta Rahman is a Product Designer crafting clear, thoughtful digital experiences across software systems, mobile apps, and AI interfaces. Based in Vancouver, Canada.">
+    <meta name="keywords"
+        content="Atta Rahman, Product Designer, UI/UX Designer, Visual Design, Design Systems, AI Design, Vancouver">
+    <meta property="og:title" content="Atta Rahman | Product Designer">
+    <meta property="og:description"
+        content="Mechanical Engineer turned Product Designer crafting clear, thoughtful digital experiences. Based in Vancouver, Canada.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://attarahman.com/">
 
-    <!-- Google Fonts -->
+    <!-- Preconnect Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Modern Design Fonts: Bricolage Grotesque + Geist + Plus Jakarta Sans + JetBrains Mono -->
     <link
-        href="https://fonts.googleapis.com/css2?family=Antonio:wght@100..700&family=Baumans&family=Inter:wght@300;400;500;600;700&family=Lexend:wght@100..900&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Geist:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
         rel="stylesheet">
 
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/logo-dark.png">
+    <link rel="shortcut icon" href="images/logo-dark.png">
 
-    <!-- Custom CSS (Tailwind Output) -->
-    <link rel="stylesheet" href="CSS/output.css">
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@1" type="module"></script>
-    <script src="JS/script.js"></script>
+    <!-- Stylesheet (Tailwind v4) -->
+    <link rel="stylesheet" href="CSS/output.css?v=58">
+
+    <!-- Shared Navigation & Footer injection -->
+    <script src="JS/components.js?v=57" defer></script>
+    <!-- Core Page Interactions -->
+    <script src="JS/script.js?v=57" defer></script>
 </head>
 
-<body>
+<body class="bg-white text-slate-900 antialiased selection:bg-slate-900 selection:text-white"
+    style="font-family:'Geist','Plus Jakarta Sans',sans-serif;">
 
-    <!-- Sticky Navigation -->
-    <header class="header !p-0 !h-auto">
-        <nav
-            class="relative w-full bg-white/50 backdrop-blur-md after:pointer-events-none after:absolute after:inset-x-0 after:bottom-0 after:h-px after:bg-black/10 z-[1000]">
-            <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-12">
-                <div class="relative flex h-20 items-center justify-between">
-                    <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
-                        <!-- Mobile menu button-->
-                        <button type="button" command="--toggle" commandfor="mobile-menu"
-                            class="relative inline-flex items-center justify-center rounded-md p-2 text-text-muted hover:bg-primary/5 hover:text-primary focus:outline-2 focus:-outline-offset-1 focus:outline-primary">
-                            <span class="absolute -inset-0.5"></span>
-                            <span class="sr-only">Open main menu</span>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
-                                data-slot="icon" aria-hidden="true" class="size-6 in-aria-expanded:hidden">
-                                <path d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" stroke-linecap="round"
+    <!-- Navigation (Auto-Hiding Fixed Pill — Revealed on scroll up, hidden on scroll down) -->
+    <div id="site-nav">
+        <header class="fixed top-3 sm:top-4 inset-x-0 z-[1000] flex justify-center px-4 sm:px-6 pointer-events-none"
+            id="site-header">
+            <div class="relative w-full max-w-xl md:max-w-[1240px] flex flex-col items-center">
+                <nav class="nav-floating-pill pointer-events-auto flex items-center justify-between w-full px-4 sm:px-6 md:px-8 py-2 md:py-3 h-14 sm:h-16 rounded-full"
+                    aria-label="Primary Navigation">
+
+                    <!-- Brand / Logo (Left) -->
+                    <div class="flex items-center md:flex-1 md:justify-start">
+                        <a href="index.html" class="flex items-center group" aria-label="Atta Rahman — Home">
+                            <img src="images/logo-dark-contrast.webp" alt="atta"
+                                class="h-5 sm:h-6 w-auto object-contain transition-opacity group-hover:opacity-75">
+                        </a>
+                    </div>
+
+                    <!-- Desktop Nav Links (Center) -->
+                    <div class="hidden md:flex items-center justify-center gap-10 md:flex-1">
+                        <a href="#work" id="nav-work" class="nav-link">Work</a>
+                        <a href="about.html" id="nav-about" class="nav-link">About</a>
+                        <a href="#contact" id="nav-contact" class="nav-link">Contact</a>
+                    </div>
+
+                    <!-- Right: Resume Button -->
+                    <div class="hidden md:flex items-center md:flex-1 md:justify-end">
+                        <a href="assets/Atta_Rahman_Resume.pdf"
+                            target="_blank" rel="noopener noreferrer"
+                            class="btn btn-primary !py-2 !px-4.5 !text-xs !font-medium" aria-label="View Resume PDF">
+                            <span>Resume</span>
+                            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.75"
+                                aria-hidden="true" width="11" height="11">
+                                <path d="M6 3H3v10h10v-3M10 2h4m0 0v4m0-4L6 10" stroke-linecap="round"
                                     stroke-linejoin="round" />
                             </svg>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
-                                data-slot="icon" aria-hidden="true" class="size-6 not-in-aria-expanded:hidden">
+                        </a>
+                    </div>
+
+                    <!-- Mobile Controls -->
+                    <div class="flex items-center gap-2 md:hidden">
+                        <a href="assets/Atta_Rahman_Resume.pdf"
+                            target="_blank" rel="noopener noreferrer"
+                            class="btn btn-primary !py-1.5 !px-3 !text-xs !font-medium" aria-label="View Resume PDF">
+                            Resume ↗
+                        </a>
+                        <button type="button" id="mobile-menu-btn"
+                            class="inline-flex items-center justify-center p-2 rounded-full text-slate-900 hover:bg-black/5 transition-colors cursor-pointer"
+                            aria-label="Toggle Navigation Menu" aria-expanded="false"
+                            aria-controls="mobile-menu-drawer">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"
+                                aria-hidden="true" class="w-6 h-6 icon-menu">
+                                <path d="M3.75 7.5h16.5M3.75 12h16.5m-16.5 4.5h16.5" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"
+                                aria-hidden="true" class="w-6 h-6 icon-close hidden">
                                 <path d="M6 18 18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" />
                             </svg>
                         </button>
                     </div>
-                    <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
-                        <div class="flex shrink-0 items-center">
-                            <a href="index.html" class="logo group" aria-label="Atta Rahman Portfolio Home">
-                                <span class="group-hover:text-primary transition-colors">Atta.</span>
-                            </a>
-                        </div>
-                        <div class="hidden sm:ml-10 sm:block">
-                            <div class="flex space-x-8">
-                                <a href="index.html"
-                                    class="text-text-main font-medium hover:text-primary transition-colors py-2">Home</a>
-                                <a href="about.html"
-                                    class="text-text-main font-medium hover:text-primary transition-colors py-2">About</a>
-                                <a href="projects.html"
-                                    class="text-text-main font-medium hover:text-primary transition-colors py-2">Portfolio</a>
-                                <a href="index.html#contact"
-                                    class="text-text-main font-medium hover:text-primary transition-colors py-2">Contact</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div
-                        class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-                        <a href="https://drive.google.com/file/d/1zv_Ai-XOlH-R0xOE9M2oAXe98I34TUYf/view?usp=sharing"
-                            target="_blank" rel="noopener noreferrer"
-                            class="btn btn-secondary !py-2 !px-6 text-sm hidden sm:block"
-                            aria-label="View Resume">Resume</a>
+                </nav>
 
-                        <!-- Profile image -->
-                        <div class="relative ml-4">
-                            <img src="./images/profile_new.webp" alt=""
-                                class="size-8 rounded-full bg-bg-card outline -outline-offset-1 outline-border" />
+                <!-- Mobile Drawer -->
+                <div id="mobile-menu-drawer"
+                    class="hidden md:hidden pointer-events-auto w-full mt-2 rounded-3xl nav-floating-pill px-6 py-6 shadow-2xl animate-fade-up">
+                    <div class="flex flex-col space-y-3">
+                        <a href="#work"
+                            class="mobile-nav-item block py-2.5 text-lg font-medium text-slate-700 hover:text-blue-900 transition-colors">Work</a>
+                        <a href="about.html"
+                            class="mobile-nav-item block py-2.5 text-lg font-medium text-slate-700 hover:text-blue-900 transition-colors">About</a>
+                        <a href="#contact"
+                            class="mobile-nav-item block py-2.5 text-lg font-medium text-slate-700 hover:text-blue-900 transition-colors">Contact</a>
+                        <div class="pt-4 border-t border-slate-200/60 mt-2 flex flex-col gap-3">
+                            <a href="assets/Atta_Rahman_Resume.pdf"
+                                target="_blank" rel="noopener noreferrer"
+                                class="btn btn-primary w-full text-center py-2.5 text-xs font-medium"
+                                aria-label="View Resume PDF">View Resume (PDF) ↗</a>
                         </div>
                     </div>
                 </div>
             </div>
-
-            <el-disclosure id="mobile-menu" hidden
-                class="block sm:hidden bg-white/95 backdrop-blur-xl border-t border-border">
-                <div class="space-y-4 px-6 pt-6 pb-8">
-                    <a href="index.html"
-                        class="block text-2xl font-medium text-text-main hover:text-primary transition-colors">Home</a>
-                    <a href="about.html"
-                        class="block text-2xl font-medium text-text-main hover:text-primary transition-colors">About</a>
-                    <a href="projects.html"
-                        class="block text-2xl font-medium text-text-main hover:text-primary transition-colors">Portfolio</a>
-                    <a href="index.html#contact"
-                        class="block text-2xl font-medium text-text-main hover:text-primary transition-colors">Contact</a>
-                    <div class="pt-4 border-t border-border mt-6">
-                        <a href="https://drive.google.com/file/d/1zv_Ai-XOlH-R0xOE9M2oAXe98I34TUYf/view?usp=sharing"
-                            target="_blank" rel="noopener noreferrer" class="btn btn-primary w-full text-center"
-                            aria-label="View Resume">Resume</a>
-                    </div>
-                </div>
-            </el-disclosure>
-        </nav>
-    </header>
+        </header>
+    </div>
 
     <main>
-        <!-- Hero Section -->
+        <!-- ══════════════════════════════════════════════════════════════════ -->
+        <!-- 1. HERO SECTION: Centered, Refined Modern Hierarchy                 -->
+        <!-- ══════════════════════════════════════════════════════════════════ -->
         <section id="hero"
-            class="relative min-h-screen flex flex-col items-center justify-center text-center px-6 pt-20 overflow-hidden">
-            <div class="hero-content relative z-10 max-w-4xl flex flex-col items-center">
-                <span
-                    class="greeting text-accent font-semibold tracking-[0.3em] uppercase text-sm mb-6 animate-fade-in-down">Hello,
-                    I'm</span>
-                <h1
-                    class="name text-[clamp(4rem,10vw,8rem)] font-black leading-[0.9] uppercase tracking-tighter mb-6 bg-gradient-to-br from-primary to-accent text-transparent bg-clip-text animate-fade-in-up">
-                    Atta Rahman</h1>
-                <h2
-                    class="text-2xl lg:text-3xl font-semibold mb-8 text-center text-text-main animate-fade-in-up max-w-3xl">
-                    "Mechanical Engineer turned UI/UX Designer who bridges structural logic with human-centered design."
-                </h2>
-                <p
-                    class="hero-desc text-xl lg:text-2xl text-text-muted max-w-3xl mx-auto mb-10 leading-relaxed animate-fade-in-up">
-                    Research. Design. Prototype. Transforming complex system logic into intuitive experiences for real
-                    people.</p>
-                <div class="cta-group flex flex-wrap justify-center gap-4 mb-16 animate-fade-in-up">
-                    <a href="#work"
-                        class="btn bg-gradient-to-br from-primary to-accent text-white shadow-lg shadow-primary/20">View
-                        Work</a>
-                    <a href="#contact" class="btn btn-secondary">Let's Talk</a>
-                </div>
-                <!--<div class="relative w-full aspect-[16/10] rounded-[2.5rem] overflow-hidden shadow-2xl reveal">
-                    <img src="images/receiptly_extra.webp" alt="Atta Rahman - Product Designer based in Vancouver"
-                        class="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-700"
-                        loading="lazy" width="600" height="600">
-                </div>-->
-            </div>
-            <div class="hero-visual absolute inset-0 pointer-events-none">
-                <!-- Abstract Blobs -->
-                <div class="blob absolute rounded-full blur-[100px] opacity-20 animate-blob-float w-[500px] h-[500px] bg-gradient-to-br from-primary to-accent top-[15%] right-[10%] bg-cover bg-center"
-                    style="background-image: url('images/receiptly_header.webp');">
-                </div>
-                <div
-                    class="blob absolute rounded-full blur-[100px] opacity-20 animate-blob-float w-[350px] h-[350px] bg-gradient-to-br from-secondary to-accent bottom-[20%] left-[15%] animation-delay-2000">
-                </div>
-            </div>
-            <div
-                class="scroll-down absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-sm text-text-muted animate-fade-scroll">
-                <span>Scroll</span>
-                <i class="fa-solid fa-arrow-down-long"></i>
-            </div>
-        </section>
+            class="relative z-10 pt-24 pb-2 sm:pt-28 sm:pb-2 md:pt-32 md:pb-2 lg:pt-36 lg:pb-2 bg-white overflow-hidden">
+            <div class="relative z-10 max-w-[1400px] mx-auto px-5 sm:px-6 lg:px-8 text-center">
+                <div class="flex flex-col items-center mx-auto w-full max-w-[1400px]">
 
-        <!-- About Section -->
-        <section id="about" class="py-24 lg:py-32">
-            <div class="max-w-6xl mx-auto px-6 lg:px-12">
-                <div
-                    class="p-6 md:p-10 lg:p-20 bg-gray-50 rounded-[2rem] md:rounded-[3rem] border border-border reveal">
-                    <div class="flex flex-col gap-10 md:gap-16">
-                        <div class="text-center space-y-6">
-                            <h2
-                                class="flex items-center justify-center gap-4 text-3xl lg:text-4xl font-bold text-primary">
-                                <i class="fa-regular fa-user" aria-hidden="true"></i>About Me
-                            </h2>
-                        </div>
-                        <div class="grid lg:grid-cols-2 gap-10 md:gap-16 lg:gap-24 items-center">
-                            <div class="about-image group">
-                                <div
-                                    class="image-wrapper relative rounded-[2.5rem] overflow-hidden shadow-2xl transition-transform duration-500 group-hover:scale-[1.02]">
-                                    <img src="images/profile_new.webp"
-                                        alt="Atta Rahman - Product Designer based in Vancouver"
-                                        class="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-700"
-                                        loading="lazy" width="600" height="600">
-                                    <div
-                                        class="absolute inset-0 bg-gradient-to-tr from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="about-text">
-                                <h3 class="text-2xl lg:text-3xl font-bold mb-8 leading-tight text-text-main"><i
-                                        class="fa-regular fa-user" aria-hidden="true"></i>UI/UX Designer based
-                                    in Vancouver</h3>
-                                <div class="space-y-6 text-lg text-text-muted leading-relaxed">
-                                    <p><strong class="text-text-main">I'm a Mechanical Engineer turned UI/UX Designer
-                                            who bridges structural logic with human-centered design.</strong> I
-                                        specialize in UI/UX design, visual systems, and
-                                        translating complex user needs into intuitive, accessible interfaces.</p>
-                                    <p>With a Postgraduate Diploma in Web and Mobile App Design from Langara College, I
-                                        bring both design thinking and technical understanding to every project.</p>
-                                    <p>When I'm not designing, you'll find me gaming, sketching, or exploring
-                                        Vancouver's creative scene.</p>
-                                </div>
 
-                                <div class="mt-12 flex flex-wrap gap-4">
-                                    <a href="https://drive.google.com/file/d/1zv_Ai-XOlH-R0xOE9M2oAXe98I34TUYf/view?usp=sharing"
-                                        target="_blank" rel="noopener noreferrer"
-                                        class="btn bg-gradient-to-br from-primary to-accent text-white shadow-lg shadow-primary/20 group"><span>View
-                                            Resume</span><i
-                                            class="fa-solid fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
 
-        <!-- Services Section -->
-        <section id="services" class="section-spacing mb-10">
-            <div class="container">
-                <div
-                    class="p-6 md:p-10 lg:p-20 bg-gray-50 rounded-[2rem] md:rounded-[3rem] border border-border reveal">
-                    <div class="max-w-6xl mx-auto flex flex-col gap-8 md:gap-10">
-                        <h2
-                            class="flex items-center justify-center gap-4 text-3xl lg:text-4xl font-bold text-[#6366f1] text-center">
-                            <i class="fa-regular fa-star" aria-hidden="true"></i>What I Do
-                        </h2>
-                        <div class="grid md:grid-cols-3 gap-6">
-                            <div
-                                class="p-8 bg-white rounded-3xl border-t-4 border-[#6366f1] shadow-sm hover:shadow-md transition-all duration-300">
-                                <div class="text-[#6366f1] text-2xl mb-4"><i class="fa-solid fa-pen-ruler"></i></div>
-                                <h3 class="text-xl font-bold text-gray-900 mb-3">Product Design</h3>
-                                <p class="text-gray-600 text-sm leading-relaxed">I transform ideas into polished,
-                                    user-tested products from research and wireframes to high-fidelity prototypes that
-                                    drive measurable engagement.</p>
-                            </div>
-                            <div
-                                class="p-8 bg-white rounded-3xl border-t-4 border-[#6366f1] shadow-sm hover:shadow-md transition-all duration-300">
-                                <div class="text-[#6366f1] text-2xl mb-4"><i class="fa-solid fa-layer-group"></i></div>
-                                <h3 class="text-xl font-bold text-gray-900 mb-3">Design Systems</h3>
-                                <p class="text-gray-600 text-sm leading-relaxed">I build scalable design systems that
-                                    ensure visual consistency, accelerate development, and create cohesive brand
-                                    experiences across platforms.</p>
-                            </div>
-                            <div
-                                class="p-8 bg-white rounded-3xl border-t-4 border-[#6366f1] shadow-sm hover:shadow-md transition-all duration-300">
-                                <div class="text-[#6366f1] text-2xl mb-4"><i class="fa-solid fa-code"></i></div>
-                                <h3 class="text-xl font-bold text-gray-900 mb-3">Frontend Development</h3>
-                                <p class="text-gray-600 text-sm leading-relaxed">I bring designs to life with clean,
-                                    responsive code bridging the gap between design vision and technical implementation
-                                    with HTML, CSS, and JavaScript.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+                    <!-- H1 Display Name -->
+                    <h1 class="hero-name mb-5 sm:mb-6">
+                        <p class="text-slate-950 text-3xl sm:text-4xl lg:text-1xl">Hi, I'm </p>
+                        <p class="text-[#2F55E6]">Atta Rahman</p>
+                    </h1>
 
-        <!-- Work/Portfolio Section -->
-        <section id="work" class="section-spacing bg-bg-card reveal">
-            <div class="container">
-                <h2 class="section-title text-center mb-12">Featured Work</h2>
+                    <!-- Tagline -->
+                    <p class="hero-tagline mb-7 sm:mb-8 lg:mb-9 mx-auto">
+                        <span class="font-semibold text-slate-950">Mechanical Engineer turned Product Designer.</span>
+                        Crafting clear, structured digital products.
+                    </p>
 
-                <div class="grid md:grid-cols-2 gap-10">
-                    <!-- Project 1: Loopin -->
-                    <article class="work-item" data-category="ui-ux">
-                        <a href="loopin.html" class="work-card group">
-                            <div class="work-image relative aspect-[4/3]">
-                                <img src="images/loopin_thumb.webp"
-                                    alt="Loopin - App for parents and neurodivergent children"
-                                    class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                                    loading="lazy" width="800" height="600">
-                                <div
-                                    class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
-                                    <span
-                                        class="text-primary font-bold tracking-wider text-sm mb-2 uppercase text-white">UI/UX
-                                        Design</span>
-                                    <h3 class="text-white text-3xl font-bold mb-3">Loopin</h3>
-                                    <p class="text-white/80 line-clamp-2 mb-6 text-sm">Loopin is an app connecting
-                                        parents and neurodivergent children through shared interests</p>
-                                    <span class="flex items-center text-white font-semibold text-sm">
-                                        View Project <i
-                                            class="fa-solid fa-arrow-right ml-2 group-hover:translate-x-2 transition-transform"></i>
-                                    </span>
-                                </div>
-                            </div>
-                        </a>
-                    </article>
-
-                    <!-- Project 2: Receiptly -->
-                    <article class="work-item" data-category="web">
-                        <a href="receiptly.html" class="work-card group">
-                            <div class="work-image relative aspect-[4/3]">
-                                <img src="images/receiptly_thumb.webp"
-                                    alt="Receiptly - Receipt management and expense tracking platform"
-                                    class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                                    loading="lazy" width="800" height="600">
-                                <div
-                                    class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
-                                    <span
-                                        class="text-primary font-bold tracking-wider text-sm mb-2 uppercase text-white">Web
-                                        Design</span>
-                                    <h3 class="text-white text-3xl font-bold mb-3">Receiptly</h3>
-                                    <p class="text-white/80 line-clamp-2 mb-6 text-sm">Receiptly is a streamlined
-                                        receipt management platform for small businesses</p>
-                                    <span class="flex items-center text-white font-semibold text-sm">
-                                        View Project <i
-                                            class="fa-solid fa-arrow-right ml-2 group-hover:translate-x-2 transition-transform"></i>
-                                    </span>
-                                </div>
-                            </div>
-                        </a>
-                    </article>
-                </div>
-
-                <!-- CTA View More -->
-                <div class="mt-16 flex justify-center">
-                    <a href="projects.html"
-                        class="btn bg-gradient-to-br from-primary to-accent text-white shadow-lg shadow-primary/20 group px-8 py-3 text-sm font-bold tracking-wider">
-                        <span>VIEW MORE</span>
-                        <i class="fa-solid fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                    <!-- Subtle Scroll Cue -->
+                    <a href="#arc-showcase" class="hero-scroll-cue" aria-label="Scroll to selected work">
+                        <span class="hero-scroll-cue-text">Scroll</span>
+                        <svg class="hero-scroll-cue-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor"
+                            stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M8 3v10M4 9l4 4 4-4" />
+                        </svg>
                     </a>
+
                 </div>
             </div>
         </section>
 
-        <!-- Contact Section -->
-        <section id="contact" class="section-spacing bg-white reveal">
-            <div class="container">
-                <div class="max-w-6xl mx-auto flex flex-col lg:flex-row gap-10 md:gap-16 lg:gap-24">
-                    <div class="lg:w-1/2">
-                        <h2 class="text-4xl lg:text-5xl font-bold mb-8 text-text-main leading-tight">Let's create
-                            something<br>meaningful together</h2>
-                        <p class="text-lg text-text-muted mb-12 leading-relaxed">Have a project in mind? I'm always open
-                            to discussing new ideas, creative collaborations, or opportunities to be part of your
-                            vision. Whether you have a specific proposal or just want to chat about design, feel free to
-                            reach out.</p>
-                        <div class="space-y-6">
-                            <div class="flex items-center gap-4 text-lg">
-                                <div
-                                    class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary">
-                                    <i class="fa-solid fa-envelope"></i>
-                                </div>
-                                <a href="mailto:attarahman406@gmail.com"
-                                    class="hover:text-primary transition-colors font-medium">attarahman406@gmail.com</a>
+        <!-- ══════════════════════════════════════════════════════════════════ -->
+        <!-- ARC CAROUSEL: Semicircular revolving project slider with dial ticks -->
+        <!-- ══════════════════════════════════════════════════════════════════ -->
+        <section id="arc-showcase"
+            class="arc-showcase-section scroll-mt-16 relative z-0 bg-white pt-0 pb-14 sm:pb-16 md:pb-20 lg:pb-20 overflow-hidden border-b border-slate-100"
+            aria-label="Selected Projects Carousel">
+            <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
+
+                <!-- Arc Carousel Root (Interactive Drag, Touch-Swipe & Auto-Revolving) -->
+                <div class="arc-carousel-wrapper" id="arc-carousel-root">
+
+                    <!-- Radial Dial / Compass Ticks SVG -->
+                    <svg id="arc-ticks-svg" class="arc-ticks-svg" xmlns="http://www.w3.org/2000/svg"
+                        aria-hidden="true"></svg>
+
+                    <!-- Arc Cards Track (20 revolving project cards with dedicated 3:4 crops) -->
+                    <div class="arc-cards-track" id="arc-cards-track">
+                        <!-- Card 0: Loopin Mobile -->
+                        <a href="loopin.html" class="arc-card" data-index="0"
+                            aria-label="Loopin — UI/UX Mobile App Case Study">
+                            <img src="images/carousel/carousel-loopin-1.webp"
+                                alt="Loopin Mobile App High-Fidelity Mockup" loading="eager" draggable="false">
+                        </a>
+                        <!-- Card 1: Veura Luxury Fragrance -->
+                        <a href="veura.html" class="arc-card" data-index="1"
+                            aria-label="Veura — Luxury Fragrance Design System">
+                            <img src="images/carousel/carousel-veura-1.webp"
+                                alt="Veura Luxury Fragrance Bottle Presentation" loading="eager" draggable="false">
+                        </a>
+                        <!-- Card 2: Receiptly Financial Dashboard -->
+                        <a href="receiptly.html" class="arc-card" data-index="2"
+                            aria-label="Receiptly — Financial Management Dashboard">
+                            <img src="images/carousel/carousel-receiptly-1.webp"
+                                alt="Receiptly Financial Management Dashboard" loading="eager" draggable="false">
+                        </a>
+                        <!-- Card 3: Rahmani Wine Packaging -->
+                        <a href="rahmani-wine.html" class="arc-card" data-index="3"
+                            aria-label="Rahmani Wine — Premium Packaging Case Study">
+                            <img src="images/carousel/carousel-rahmani-1.webp" alt="Rahmani Premium Wine Packaging"
+                                loading="eager" draggable="false">
+                        </a>
+                        <!-- Card 4: MemoTrip Travel Companion -->
+                        <a href="memotrip.html" class="arc-card" data-index="4"
+                            aria-label="MemoTrip — Travel Companion Interface">
+                            <img src="images/carousel/carousel-memotrip-1.webp"
+                                alt="MemoTrip Travel Companion Interface" loading="eager" draggable="false">
+                        </a>
+                        <!-- Card 5: Loopin Routine Builder -->
+                        <a href="loopin.html" class="arc-card" data-index="5"
+                            aria-label="Loopin — Routine Builder and Mood Tracker">
+                            <img src="images/carousel/carousel-loopin-2.webp"
+                                alt="Loopin Calming Tools & Routine Builder" loading="eager" draggable="false">
+                        </a>
+                        <!-- Card 6: Receiptly Receipt Scanner -->
+                        <a href="receiptly.html" class="arc-card" data-index="6"
+                            aria-label="Receiptly — Mobile Expense Capture Scanner">
+                            <img src="images/carousel/carousel-receiptly-2.webp"
+                                alt="Receiptly Mobile Receipt Capture Scanner" loading="eager" draggable="false">
+                        </a>
+                        <!-- Card 7: Veura Bespoke Packaging -->
+                        <a href="veura.html" class="arc-card" data-index="7"
+                            aria-label="Veura — Bespoke Packaging Presentation">
+                            <img src="images/carousel/carousel-veura-2.webp"
+                                alt="Veura Bespoke Fragrance Box Presentation" loading="eager" draggable="false">
+                        </a>
+                        <!-- Card 8: Rahmani Wine Heritage -->
+                        <a href="rahmani-wine.html" class="arc-card" data-index="8"
+                            aria-label="Rahmani Wine — Heritage Typography and Labels">
+                            <img src="images/carousel/carousel-rahmani-2.webp"
+                                alt="Rahmani Wine Heritage Label Showcase" loading="eager" draggable="false">
+                        </a>
+                        <!-- Card 9: MemoTrip Travel App Flows -->
+                        <a href="memotrip.html" class="arc-card" data-index="9"
+                            aria-label="MemoTrip — Discovery Flow and Saved Trips">
+                            <img src="images/carousel/carousel-memotrip-2.webp" alt="MemoTrip Travel App UI Flows"
+                                loading="eager" draggable="false">
+                        </a>
+                        <!-- Card 10: Loopin Design Tokens -->
+                        <a href="loopin.html" class="arc-card" data-index="10"
+                            aria-label="Loopin — Design Tokens and Mood System">
+                            <img src="images/carousel/carousel-loopin-1.webp" alt="Loopin Design System Overview"
+                                loading="eager" draggable="false">
+                        </a>
+                        <!-- Card 11: Veura Brand Presentation -->
+                        <a href="veura.html" class="arc-card" data-index="11" aria-label="Veura — Brand Presentation">
+                            <img src="images/carousel/carousel-veura-1.webp" alt="Veura Brand Presentation"
+                                loading="eager" draggable="false">
+                        </a>
+                        <!-- Card 12: Receiptly Expense Analytics -->
+                        <a href="receiptly.html" class="arc-card" data-index="12"
+                            aria-label="Receiptly — Expense Analytics">
+                            <img src="images/carousel/carousel-receiptly-1.webp" alt="Receiptly Expense Analytics"
+                                loading="eager" draggable="false">
+                        </a>
+                        <!-- Card 13: Rahmani Wine Craft -->
+                        <a href="rahmani-wine.html" class="arc-card" data-index="13"
+                            aria-label="Rahmani Wine — Craftsmanship">
+                            <img src="images/carousel/carousel-rahmani-1.webp" alt="Rahmani Wine Packaging Detail"
+                                loading="eager" draggable="false">
+                        </a>
+                        <!-- Card 14: MemoTrip Travel Interface -->
+                        <a href="memotrip.html" class="arc-card" data-index="14"
+                            aria-label="MemoTrip — Interface Details">
+                            <img src="images/carousel/carousel-memotrip-1.webp" alt="MemoTrip Interface Detail"
+                                loading="eager" draggable="false">
+                        </a>
+                        <!-- Card 15: Loopin Child Interface -->
+                        <a href="loopin.html" class="arc-card" data-index="15" aria-label="Loopin — Child Centric UI">
+                            <img src="images/carousel/carousel-loopin-2.webp" alt="Loopin Routine Tools" loading="eager"
+                                draggable="false">
+                        </a>
+                        <!-- Card 16: Receiptly Flow -->
+                        <a href="receiptly.html" class="arc-card" data-index="16"
+                            aria-label="Receiptly — Fast Flow Scanner">
+                            <img src="images/carousel/carousel-receiptly-2.webp" alt="Receiptly Scanner Screen"
+                                loading="eager" draggable="false">
+                        </a>
+                        <!-- Card 17: Veura Box Details -->
+                        <a href="veura.html" class="arc-card" data-index="17" aria-label="Veura — Bespoke Packaging">
+                            <img src="images/carousel/carousel-veura-2.webp" alt="Veura Box Detail" loading="eager"
+                                draggable="false">
+                        </a>
+                        <!-- Card 18: Rahmani Heritage Print -->
+                        <a href="rahmani-wine.html" class="arc-card" data-index="18"
+                            aria-label="Rahmani Wine — Heritage Print">
+                            <img src="images/carousel/carousel-rahmani-2.webp" alt="Rahmani Heritage Print"
+                                loading="eager" draggable="false">
+                        </a>
+                        <!-- Card 19: MemoTrip City Discovery -->
+                        <a href="memotrip.html" class="arc-card" data-index="19" aria-label="MemoTrip — City Discovery">
+                            <img src="images/carousel/carousel-memotrip-2.webp" alt="MemoTrip City Discovery"
+                                loading="eager" draggable="false">
+                        </a>
+                    </div>
+
+                    <!-- Centered Content in the Middle of the Arc -->
+                    <div class="arc-center-content text-center pt-[50px]" id="arc-center-content" style="padding-top: 50px;">
+
+                        <h2
+                            class="text-3xl sm:text-4xl lg:text-[42px] font-semibold text-slate-950 tracking-tight leading-[1.15] mb-3">
+                            Crafted with Intent
+                        </h2>
+                        <p class="text-sm sm:text-base text-slate-600 max-w-md mx-auto leading-relaxed mb-6">
+                            Digital products, mobile systems, and AI interfaces engineered with precision.
+                        </p>
+
+
+                        <!-- Arc Carousel Controls: Left/Right Arrow Buttons & Drag Hint -->
+                        <div class="flex items-center justify-center gap-3 mt-6">
+                            <button type="button" id="arc-prev-btn" class="arc-control-btn"
+                                aria-label="Previous Project" title="Previous Project">
+                                <svg width="14" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor"
+                                    stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M10 13L5 8l5-5" />
+                                </svg>
+                            </button>
+                            <div
+                                class="flex items-center gap-1.5 text-[11px] font-mono tracking-wider text-slate-500 uppercase bg-slate-100/80 px-2.5 py-1 rounded-full border border-slate-200/60">
+                                <svg width="12" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M7 16l-4-4m0 0l4-4m-4 4h18m-4 4l4-4m0 0l-4-4" />
+                                </svg>
+                                <span>Drag or Use Arrows</span>
                             </div>
-                            <div class="flex items-center gap-4 text-lg">
-                                <div
-                                    class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary">
-                                    <i class="fa-solid fa-location-dot"></i>
+                            <button type="button" id="arc-next-btn" class="arc-control-btn" aria-label="Next Project"
+                                title="Next Project">
+                                <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor"
+                                    stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M6 3l5 5-5 5" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ══════════════════════════════════════════════════════════════════ -->
+        <!-- 2. SELECTED WORK SECTION: Side-by-Side 2-Column Studio Grid        -->
+        <!-- ══════════════════════════════════════════════════════════════════ -->
+        <section id="work" class="py-20 lg:py-28 bg-[#FBFBFA] border-b border-slate-200/70">
+            <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
+
+                <!-- Section Header (Centralized) -->
+                <div class="mb-10 pb-6 border-b border-slate-200/80 text-center max-w-2xl mx-auto">
+
+                    <h2 class="text-3xl sm:text-4xl lg:text-5xl font-semibold text-slate-950 tracking-tight mb-3">
+                        Selected Work</h2>
+                    <p class="text-base sm:text-lg text-slate-600 leading-relaxed mx-auto">
+                        Deep-dive into some of my product case studies, branding systems, and visual design craft.
+                    </p>
+                </div>
+
+                <!-- Category Filters -->
+                <div class="flex flex-wrap justify-center gap-2.5 sm:gap-3 mb-12 filter-container">
+                    <button class="filter-btn active" data-filter="all">All Projects</button>
+                    <button class="filter-btn" data-filter="ui-ux">UI/UX Design</button>
+                    <button class="filter-btn" data-filter="graphic">Graphic Design</button>
+                    <button class="filter-btn" data-filter="branding">Branding</button>
+                </div>
+
+                <!-- RESPONSIVE PROJECT CARDS GRID (Desktop: 3 cols, Tablet: 2 cols, Mobile: 1 col) -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7 lg:gap-8 projects-responsive-grid"
+                    id="index-projects-grid">
+
+                    <!-- PROJECT 1: Loopin -->
+                    <a href="loopin.html" class="project-card group" data-category="ui-ux"
+                        aria-label="Loopin — UI/UX Design Case Study">
+                        <div class="project-card-visual">
+                            <img src="images/cards/card-loopin.webp"
+                                alt="Loopin — Mobile App for neurodivergent children routines"
+                                class="project-card-image" loading="lazy" width="960" height="1200">
+                            <div class="project-card-panel">
+                                <div class="project-card-meta">
+                                    <span class="project-card-tag">UI/UX Design</span>
                                 </div>
-                                <span class="text-text-main font-medium">Vancouver, BC, Canada</span>
+                                <h3 class="project-card-title">
+                                    Loopin
+                                </h3>
+                                <p class="project-card-desc">
+                                    Web & Mobile App for Neurodivergent children routines & emotional connection. </p>
                             </div>
                         </div>
-                        <div class="flex gap-4 mt-12">
+                    </a>
+
+                    <!-- PROJECT 2: Receiptly -->
+                    <a href="receiptly.html" class="project-card group" data-category="ui-ux graphic"
+                        aria-label="Receiptly — UI/UX &amp; Graphic Design Case Study">
+                        <div class="project-card-visual">
+                            <img src="images/cards/card-receiptly.webp"
+                                alt="Receiptly — AI-powered expense tracking platform" class="project-card-image"
+                                loading="lazy" width="960" height="1200">
+                            <div class="project-card-panel">
+                                <div class="project-card-meta">
+                                    <span class="project-card-tag">UI/UX &amp; Graphic Design</span>
+                                </div>
+                                <h3 class="project-card-title">
+                                    Receiptly
+                                </h3>
+                                <p class="project-card-desc">
+                                    AI-powered expense tracking & receipt management for small businesses and
+                                    individuals
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- PROJECT 3: MemoTrip -->
+                    <a href="memotrip.html" class="project-card group" data-category="ui-ux"
+                        aria-label="MemoTrip — UI/UX Design Case Study">
+                        <div class="project-card-visual">
+                            <img src="images/cards/card-memotrip.webp" alt="MemoTrip — Travel Companion App"
+                                class="project-card-image" loading="lazy" width="960" height="1200">
+                            <div class="project-card-panel">
+                                <div class="project-card-meta">
+                                    <span class="project-card-tag">UI/UX Design</span>
+                                </div>
+                                <h3 class="project-card-title">
+                                    MemoTrip
+                                </h3>
+                                <p class="project-card-desc">
+                                    Travel companion app that helps users find new places and share their journey.
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- PROJECT 4: Veura -->
+                    <a href="veura.html" class="project-card group" data-category="branding"
+                        aria-label="Veura — Luxury Fragrance Branding Case Study">
+                        <div class="project-card-visual">
+                            <img src="images/cards/card-veura.webp" alt="Veura — Luxury Fragrance Identity"
+                                class="project-card-image" loading="lazy" width="960" height="1200">
+                            <div class="project-card-panel">
+                                <div class="project-card-meta">
+                                    <span class="project-card-tag">Branding</span>
+                                </div>
+                                <h3 class="project-card-title">
+                                    Veura
+                                </h3>
+                                <p class="project-card-desc">
+                                    Veura is a luxury fragrance brand.
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- PROJECT 5: Rahmani -->
+                    <a href="rahmani-wine.html" class="project-card group" data-category="branding"
+                        aria-label="Rahmani — Premium Non-Alcoholic Wine Packaging">
+                        <div class="project-card-visual">
+                            <img src="images/cards/card-rahmani.webp"
+                                alt="Rahmani — Premium Non-Alcoholic Wine Packaging" class="project-card-image"
+                                loading="lazy" width="960" height="1200">
+                            <div class="project-card-panel">
+                                <div class="project-card-meta">
+                                    <span class="project-card-tag">Branding</span>
+                                </div>
+                                <h3 class="project-card-title">
+                                    Rahmani
+                                </h3>
+                                <p class="project-card-desc">
+                                    Brand identity and packaging design for a premium non-alcoholic wine.
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- PROJECT 6: Wildlife Warning Poster -->
+                    <a href="images/graphic design/Wildlife Warning Poster.webp" target="_blank"
+                        rel="noopener noreferrer" class="project-card group lightbox-trigger" data-category="graphic"
+                        data-src="images/graphic design/Wildlife Warning Poster.webp"
+                        data-caption="Wildlife Warning Poster — Graphic Design &amp; Urgency Illustration"
+                        aria-label="Wildlife Warning Poster — Graphic Design">
+                        <div class="project-card-visual">
+                            <img src="images/graphic design/Wildlife Warning Poster.webp" alt="Wildlife Warning Poster"
+                                class="project-card-image" loading="lazy" width="960" height="1200">
+                            <div class="project-card-panel">
+                                <div class="project-card-meta">
+                                    <span class="project-card-tag">Graphic Design</span>
+                                </div>
+                                <h3 class="project-card-title">
+                                    Wildlife Warning Poster
+                                </h3>
+                                <p class="project-card-desc">
+                                    a warning sign for protected wildlife areas.
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- PROJECT 7: Fitness Podcast Promotion -->
+                    <a href="images/graphic design/Fitness Podcast Poster.webp" target="_blank"
+                        rel="noopener noreferrer" class="project-card group lightbox-trigger" data-category="graphic"
+                        data-src="images/graphic design/Fitness Podcast Poster.webp"
+                        data-caption="Fitness Podcast Promotion — Graphic Design &amp; Typography"
+                        aria-label="Fitness Podcast Promotion — Graphic Design">
+                        <div class="project-card-visual project-card-visual--contain">
+                            <img src="images/graphic design/Fitness Podcast Poster.webp"
+                                alt="Fitness Podcast Promotion Poster" class="project-card-image project-card-image--contain" loading="lazy"
+                                width="960" height="1200">
+                            <div class="project-card-panel">
+                                <div class="project-card-meta">
+                                    <span class="project-card-tag">Graphic Design</span>
+                                </div>
+                                <h3 class="project-card-title">
+                                    Fitness Podcast Promotion
+                                </h3>
+                                <p class="project-card-desc">
+                                    This is a fitness podcast episode.
+
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- PROJECT 8: Beverage Advertising Poster -->
+                    <a href="images/graphic design/Orange Beverage Advertisement.webp" target="_blank"
+                        rel="noopener noreferrer" class="project-card group lightbox-trigger" data-category="graphic"
+                        data-src="images/graphic design/Orange Beverage Advertisement.webp"
+                        data-caption="Beverage Advertising Poster — Graphic Design &amp; Visual Freshness"
+                        aria-label="Beverage Advertising Poster — Graphic Design">
+                        <div class="project-card-visual project-card-visual--contain">
+                            <img src="images/graphic design/Orange Beverage Advertisement.webp"
+                                alt="Orange Beverage Advertisement Poster" class="project-card-image project-card-image--contain" loading="lazy"
+                                width="960" height="1200">
+                            <div class="project-card-panel">
+                                <div class="project-card-meta">
+                                    <span class="project-card-tag">Graphic Design</span>
+                                </div>
+                                <h3 class="project-card-title">
+                                    Beverage Advertising Poster
+                                </h3>
+                                <p class="project-card-desc">
+                                    This is a product advertisement for an orange flavored beverage.
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- PROJECT 9: City Event Poster -->
+                    <a href="images/graphic design/Vancouver Event Poster.webp" target="_blank"
+                        rel="noopener noreferrer" class="project-card group lightbox-trigger" data-category="graphic"
+                        data-src="images/graphic design/Vancouver Event Poster.webp"
+                        data-caption="City Event Poster — Vancouver Typographic &amp; Editorial Design"
+                        aria-label="City Event Poster — Graphic Design">
+                        <div class="project-card-visual project-card-visual--contain">
+                            <img src="images/graphic design/Vancouver Event Poster.webp"
+                                alt="Vancouver City Event Poster" class="project-card-image project-card-image--contain" loading="lazy" width="960"
+                                height="1200">
+                            <div class="project-card-panel">
+                                <div class="project-card-meta">
+                                    <span class="project-card-tag">Graphic Design</span>
+                                </div>
+                                <h3 class="project-card-title">
+                                    City Event Poster
+                                </h3>
+                                <p class="project-card-desc">
+                                    This is a fictional event poster in Vancouver. </p>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- PROJECT 10: Men's Grooming Product Poster -->
+                    <a href="images/graphic design/Men's Face Wash Product Ad.webp" target="_blank"
+                        rel="noopener noreferrer" class="project-card group lightbox-trigger" data-category="graphic"
+                        data-src="images/graphic design/Men's Face Wash Product Ad.webp"
+                        data-caption="Men's Grooming Product Poster — Product Advertisement Design"
+                        aria-label="Men's Grooming Product Poster — Graphic Design">
+                        <div class="project-card-visual project-card-visual--contain">
+                            <img src="images/graphic design/Men's Face Wash Product Ad.webp"
+                                alt="Men's Grooming Product Face Wash Advertisement Poster" class="project-card-image project-card-image--contain"
+                                loading="lazy" width="960" height="1200">
+                            <div class="project-card-panel">
+                                <div class="project-card-meta">
+                                    <span class="project-card-tag">Graphic Design</span>
+                                </div>
+                                <h3 class="project-card-title">
+                                    Men's Grooming Product Poster
+                                </h3>
+                                <p class="project-card-desc">
+                                    This is a men's facial cleanser product.
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+
+                </div>
+
+            </div>
+        </section>
+
+
+
+        <!-- ══════════════════════════════════════════════════════════════════ -->
+        <!-- 3. SERVICES / CAPABILITIES SECTION: What I Do (Typography-Led)     -->
+        <!-- ══════════════════════════════════════════════════════════════════ -->
+        <section id="services" class="py-20 lg:py-32 bg-[#FBFBFA] border-b border-slate-200/70 overflow-hidden">
+            <div class="max-w-[1380px] mx-auto px-4 sm:px-6 lg:px-8">
+
+                <!-- Section Header -->
+                <div class="text-center max-w-xl mx-auto mb-12 sm:mb-16 lg:mb-20">
+                    <h2 class="text-3xl sm:text-4xl font-semibold text-slate-950 tracking-tight">Where I Add Value</h2>
+                </div>
+
+                <!-- Two-Zone Fanned Card Deck -->
+                <div
+                    class="services-twozone-deck flex flex-col lg:flex-row items-center justify-center max-w-md lg:max-w-[900px] mx-auto gap-8 lg:gap-0 pt-2 pb-6">
+
+                    <!-- CARD 1: Product Design (Center Dominant Lead, 0deg, z-index 10) -->
+                    <div class="deck-twozone-card deck-twozone-card--center" tabindex="0" role="region"
+                        aria-label="Product Design capability">
+
+                        <!-- TOP ZONE: Background Image + Dark Contrast Overlay + Centered Icon & Title -->
+                        <div class="card-top-zone">
+                            <img src="images/cards/card-loopin.webp" alt="" class="card-top-bg-img" loading="lazy"
+                                style="object-position: center 30%;">
+                            <div class="card-top-overlay" aria-hidden="true"></div>
+                            <div class="card-top-content">
+                                <div class="card-top-icon" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"
+                                        stroke-linecap="round" stroke-linejoin="round">
+                                        <rect width="18" height="18" x="3" y="3" rx="2" />
+                                        <path d="M3 9h18" />
+                                        <path d="M9 21V9" />
+                                    </svg>
+                                </div>
+                                <h3 class="card-top-title">
+                                    <span class="heading-text">Product Design</span>
+                                </h3>
+                            </div>
+                        </div>
+
+                        <!-- Divider -->
+                        <div class="card-zone-divider"></div>
+
+                        <!-- BOTTOM ZONE: Light Background, Body, Skill Tags, Bottom Row -->
+                        <div class="card-bottom-zone">
+                            <div class="card-bottom-body">
+                                <p class="card-desc">
+                                    Product discovery, user research, and interaction design. Turning complex
+                                    requirements into intuitive, friction-free workflows.
+                                </p>
+
+                                <div class="card-tag-row" aria-label="Product Design skills">
+                                    <span class="skill-tag-pill">Figma</span>
+                                    <span class="skill-tag-pill">User Research</span>
+                                    <span class="skill-tag-pill">Wireframing</span>
+                                    <span class="skill-tag-pill">Prototyping</span>
+                                </div>
+                            </div>
+
+                            <div class="card-bottom-footer">
+                                <div class="card-bottom-divider"></div>
+                                <div class="card-bottom-row">
+                                    <span class="card-number-pill">01</span>
+                                    <a href="#work" class="card-action-pill" aria-label="Explore Product Design work">
+                                        <span>Explore</span>
+                                        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.75"
+                                            class="w-3 h-3" aria-hidden="true">
+                                            <path d="M4 12L12 4M12 4H6M12 4V10" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CARD 2: Design Systems (Left Flank, -7.5deg, z-index 2) -->
+                    <div class="deck-twozone-card deck-twozone-card--left" tabindex="0" role="region"
+                        aria-label="Design Systems capability">
+
+                        <!-- TOP ZONE: Background Image + Dark Contrast Overlay + Centered Icon & Title -->
+                        <div class="card-top-zone">
+                            <img src="images/projects/memotrip/Component Slides.webp" alt="" class="card-top-bg-img"
+                                loading="lazy" style="object-position: center 40%;">
+                            <div class="card-top-overlay" aria-hidden="true"></div>
+                            <div class="card-top-content">
+                                <div class="card-top-icon" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"
+                                        stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M5.5 8.5 9 12l-3.5 3.5L2 12l3.5-3.5Z" />
+                                        <path d="m12 2 3.5 3.5L12 9 8.5 5.5 12 2Z" />
+                                        <path d="M18.5 8.5 22 12l-3.5 3.5L15 12l3.5-3.5Z" />
+                                        <path d="m12 15 3.5 3.5L12 22l-3.5-3.5L12 15Z" />
+                                    </svg>
+                                </div>
+                                <h3 class="card-top-title">
+                                    <span class="heading-text">Design Systems</span>
+                                </h3>
+                            </div>
+                        </div>
+
+                        <!-- Divider -->
+                        <div class="card-zone-divider"></div>
+
+                        <!-- BOTTOM ZONE -->
+                        <div class="card-bottom-zone">
+                            <div class="card-bottom-body">
+                                <p class="card-desc">
+                                    Scalable component libraries and design tokens that keep products consistent across
+                                    platforms.
+                                </p>
+
+                                <div class="card-tag-row" aria-label="Design Systems skills">
+                                    <span class="skill-tag-pill">Design Tokens</span>
+                                    <span class="skill-tag-pill">Component Libraries</span>
+                                    <span class="skill-tag-pill">prototyping</span>
+                                    <span class="skill-tag-pill">Wireframes</span>
+                                </div>
+                            </div>
+
+                            <div class="card-bottom-footer">
+                                <div class="card-bottom-divider"></div>
+                                <div class="card-bottom-row">
+                                    <span class="card-number-pill">02</span>
+                                    <a href="#work" class="card-action-pill" aria-label="Explore Design Systems work">
+                                        <span>Explore</span>
+                                        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.75"
+                                            class="w-3 h-3" aria-hidden="true">
+                                            <path d="M4 12L12 4M12 4H6M12 4V10" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CARD 3: Frontend Development (Right Flank, +7.5deg, z-index 3) -->
+                    <div class="deck-twozone-card deck-twozone-card--right" tabindex="0" role="region"
+                        aria-label="Frontend Development capability">
+
+                        <!-- TOP ZONE: Background Image + Dark Contrast Overlay + Centered Icon & Title -->
+                        <div class="card-top-zone">
+                            <img src="images/cards/card-receiptly.webp" alt="" class="card-top-bg-img" loading="lazy"
+                                style="object-position: center 40%;">
+                            <div class="card-top-overlay" aria-hidden="true"></div>
+                            <div class="card-top-content">
+                                <div class="card-top-icon" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"
+                                        stroke-linecap="round" stroke-linejoin="round">
+                                        <polyline points="16 18 22 12 16 6" />
+                                        <polyline points="8 6 2 12 8 18" />
+                                        <line x1="14" x2="10" y1="4" y2="20" />
+                                    </svg>
+                                </div>
+                                <h3 class="card-top-title">
+                                    <span class="heading-text">Frontend Development</span>
+                                </h3>
+                            </div>
+                        </div>
+
+                        <!-- Divider -->
+                        <div class="card-zone-divider"></div>
+
+                        <!-- BOTTOM ZONE -->
+                        <div class="card-bottom-zone">
+                            <div class="card-bottom-body">
+                                <p class="card-desc">
+                                    Turning designs into functional, coded prototypes. Testing real interactions and
+                                    validating logic with HTML, CSS, and modern JavaScript.
+                                </p>
+
+                                <div class="card-tag-row" aria-label="Frontend Development skills">
+                                    <span class="skill-tag-pill">HTML/CSS</span>
+                                    <span class="skill-tag-pill">JavaScript</span>
+                                    <span class="skill-tag-pill">Responsive Design</span>
+                                </div>
+                            </div>
+
+                            <div class="card-bottom-footer">
+                                <div class="card-bottom-divider"></div>
+                                <div class="card-bottom-row">
+                                    <span class="card-number-pill">03</span>
+                                    <a href="#work" class="card-action-pill"
+                                        aria-label="Explore Frontend Development work">
+                                        <span>Explore</span>
+                                        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.75"
+                                            class="w-3 h-3" aria-hidden="true">
+                                            <path d="M4 12L12 4M12 4H6M12 4V10" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ══════════════════════════════════════════════════════════════════ -->
+        <!-- 3. CONTACT SECTION: Side-by-Side Modern Layout                     -->
+        <!-- ══════════════════════════════════════════════════════════════════ -->
+        <section id="contact" class="py-[clamp(72px,10vw,128px)] bg-[#FBFBFA] border-t border-slate-100">
+            <div class="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+
+                    <!-- Left Column: Texts, Email CTA & Social Links -->
+                    <div class="lg:col-span-5 flex flex-col items-start text-left">
+                        <!-- 1. "03 · GET IN TOUCH" label -->
+                        <span class="text-xs font-mono font-medium tracking-wider text-slate-500 uppercase block mb-3">
+                            GET IN TOUCH</span>
+
+                        <!-- 2. Heading -->
+                        <h2
+                            class="text-3xl sm:text-4xl lg:text-[2.65rem] font-bold text-slate-950 tracking-[-0.025em] leading-[1.15] mb-5">
+                            Have a product in mind?
+                        </h2>
+
+                        <!-- 3. Paragraph -->
+                        <p class="text-base sm:text-lg text-slate-600 leading-relaxed mb-8">
+                            If you have an idea, a challenge, or a project that needs a thoughtful designer, I'd love to
+                            hear about it.
+                        </p>
+
+                        <!-- 4. Email button and Copy Email button -->
+                        <div
+                            class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full sm:w-auto mb-10">
+                            <a href="mailto:attarahman406@gmail.com" id="contact-email-btn"
+                                class="email-btn w-full sm:w-auto" aria-label="Email Atta Rahman directly">
+                                <span>attarahman406@gmail.com</span>
+                                <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor"
+                                    stroke-width="2" aria-hidden="true">
+                                    <path d="M6 3H3v10h10v-3M10 2h4m0 0v4m0-4L6 10" />
+                                </svg>
+                            </a>
+                            <button type="button" id="contact-copy-email-btn"
+                                onclick="navigator.clipboard.writeText('attarahman406@gmail.com'); const el=this; el.innerText='Copied!'; setTimeout(()=>el.innerText='Copy Email', 2000);"
+                                class="copy-email-btn w-full sm:w-auto" aria-label="Copy email address to clipboard">
+                                Copy Email
+                            </button>
+                        </div>
+
+                        <!-- 6. Location and social links -->
+                        <div
+                            class="flex flex-wrap items-center gap-3 text-xs font-mono text-slate-500 pt-6 border-t border-slate-200/80 w-full">
+                            <span class="font-medium text-slate-700">Vancouver, BC, Canada</span>
+                            <span>·</span>
                             <a href="https://www.linkedin.com/in/atta-rahman-/" target="_blank"
                                 rel="noopener noreferrer"
-                                class="w-12 h-12 rounded-full border border-border flex items-center justify-center text-text-main hover:bg-primary hover:text-white hover:border-primary transition-all duration-300"
-                                aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a>
+                                class="font-medium text-slate-700 hover:text-blue-900 transition-colors"
+                                aria-label="LinkedIn Profile">LinkedIn ↗</a>
+                            <span>·</span>
+                            <a href="https://github.com/attarahman" target="_blank" rel="noopener noreferrer"
+                                class="font-medium text-slate-700 hover:text-blue-900 transition-colors"
+                                aria-label="GitHub Profile">GitHub ↗</a>
+                            <span>·</span>
                             <a href="https://www.behance.net/attarahman" target="_blank" rel="noopener noreferrer"
-                                class="w-12 h-12 rounded-full border border-border flex items-center justify-center text-text-main hover:bg-primary hover:text-white hover:border-primary transition-all duration-300"
-                                aria-label="Behance"><i class="fa-brands fa-behance" aria-hidden="true"></i></a>
+                                class="font-medium text-slate-700 hover:text-blue-900 transition-colors"
+                                aria-label="Behance Profile">Behance ↗</a>
                         </div>
                     </div>
-                    <form class="lg:w-1/2 space-y-6" id="contactForm" action="https://api.web3forms.com/submit"
-                        method="POST">
-                        <input type="hidden" name="access_key" value="e3faf184-f93c-42d1-a20e-22221767c6ec">
-                        <div class="form-group">
-                            <label for="name">Name *</label>
-                            <input type="text" id="name" name="name" placeholder="What's your name?" required>
+
+                    <!-- Right Column: Boxed Contact Form Card -->
+                    <div class="lg:col-span-7 w-full">
+                        <div class="contact-form-wrap w-full">
+
+                            <!-- Status Announcement Alert (Network errors, validation issues) -->
+                            <div id="contact-status-alert" class="hidden mb-6 p-4 rounded-xl text-xs font-mono"
+                                role="status" aria-live="polite"></div>
+
+                            <!-- Form Confirmation Container (Replaces form on success) -->
+                            <div id="contact-success-state"
+                                class="hidden p-8 rounded-2xl bg-white border border-slate-200/80 text-left space-y-3"
+                                role="status" aria-live="polite">
+                                <div
+                                    class="w-10 h-10 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200 flex items-center justify-center font-bold text-lg mb-2">
+                                    ✓</div>
+                                <h3 class="text-2xl font-semibold text-slate-950 tracking-tight">Message sent.</h3>
+                                <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+                                    Thanks, I'll get back to you soon.
+                                </p>
+                            </div>
+
+                            <form id="portfolio-contact-form" novalidate class="space-y-5">
+                                <!-- Hidden Honeypot to block spam bots -->
+                                <div style="display:none !important;" aria-hidden="true">
+                                    <label for="contact-honeypot">Do not fill this field</label>
+                                    <input type="text" id="contact-honeypot" name="_gotcha" tabindex="-1"
+                                        autocomplete="off">
+                                </div>
+
+                                <!-- Field: Name -->
+                                <div class="contact-field-group">
+                                    <label for="contact-name" class="contact-label">
+                                        Your Name <span class="text-[#2F55E6] font-semibold" aria-hidden="true">*</span>
+                                    </label>
+                                    <input type="text" id="contact-name" name="name" required
+                                        placeholder="e.g. Sarah Jenkins" autocomplete="name" class="contact-input"
+                                        aria-describedby="error-name" aria-required="true">
+                                    <span id="error-name" class="contact-error-msg hidden" aria-live="polite"></span>
+                                </div>
+
+                                <!-- Field: Email -->
+                                <div class="contact-field-group">
+                                    <label for="contact-email" class="contact-label">
+                                        Email Address <span class="text-[#2F55E6] font-semibold"
+                                            aria-hidden="true">*</span>
+                                    </label>
+                                    <input type="email" id="contact-email" name="email" required
+                                        placeholder="e.g. sarah@company.com" autocomplete="email" class="contact-input"
+                                        aria-describedby="error-email" aria-required="true">
+                                    <span id="error-email" class="contact-error-msg hidden" aria-live="polite"></span>
+                                </div>
+
+                                <!-- Field: Company / Organization (Optional) -->
+                                <div class="contact-field-group">
+                                    <label for="contact-company" class="contact-label">
+                                        Company / Organization <span
+                                            class="text-slate-500 font-normal lowercase">(optional)</span>
+                                    </label>
+                                    <input type="text" id="contact-company" name="company"
+                                        placeholder="e.g. Acme Corp, Design Studio, or Startup"
+                                        autocomplete="organization" class="contact-input">
+                                </div>
+
+                                <!-- Field: Message -->
+                                <div class="contact-field-group">
+                                    <label for="contact-message" class="contact-label">
+                                        Project Details or Message <span class="text-[#2F55E6] font-semibold"
+                                            aria-hidden="true">*</span>
+                                    </label>
+                                    <textarea id="contact-message" name="message" rows="5" required
+                                        placeholder="Tell me about your product, project scope, timeline, and goals..."
+                                        class="contact-input contact-textarea" aria-describedby="error-message"
+                                        aria-required="true"></textarea>
+                                    <span id="error-message" class="contact-error-msg hidden" aria-live="polite"></span>
+                                </div>
+
+                                <!-- Submit Button -->
+                                <div class="pt-2">
+                                    <button type="submit" id="contact-submit-btn"
+                                        class="btn btn-primary !py-3.5 !px-8 text-sm font-medium tracking-wide inline-flex items-center gap-2 w-full sm:w-auto">
+                                        <span id="contact-submit-text">Send Message</span>
+                                        <svg width="14" height="14" viewBox="0 0 16 16" fill="none"
+                                            stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                            <path d="M2 8h12M10 4l4 4-4 4" />
+                                        </svg>
+                                    </button>
+                                </div>
+                            </form>
+
                         </div>
-                        <div class="form-group">
-                            <label for="email">Email *</label>
-                            <input type="email" id="email" name="email" placeholder="your@email.com" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Message *</label>
-                            <textarea id="message" name="message" rows="5"
-                                placeholder="Tell me about your project or vision..." required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary w-full lg:w-auto px-12">Send
-                            Message</button>
-                        <div class="mt-4 hidden p-4 rounded-lg font-medium" id="formStatus"></div>
-                    </form>
+                    </div>
+
                 </div>
             </div>
         </section>
     </main>
 
-    <footer class="bg-[#111827] text-white pt-20 pb-10" role="contentinfo">
-        <div class="container grid lg:grid-cols-4 gap-12 mb-16">
-            <div class="space-y-6 col-span-1 lg:col-span-1">
-                <a href="index.html" class="font-heading text-3xl font-bold tracking-tighter"
-                    aria-label="Atta Rahman Home">Atta.</a>
-                <p class="text-gray-400">Product Designer crafting meaningful digital experiences in Vancouver, BC.</p>
-            </div>
-            <div class="space-y-6">
-                <h2 class="text-lg font-bold uppercase tracking-widest text-white">Quick Links</h2>
-                <nav class="flex flex-col gap-3" aria-label="Footer Navigation">
-                    <a href="index.html" class="text-gray-400 hover:text-white transition-colors">Home</a>
-                    <a href="about.html" class="text-gray-400 hover:text-white transition-colors">About</a>
-                    <a href="projects.html" class="text-gray-400 hover:text-white transition-colors">Portfolio</a>
-                    <a href="index.html#contact" class="text-gray-400 hover:text-white transition-colors">Contact</a>
-                </nav>
-            </div>
-            <div class="space-y-6">
-                <h2 class="text-lg font-bold uppercase tracking-widest text-white">Connect</h2>
-                <div class="flex gap-4">
-                    <a href="https://www.linkedin.com/in/atta-rahman-/" target="_blank" rel="noopener noreferrer"
-                        class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition-all duration-300"
-                        aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a>
-                    <a href="https://www.behance.net/attarahman" target="_blank" rel="noopener noreferrer"
-                        class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition-all duration-300"
-                        aria-label="Behance"><i class="fa-brands fa-behance" aria-hidden="true"></i></a>
-                    <a href="https://www.instagram.com/atta____rahman/" target="_blank" rel="noopener noreferrer"
-                        class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition-all duration-300"
-                        aria-label="Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
-                </div>
-            </div>
-            <div class="space-y-6">
-                <h2 class="text-lg font-bold uppercase tracking-widest text-white">Get in Touch</h2>
-                <div class="space-y-4 text-gray-400">
-                    <p><a href="mailto:attarahman406@gmail.com"
-                            class="hover:text-white transition-colors">attarahman406@gmail.com</a></p>
-                    <p>Vancouver, BC, Canada</p>
-                    <p
-                        class="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase text-white">
-                        Willing to relocate</p>
-                </div>
-            </div>
-        </div>
-        <div class="border-t border-gray-800 pt-10 text-center text-sm text-gray-500">
-            <div class="container">
-                <p>&copy; 2026 Atta Rahman. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
-
+    <!-- Shared Footer slot -->
+    <div id="site-footer"></div>
 
 </body>
 

@@ -1,503 +1,636 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Me | Atta Rahman - Product Designer & UX Specialist</title>
+    <title>About | Atta Rahman — Product Designer &amp; UI/UX Designer</title>
     <meta name="description"
-        content="Learn about Atta Rahman, a Product Designer based in Vancouver specializing in user-centered design, design systems, and digital experiences.">
+        content="Atta Rahman is a Product Designer and UI/UX Designer based in Vancouver, Canada. Systems thinking, user research, interaction design, and AI-assisted workflows.">
 
-    <!-- Google Fonts -->
+    <!-- Typography: Geist + Plus Jakarta Sans + JetBrains Mono -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Antonio:wght@100..700&family=Baumans&family=Inter:wght@300;400;500;600;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Geist:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
         rel="stylesheet">
 
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="shortcut icon" href="favicon.svg">
 
-    <!-- Custom CSS (Tailwind Output) -->
-    <link rel="stylesheet" href="CSS/output.css">
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@1" type="module"></script>
+    <!-- Styles & Scripts -->
+    <link rel="stylesheet" href="CSS/output.css?v=56">
+
+    <script src="JS/components.js?v=56" defer></script>
+    <script src="JS/script.js?v=56" defer></script>
 </head>
 
-<body class="about-page">
+<body class="bg-white text-slate-900 antialiased selection:bg-slate-900 selection:text-white"
+    style="font-family:'Geist','Plus Jakarta Sans',sans-serif;">
 
-    <!-- Sticky Navigation -->
-    <header class="header !p-0 !h-auto">
-        <nav
-            class="relative w-full bg-white/50 backdrop-blur-md after:pointer-events-none after:absolute after:inset-x-0 after:bottom-0 after:h-px after:bg-black/10 z-[1000]">
-            <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-12">
-                <div class="relative flex h-20 items-center justify-between">
-                    <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
-                        <!-- Mobile menu button-->
-                        <button type="button" command="--toggle" commandfor="mobile-menu"
-                            class="relative inline-flex items-center justify-center rounded-md p-2 text-text-muted hover:bg-primary/5 hover:text-primary focus:outline-2 focus:-outline-offset-1 focus:outline-primary">
-                            <span class="absolute -inset-0.5"></span>
-                            <span class="sr-only">Open main menu</span>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
-                                data-slot="icon" aria-hidden="true" class="size-6 in-aria-expanded:hidden">
-                                <path d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" stroke-linecap="round"
-                                    stroke-linejoin="round" />
-                            </svg>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
-                                data-slot="icon" aria-hidden="true" class="size-6 not-in-aria-expanded:hidden">
-                                <path d="M6 18 18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" />
-                            </svg>
-                        </button>
-                    </div>
-                    <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
-                        <div class="flex shrink-0 items-center">
-                            <a href="index.html" class="logo group" aria-label="Atta Rahman Portfolio Home">
-                                <span class="group-hover:text-primary transition-colors">Atta.</span>
-                            </a>
-                        </div>
-                        <div class="hidden sm:ml-10 sm:block">
-                            <div class="flex space-x-8">
-                                <a href="index.html"
-                                    class="text-text-main font-medium hover:text-primary transition-colors py-2">Home</a>
-                                <a href="about.html"
-                                    class="text-text-main font-medium hover:text-primary transition-colors py-2">About</a>
-                                <a href="projects.html"
-                                    class="text-text-main font-medium hover:text-primary transition-colors py-2">Portfolio</a>
-                                <a href="index.html#contact"
-                                    class="text-text-main font-medium hover:text-primary transition-colors py-2">Contact</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div
-                        class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-                        <a href="https://drive.google.com/file/d/1zv_Ai-XOlH-R0xOE9M2oAXe98I34TUYf/view?usp=sharing"
-                            target="_blank" rel="noopener noreferrer"
-                            class="btn btn-secondary !py-2 !px-6 text-sm hidden sm:block"
-                            aria-label="View Resume">Resume</a>
-
-                        <!-- Profile image -->
-                        <div class="relative ml-4">
-                            <img src="./images/profile_new.webp" alt=""
-                                class="size-8 rounded-full bg-bg-card outline -outline-offset-1 outline-border" />
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <el-disclosure id="mobile-menu" hidden
-                class="block sm:hidden bg-white/95 backdrop-blur-xl border-t border-border">
-                <div class="space-y-4 px-6 pt-6 pb-8">
-                    <a href="index.html"
-                        class="block text-2xl font-medium text-text-main hover:text-primary transition-colors">Home</a>
-                    <a href="about.html"
-                        class="block text-2xl font-medium text-text-main hover:text-primary transition-colors">About</a>
-                    <a href="projects.html"
-                        class="block text-2xl font-medium text-text-main hover:text-primary transition-colors">Portfolio</a>
-                    <a href="index.html#contact"
-                        class="block text-2xl font-medium text-text-main hover:text-primary transition-colors">Contact</a>
-                    <div class="pt-4 border-t border-border mt-6">
-                        <a href="https://drive.google.com/file/d/1zv_Ai-XOlH-R0xOE9M2oAXe98I34TUYf/view?usp=sharing"
-                            target="_blank" rel="noopener noreferrer" class="btn btn-primary w-full text-center"
-                            aria-label="View Resume">Resume</a>
-                    </div>
-                </div>
-            </el-disclosure>
-        </nav>
-    </header>
+    <!-- Shared Navigation -->
+    <div id="site-nav"></div>
 
     <main>
-        <!-- Hero Section -->
-        <section class="pt-40 pb-20 lg:pt-56 lg:pb-32 bg-gradient-to-b from-white to-bg-card">
-            <div class="container text-center lg:text-left">
-                <span class="text-accent font-bold tracking-[0.3rem] uppercase text-[1rem] mb-6 block">About Me</span>
-                <h1 class="text-4xl md:text-5xl lg:text-7xl font-black mb-8 leading-tight max-w-4xl">Bridging structural
-                    logic with human-centered design</h1>
-                <p class="text-xl lg:text-2xl text-text-muted max-w-3xl leading-relaxed">I’m Atta Rahman, a Mechanical
-                    Engineer turned UI/UX Designer. I focus on clarity, usability, and thoughtful interaction, building
-                    experiences that are both structurally sound and deeply human.</p>
+        <!-- ══════════════════════════════════════════════════════════════════ -->
+        <!-- 1. ABOUT HERO: INTRO & DESIGN APPROACH (Unified Split Layout)       -->
+        <!-- ══════════════════════════════════════════════════════════════════ -->
+        <section id="about" class="pt-32 pb-20 lg:pt-40 lg:pb-28 bg-white border-b border-slate-100">
+            <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
+
+                <div class="grid lg:grid-cols-12 gap-10 lg:gap-16 items-start">
+
+                    <!-- Left Column: Intro Statement + Approach Narrative (order-1 on mobile & desktop) -->
+                    <div class="lg:col-span-6 order-1 lg:order-1 space-y-8">
+
+                        <!-- Main Intro Statement (H1) -->
+                        <div>
+                            <span
+                                class="text-xs font-mono font-medium tracking-wider text-slate-500 uppercase block mb-3">About
+                                Me</span>
+                            <h1 class="text-2xl sm:text-3xl lg:text-[2.1rem] font-medium tracking-tight text-slate-950 leading-[1.28] max-w-xl"
+                                style="letter-spacing:-0.03em;">
+                                I am <span class="text-[#2F55E6] font-semibold">Atta Rahman</span>, a Product Designer
+                                based in Vancouver,
+                                Canada. I design intuitive interfaces, scalable design systems, and end-to-end digital
+                                experiences for digital products.
+                            </h1>
+                        </div>
+
+                        <!-- My Approach Section (Down / Below Intro) -->
+                        <div id="approach" class="pt-8 border-t border-slate-200/80 space-y-5">
+                            <div>
+                                <span
+                                    class="text-xs font-mono font-medium tracking-wider text-slate-500 uppercase block mb-1.5">Design
+                                    Philosophy</span>
+                                <h2 class="text-xl sm:text-2xl font-semibold text-slate-950 tracking-tight">
+                                    My Approach
+                                </h2>
+                            </div>
+
+                            <!-- Narrative Paragraphs -->
+                            <div class="space-y-4 text-base sm:text-[17px] text-slate-700 leading-relaxed">
+                                <p>
+                                    My approach is rooted in an engineering and operations background, where managing
+                                    physical tolerances and systems taught me that great design eliminates failure
+                                    points before they manifest.
+                                </p>
+
+                                <p>
+                                    With a postgraduate diploma in Web and Mobile App Design from Langara College, I
+                                    combine structured systems thinking with human empathy to craft intuitive, resilient
+                                    digital experiences.
+                                </p>
+
+                                <p>
+                                    Outside of design, you’ll find me sketching concepts, gaming, and exploring
+                                    Vancouver’s creative spaces for visual inspiration.
+                                </p>
+                            </div>
+
+                            <!-- Action Button: Resume PDF -->
+                            <div class="pt-2">
+                                <a href="assets/Atta_Rahman_Resume.pdf"
+                                    id="about-cta-resume" target="_blank" rel="noopener noreferrer"
+                                    class="btn btn-secondary-ink inline-flex items-center gap-2 text-sm"
+                                    aria-label="View Resume PDF">
+                                    <span>Resume (PDF) ↗</span>
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Right Column: Visual Layout (order-2 on mobile, lg:order-2 on desktop) -->
+                    <div class="lg:col-span-6 order-2 lg:order-2">
+                        <div class="space-y-5 sm:space-y-6">
+
+                            <!-- Top Photo: Landscape / Candid along Vancouver Waterfront -->
+                            <div class="approach-top-frame group">
+                                <img src="images/atta_candid.webp"
+                                    alt="Atta Rahman exploring creative inspiration along the Vancouver waterfront"
+                                    class="w-full aspect-[16/10] object-cover" width="1200" height="750" loading="lazy">
+                            </div>
+
+                            <!-- Bottom Row: 2-Card Grid (Headshot + Vancouver Map Card) -->
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6 items-stretch">
+
+                                <!-- Left Card: Professional Headshot -->
+                                <div class="approach-headshot-frame group">
+                                    <img src="images/profile_new.webp"
+                                        alt="Professional portrait of Atta Rahman — Product Designer"
+                                        class="w-full h-full aspect-[4/5] object-cover object-top block" width="600"
+                                        height="750" loading="lazy">
+                                </div>
+
+                                <!-- Right Card: Vancouver Map Location Card -->
+                                <div
+                                    class="approach-map-card group relative flex flex-col items-center justify-center p-6 sm:p-8 text-center h-full min-h-[260px] sm:min-h-[280px]">
+                                    <!-- Map Background -->
+                                    <img src="images/vancouver_map.webp" alt="Stylized Map of Vancouver, BC"
+                                        class="map-bg absolute inset-0 w-full h-full object-cover" width="800"
+                                        height="1000" loading="lazy">
+
+                                    <!-- Soft Gradient & Vignette Overlay -->
+                                    <div
+                                        class="absolute inset-0 bg-gradient-to-b from-white/30 via-white/50 to-white/70 backdrop-blur-[1px] transition-colors duration-300 group-hover:bg-white/40">
+                                    </div>
+
+                                    <!-- Location Content (Pin + Text, matching reference mockup) -->
+                                    <div class="relative z-10 flex flex-col items-center">
+                                        <!-- Pin Icon in Circular Badge with subtle Radar Pulse -->
+                                        <div class="relative mb-3.5">
+                                            <span
+                                                class="absolute -inset-1.5 rounded-full bg-indigo-500/20 animate-ping"></span>
+                                            <div
+                                                class="relative w-12 h-12 rounded-full bg-white shadow-[0_4px_16px_rgba(15,23,42,0.10)] border border-slate-100 flex items-center justify-center text-[#2F55E6] transition-transform duration-300 group-hover:scale-110">
+                                                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                                                    <path
+                                                        d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+                                                </svg>
+                                            </div>
+                                        </div>
+
+                                        <span
+                                            class="text-[11px] font-mono font-semibold tracking-widest text-slate-500 uppercase block mb-1.5">
+                                            Based In
+                                        </span>
+                                        <h3 class="text-xl sm:text-2xl font-bold text-slate-950 tracking-tight">
+                                            Vancouver, BC
+                                        </h3>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
             </div>
         </section>
 
-        <!-- Bio Section -->
-        <section class="section-spacing bg-white reveal">
-            <div class="container max-w-6xl mx-auto px-6 lg:px-12">
-                <div class="grid lg:grid-cols-12 gap-10 md:gap-16 lg:gap-24 items-start">
+        <!-- ══════════════════════════════════════════════════════════════════ -->
+        <!-- 2. HOW I WORK (From Brief to Launch)                               -->
+        <!-- ══════════════════════════════════════════════════════════════════ -->
+        <section id="how-i-work" class="bg-white border-b border-slate-200/70"
+            style="padding-top: clamp(72px, 10vw, 128px); padding-bottom: clamp(72px, 10vw, 128px);">
+            <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
 
-                    <!-- Left: Text Content -->
-                    <div class="lg:col-span-6 space-y-10">
-                        <div>
-                            <!-- <span class="text-[10px] font-bold uppercase tracking-widest text-primary mb-4 block">About
-                                Me</span> -->
-                            <h2 class="text-3xl lg:text-4xl font-bold text-text-main leading-tight">
-                                My Approach
-                            </h2>
-                        </div>
-
-                        <div class="space-y-6 text-lg text-text-muted leading-relaxed">
-                            <p class="text-xl text-text-main font-medium leading-relaxed">
-                                I believe good design should feel natural and effortless.
-                            </p>
-
-                            <p>My approach starts with understanding people, their needs, and the context around a
-                                problem before moving into structure and visuals.</p>
-
-                            <p>With a postgraduate diploma in Web and Mobile App Design from Langara College, I combine
-                                design thinking with hands-on technical knowledge to build practical, well-considered
-                                digital experiences.</p>
-
-                            <p>My background in engineering and operations influences how I work. I value structure,
-                                attention to detail, and designing systems that hold up beyond a single screen.</p>
-
-                            <p>Outside of design, I enjoy gaming, sketching ideas, and exploring Vancouver’s creative
-                                spaces for inspiration.</p>
-                        </div>
-                    </div>
-
-                    <!-- Right: Images Grid -->
-                    <div class="lg:col-span-6 grid grid-cols-2 gap-6">
-                        <div
-                            class="col-span-2 rounded-[2rem] overflow-hidden bg-gray-50 border border-gray-100 shadow-sm transition-transform hover:scale-[1.01] duration-500">
-                            <img src="https://framerusercontent.com/images/yxvxgPZ9hsGY075O88xO3ayFN5M.jpg?width=2419&height=1361"
-                                alt="Atta Rahman working on design projects at desk"
-                                class="w-full aspect-[4/3] object-cover" loading="lazy" width="2419" height="1361">
-                        </div>
-                        <div
-                            class="col-span-1 rounded-[2rem] overflow-hidden bg-gray-50 border border-gray-100 shadow-sm transition-transform hover:scale-[1.02] duration-500">
-                            <img src="https://framerusercontent.com/images/kbvGZ9Jpk2dNIRmc62qud6CxA.png?width=839&height=957"
-                                alt="Professional portrait of Atta Rahman"
-                                class="w-full aspect-[4/5] object-cover object-top" loading="lazy" width="839"
-                                height="957">
-                        </div>
-                        <div
-                            class="col-span-1 rounded-[2rem] border border-gray-100 bg-gray-50 flex flex-col justify-center items-center text-center p-6 shadow-sm">
-                            <div
-                                class="w-12 h-12 bg-white rounded-full flex items-center justify-center mb-6 shadow-sm text-primary">
-                                <i class="fa-solid fa-location-dot"></i>
-                            </div>
-                            <span
-                                class="text-[10px] font-bold uppercase tracking-widest text-text-muted mb-2 block">Based
-                                In</span>
-                            <span class="font-bold text-text-main text-sm lg:text-base">Vancouver, BC</span>
-                        </div>
-                    </div>
+                <!-- Section Header (Centered, matching page rhythm) -->
+                <div class="text-center max-w-3xl mx-auto mb-16 lg:mb-20">
+                    <h2 class="font-bold tracking-tight text-slate-950"
+                        style="font-size: clamp(2.25rem, 5vw, 3.5rem); line-height: 1.15; color: var(--ink, #0B1020); letter-spacing: -0.03em;">
+                        How I work, from brief to launch
+                    </h2>
                 </div>
+
+                <!-- 4 Typographic Columns (No Cards, Pure Type & Spacing) -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12">
+
+                    <!-- Step 01 -->
+                    <div class="flex flex-col text-left">
+                        <span class="font-mono block mb-3 select-none"
+                            style="font-size: clamp(1.5rem, 2.5vw, 2rem); color: var(--muted, #6B7280); line-height: 1; font-weight: 400;">
+                            01
+                        </span>
+                        <h3 class="font-bold tracking-tight mb-3 text-slate-950"
+                            style="font-size: 1.25rem; line-height: 1.3; color: var(--ink, #0B1020); letter-spacing: -0.02em;">
+                            Understand
+                        </h3>
+                        <p class="text-[0.95rem] leading-[1.6]"
+                            style="color: var(--body-text, #374151); font-weight: 400;">
+                            Before anything gets designed, I dig into the brief: what&#39;s actually needed, what&#39;s
+                            constrained, and what success looks like. I&#39;d rather ask an extra question upfront than
+                            guess at the problem later.
+                        </p>
+                    </div>
+
+                    <!-- Step 02 -->
+                    <div class="flex flex-col text-left">
+                        <span class="font-mono block mb-3 select-none"
+                            style="font-size: clamp(1.5rem, 2.5vw, 2rem); color: var(--muted, #6B7280); line-height: 1; font-weight: 400;">
+                            02
+                        </span>
+                        <h3 class="font-bold tracking-tight mb-3 text-slate-950"
+                            style="font-size: 1.25rem; line-height: 1.3; color: var(--ink, #0B1020); letter-spacing: -0.02em;">
+                            Explore &amp; Design
+                        </h3>
+                        <p class="text-[0.95rem] leading-[1.6]"
+                            style="color: var(--body-text, #374151); font-weight: 400;">
+                            This is where sketches, wireframes, and prototypes start doing the thinking, testing
+                            structure, motion, and usability against each other. Every decision has to earn its place by
+                            being clear and genuinely useful to the person using it.
+                        </p>
+                    </div>
+
+                    <!-- Step 03 -->
+                    <div class="flex flex-col text-left">
+                        <span class="font-mono block mb-3 select-none"
+                            style="font-size: clamp(1.5rem, 2.5vw, 2rem); color: var(--muted, #6B7280); line-height: 1; font-weight: 400;">
+                            03
+                        </span>
+                        <h3 class="font-bold tracking-tight mb-3 text-slate-950"
+                            style="font-size: 1.25rem; line-height: 1.3; color: var(--ink, #0B1020); letter-spacing: -0.02em;">
+                            Build
+                        </h3>
+                        <p class="text-[0.95rem] leading-[1.6]"
+                            style="color: var(--body-text, #374151); font-weight: 400;">
+                            Designs get handed off properly: documented, implemented, and checked against how they
+                            actually behave, not just how they look. I stay close through this stage and adjust whatever
+                            needs adjusting.
+                        </p>
+                    </div>
+
+                    <!-- Step 04 -->
+                    <div class="flex flex-col text-left">
+                        <span class="font-mono block mb-3 select-none"
+                            style="font-size: clamp(1.5rem, 2.5vw, 2rem); color: var(--muted, #6B7280); line-height: 1; font-weight: 400;">
+                            04
+                        </span>
+                        <h3 class="font-bold tracking-tight mb-3 text-slate-950"
+                            style="font-size: 1.25rem; line-height: 1.3; color: var(--ink, #0B1020); letter-spacing: -0.02em;">
+                            Test &amp; Refine
+                        </h3>
+                        <p class="text-[0.95rem] leading-[1.6]"
+                            style="color: var(--body-text, #374151); font-weight: 400;">
+                            A design isn&#39;t finished when it ships, it&#39;s finished when real people have used it
+                            and it holds up. I watch how it&#39;s actually used, gather feedback, and keep refining
+                            until it feels obvious rather than merely functional.
+                        </p>
+                    </div>
+
+                </div>
+
             </div>
         </section>
 
         <!-- Tools Section -->
-        <section class="section-spacing bg-bg-card reveal">
-            <div class="container max-w-5xl mx-auto">
-                <h2 class="section-title mb-6">Tools I Use</h2>
-                <p class="text-lg text-text-muted mb-12 max-w-2xl text-center lg:text-left mx-auto lg:mx-0">A focused
-                    toolkit for
-                    designing, prototyping, and building exceptional digital experiences.</p>
+        <section id="tools" class="section-spacing bg-bg-card reveal">
+            <div class="container max-w-5xl mx-auto px-4 sm:px-6">
+                <div class="text-center max-w-2xl mx-auto mb-12">
+                    <h2 class="section-title mb-4">Tools I Use</h2>
+                    <p class="text-lg text-text-muted">A focused toolkit for designing, prototyping, and building exceptional digital experiences.</p>
+                </div>
 
-                <div class="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3 lg:gap-4">
-                    <div class="tool-card group p-2">
+                <div class="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+                    <div class="tool-card group">
                         <div class="tool-icon">
-                            <img src="./assets/icons/Figma.svg" alt="Figma icon"
-                                class="group-hover:scale-110 transition-transform w-[28px] h-[28px]">
+                            <img src="./assets/icons/Figma.svg" alt="Figma icon" width="44" height="44" loading="lazy">
                         </div>
-                        <span class="tool-name text-xs">Figma</span>
+                        <span class="tool-name">Figma</span>
                     </div>
-                    <div class="tool-card group p-2">
+                    <div class="tool-card group">
                         <div class="tool-icon">
-                            <img src="./assets/icons/framer logo.webp" alt="Framer icon"
-                                class="group-hover:scale-110 transition-transform w-[28px] h-[28px]">
+                            <img src="./assets/icons/framer logo.webp" alt="Framer icon" width="44" height="44" loading="lazy">
                         </div>
-                        <span class="tool-name text-xs">Framer</span>
+                        <span class="tool-name">Framer</span>
                     </div>
-                    <div class="tool-card group p-2">
+                    <div class="tool-card group">
                         <div class="tool-icon">
-                            <img src="./assets/icons/HTML.svg" alt="HTML icon"
-                                class="group-hover:scale-110 transition-transform w-[28px] h-[28px]">
+                            <img src="./assets/icons/HTML.svg" alt="HTML icon" width="44" height="44" loading="lazy">
                         </div>
-                        <span class="tool-name text-xs">HTML</span>
+                        <span class="tool-name">HTML</span>
                     </div>
-                    <div class="tool-card group p-2">
+                    <div class="tool-card group">
                         <div class="tool-icon">
-                            <img src="./assets/icons/css_icon_130661.webp" alt="CSS icon"
-                                class="group-hover:scale-110 transition-transform w-[28px] h-[28px]">
+                            <img src="./assets/icons/css_icon_130661.webp" alt="CSS icon" width="44" height="44" loading="lazy">
                         </div>
-                        <span class="tool-name text-xs">CSS</span>
+                        <span class="tool-name">CSS</span>
                     </div>
-                    <div class="tool-card group p-2">
+                    <div class="tool-card group">
                         <div class="tool-icon">
-                            <img src="./assets/icons/Adobe-After-Effects-Logo-84.webp" alt="After Effects"
-                                class="group-hover:scale-110 transition-transform w-[28px] h-[28px]">
+                            <img src="./assets/icons/Adobe-After-Effects-Logo-84.webp" alt="After Effects" width="44" height="44" loading="lazy">
                         </div>
-                        <span class="tool-name text-xs">After Effects</span>
+                        <span class="tool-name">After Effects</span>
                     </div>
-                    <div class="tool-card group p-2">
+                    <div class="tool-card group">
                         <div class="tool-icon">
-                            <img src="./assets/icons/Adobe Premiere Pro.svg" alt="adobe premiere pro"
-                                class="group-hover:scale-110 transition-transform w-[28px] h-[28px]">
+                            <img src="./assets/icons/Adobe Premiere Pro.svg" alt="Premiere Pro" width="44" height="44" loading="lazy">
                         </div>
-                        <span class="tool-name text-xs">Premiere</span>
+                        <span class="tool-name">Premiere</span>
                     </div>
-                    <div class="tool-card group p-2">
+                    <div class="tool-card group">
                         <div class="tool-icon">
                             <img src="./assets/icons/Adobe-Illustrator-2024-Logo-PNG-Transparent-Creative-and-Distinctive-Design.webp"
-                                alt="Adobe Illustrator"
-                                class="group-hover:scale-110 transition-transform w-[28px] h-[28px]">
+                                alt="Adobe Illustrator" width="44" height="44" loading="lazy">
                         </div>
-                        <span class="tool-name text-xs">Illustrator</span>
+                        <span class="tool-name">Illustrator</span>
                     </div>
-                    <div class="tool-card group p-2">
+                    <div class="tool-card group">
                         <div class="tool-icon">
                             <img src="./assets/icons/Photoshop-logo-Adobe-symbol-digital-creativity-transparent-png-image.webp"
-                                alt="Photoshop" class="group-hover:scale-110 transition-transform w-[28px] h-[28px]">
+                                alt="Photoshop" width="44" height="44" loading="lazy">
                         </div>
-                        <span class="tool-name text-xs">Photoshop</span>
+                        <span class="tool-name">Photoshop</span>
                     </div>
-                    <div class="tool-card group p-2">
+                    <div class="tool-card group">
                         <div class="tool-icon">
                             <img src="./assets/icons/InDesign-2024-logo-graphic-design-transparent-PNG-image.webp"
-                                alt="InDesign" class="group-hover:scale-110 transition-transform w-[28px] h-[28px]">
+                                alt="InDesign" width="44" height="44" loading="lazy">
                         </div>
-                        <span class="tool-name text-xs">InDesign</span>
+                        <span class="tool-name">InDesign</span>
                     </div>
-                    <div class="tool-card group p-2">
+                    <div class="tool-card group">
                         <div class="tool-icon">
-                            <img src="./assets/icons/SketchUp_idrNc9SERG_0.svg" alt="SketchUp"
-                                class="group-hover:scale-110 transition-transform w-[28px] h-[28px]">
+                            <img src="./assets/icons/SketchUp_idrNc9SERG_0.svg" alt="SketchUp" width="44" height="44" loading="lazy">
                         </div>
-                        <span class="tool-name text-xs">SketchUp</span>
+                        <span class="tool-name">SketchUp</span>
                     </div>
-                    <div class="tool-card group p-2">
+                    <div class="tool-card group">
                         <div class="tool-icon">
-                            <img src="./assets/icons/Slack.svg" alt="Slack"
-                                class="group-hover:scale-110 transition-transform w-[28px] h-[28px]">
+                            <img src="./assets/icons/Slack.svg" alt="Slack" width="44" height="44" loading="lazy">
                         </div>
-                        <span class="tool-name text-xs">Slack</span>
+                        <span class="tool-name">Slack</span>
                     </div>
-                    <div class="tool-card group p-2">
+                    <div class="tool-card group">
                         <div class="tool-icon">
-                            <img src="./assets/icons/Jira.svg" alt="Jira"
-                                class="group-hover:scale-110 transition-transform w-[28px] h-[28px]">
+                            <img src="./assets/icons/Jira.svg" alt="Jira" width="44" height="44" loading="lazy">
                         </div>
-                        <span class="tool-name text-xs">Jira</span>
+                        <span class="tool-name">Jira</span>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Process Section -->
-        <section class="section-spacing bg-white reveal">
-            <div class="container">
-                <h2 class="section-title">How I Work</h2>
-                <p class="text-lg text-text-muted mb-16 max-w-2xl text-center lg:text-left">My design process is
-                    iterative, collaborative, and focused on delivering
-                    measurable results.</p>
+        <!-- ══════════════════════════════════════════════════════════════════ -->
+        <!-- 4. CORE PILLARS & AREAS OF EXPERTISE                               -->
+        <!-- ══════════════════════════════════════════════════════════════════ -->
+        <section class="py-20 lg:py-28 bg-[#FBFBFA] border-b border-slate-200/70">
+            <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
 
-                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                    <div class="process-card group">
-                        <div
-                            class="text-xs font-bold uppercase tracking-widest text-primary/40 mb-6 transition-colors group-hover:text-primary">
-                            01</div>
-                        <h3 class="text-2xl font-bold mb-4">Understand</h3>
-                        <p class="text-text-muted text-sm leading-relaxed">I start by deeply understanding the problem,
-                            users, and business goals through research,
-                            stakeholder interviews, and competitive analysis.</p>
+                <!-- Section Header (Centered) -->
+                <div class="text-center max-w-2xl mx-auto mb-14 lg:mb-16">
+                    <span class="text-xs font-mono font-medium tracking-wider text-slate-500 uppercase block mb-2">What
+                        I Do</span>
+                    <h2 class="text-3xl sm:text-4xl font-semibold text-slate-950 tracking-tight mb-3">Areas of Expertise
+                    </h2>
+                    <p class="text-base sm:text-lg text-slate-600 leading-relaxed max-w-[640px] mx-auto">
+                        A multidisciplinary foundation spanning digital products, brand visual systems, and AI
+                        workflows.
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-8 items-stretch">
+
+                    <!-- 1. Product & UI/UX -->
+                    <div class="expertise-card expertise-card--navy group">
+                        <div class="expertise-card-top">
+                            <div class="expertise-top-bar">
+                                <span class="expertise-label">01 · Digital Product</span>
+                                <div class="expertise-icon-box" aria-hidden="true">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path
+                                            d="M19 4h-14a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2z" />
+                                        <path d="M15 2v2" />
+                                        <path d="M7 2v2" />
+                                        <path d="M3 10h18" />
+                                        <path d="M8 14h.01" />
+                                        <path d="M12 14h.01" />
+                                        <path d="M16 14h.01" />
+                                        <path d="M8 18h.01" />
+                                        <path d="M12 18h.01" />
+                                        <path d="M16 18h.01" />
+                                    </svg>
+                                </div>
+                            </div>
+                            <h3 class="expertise-title">Product &amp; UI/UX Design</h3>
+                        </div>
+                        <div class="expertise-card-body">
+                            <p class="expertise-desc">
+                                End-to-end design for complex mobile and web software. From initial user discovery and
+                                journey mapping to tokenized component libraries and high-fidelity interactive
+                                prototypes.
+                            </p>
+                            <div class="expertise-tags">
+                                <span class="expertise-tag">User Research</span>
+                                <span class="expertise-tag">Figma Systems</span>
+                                <span class="expertise-tag">Prototypes</span>
+                            </div>
+                            <div class="expertise-featured">
+                                Featured: Loopin · Receiptly · MemoTrip
+                            </div>
+                        </div>
                     </div>
-                    <div class="process-card group">
-                        <div
-                            class="text-xs font-bold uppercase tracking-widest text-primary/40 mb-6 transition-colors group-hover:text-primary">
-                            02</div>
-                        <h3 class="text-2xl font-bold mb-4">Explore</h3>
-                        <p class="text-text-muted text-sm leading-relaxed">I translate insights into user flows,
-                            wireframes, and early concepts, focusing on structure,
-                            hierarchy, and solving the core problem.</p>
+
+                    <!-- 2. Visual & Branding -->
+                    <div class="expertise-card expertise-card--terracotta group">
+                        <div class="expertise-card-top">
+                            <div class="expertise-top-bar">
+                                <span class="expertise-label">02 · Craft &amp; Identity</span>
+                                <div class="expertise-icon-box" aria-hidden="true">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <circle cx="13.5" cy="6.5" r=".5" fill="currentColor" />
+                                        <circle cx="17.5" cy="10.5" r=".5" fill="currentColor" />
+                                        <circle cx="8.5" cy="7.5" r=".5" fill="currentColor" />
+                                        <circle cx="6.5" cy="12.5" r=".5" fill="currentColor" />
+                                        <path
+                                            d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z" />
+                                    </svg>
+                                </div>
+                            </div>
+                            <h3 class="expertise-title">Visual Design &amp; Systems</h3>
+                        </div>
+                        <div class="expertise-card-body">
+                            <p class="expertise-desc">
+                                Art-directed typography, tokenized component libraries, and packaging systems. Crafting
+                                cohesive visual identities that command presence and communicate authenticity.
+                            </p>
+                            <div class="expertise-tags">
+                                <span class="expertise-tag">Design Tokens</span>
+                                <span class="expertise-tag">Brand Systems</span>
+                                <span class="expertise-tag">Packaging</span>
+                            </div>
+                            <div class="expertise-featured">
+                                Featured: Veura · Rahmani · Editorial Print
+                            </div>
+                        </div>
                     </div>
-                    <div class="process-card group">
-                        <div
-                            class="text-xs font-bold uppercase tracking-widest text-primary/40 mb-6 transition-colors group-hover:text-primary">
-                            03</div>
-                        <h3 class="text-2xl font-bold mb-4">Iterate</h3>
-                        <p class="text-text-muted text-sm leading-relaxed">Through feedback and testing, I refine
-                            designs
-                            to improve usability, accessibility, and
-                            visual consistency, always keeping users at the center.</p>
+
+                    <!-- 3. AI & Systems -->
+                    <div class="expertise-card expertise-card--accent group">
+                        <div class="expertise-card-top">
+                            <div class="expertise-top-bar">
+                                <span class="expertise-label">03 · Next-Gen UX</span>
+                                <div class="expertise-icon-box" aria-hidden="true">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path
+                                            d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" />
+                                    </svg>
+                                </div>
+                            </div>
+                            <h3 class="expertise-title">AI + Interface Evaluation</h3>
+                        </div>
+                        <div class="expertise-card-body">
+                            <p class="expertise-desc">
+                                Evaluating AI-generated product interfaces for cognitive load, visual consistency, and
+                                information hierarchy. Integrating generative workflows and OCR into frictionless
+                                product UX.
+                            </p>
+                            <div class="expertise-tags">
+                                <span class="expertise-tag">AI Heuristics</span>
+                                <span class="expertise-tag">OCR Workflows</span>
+                                <span class="expertise-tag">Audits</span>
+                            </div>
+                            <div class="expertise-featured">
+                                Featured: Mercor · Receiptly Smart OCR
+                            </div>
+                        </div>
                     </div>
-                    <div class="process-card group">
-                        <div
-                            class="text-xs font-bold uppercase tracking-widest text-primary/40 mb-6 transition-colors group-hover:text-primary">
-                            04</div>
-                        <h3 class="text-2xl font-bold mb-4">Deliver</h3>
-                        <p class="text-text-muted text-sm leading-relaxed">I deliver polished, developer-ready designs
-                            with detailed specs, ensuring seamless handoff
-                            and pixel-perfect implementation.</p>
-                    </div>
+
                 </div>
             </div>
         </section>
 
-        <!-- Journey Section -->
-        <section class="section-spacing bg-bg-card reveal">
-            <div class="container">
-                <h2 class="section-title">My Journey</h2>
-                <p class="text-lg text-text-muted mb-16 max-w-3xl text-center lg:text-left">I didn't start in design. I
-                    started with engineering, moved into real world
-                    operations, and later found my place in digital design. Each step shaped how I think, solve
-                    problems, and design experiences today.</p>
+        <!-- ══════════════════════════════════════════════════════════════════ -->
+        <!-- 5. CAREER TIMELINE (Alternating Left/Right Layout)                 -->
+        <!-- ══════════════════════════════════════════════════════════════════ -->
+        <section id="experience" class="py-20 lg:py-28 bg-white border-b border-slate-100">
+            <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
 
-                <div class="timeline">
-                    <!-- Timeline Item 1 -->
-                    <div class="timeline-item timeline-left">
-                        <div class="timeline-content group">
-                            <div class="flex items-center gap-6 mb-6">
-                                <img src="./assets/icons/ABU_Zaria_logo.webp" alt="Ahmadu Bello University logo"
-                                    class="w-12 h-12 object-contain hidden lg:block">
-                                <div class="text-left lg:text-right w-full">
-                                    <span class="text-xs font-bold text-primary uppercase tracking-widest">2014 –
-                                        2018</span>
-                                    <h3 class="text-xl font-bold text-text-main mt-1">B.Eng Mechanical Engineering</h3>
-                                    <p class="text-sm font-medium text-text-muted">Ahmadu Bello University</p>
-                                </div>
-                            </div>
-                            <p class="text-text-muted text-sm leading-relaxed">Built a strong foundation in problem
-                                solving, systems thinking, and
-                                technical discipline.</p>
-                        </div>
-                        <div class="timeline-dot"></div>
-                    </div>
-
-                    <!-- Timeline Item 2 -->
-                    <div class="timeline-item timeline-right">
-                        <div class="timeline-content group">
-                            <div class="flex items-center gap-6 mb-6">
-                                <div class="text-left w-full">
-                                    <span class="text-xs font-bold text-primary uppercase tracking-widest">2019 –
-                                        2023</span>
-                                    <h3 class="text-xl font-bold text-text-main mt-1">Quality Control Manager</h3>
-                                    <p class="text-sm font-medium text-text-muted">Pan Orobica Steel Structures Ltd</p>
-                                </div>
-                                <img src="./assets/icons/pan orobica .webp" alt="Pan Orobica Steel Structures logo"
-                                    class="w-12 h-12 object-contain hidden lg:block">
-                            </div>
-                            <p class="text-text-muted text-sm leading-relaxed text-left">Worked closely with design,
-                                production, and safety teams. Developed
-                                strong attention to detail and process driven thinking.</p>
-                        </div>
-                        <div class="timeline-dot"></div>
-                    </div>
-
-                    <!-- Timeline Item 3 -->
-                    <div class="timeline-item timeline-left">
-                        <div class="timeline-content group">
-                            <div class="flex items-center gap-6 mb-6">
-                                <img src="./assets/icons/Email_Langara at Musqueam logo.webp" alt="Langara College logo"
-                                    class="w-12 h-12 object-contain hidden lg:block">
-                                <div class="text-left lg:text-right w-full">
-                                    <span class="text-xs font-bold text-primary uppercase tracking-widest">2024 –
-                                        2025</span>
-                                    <h3 class="text-xl font-bold text-text-main mt-1">Post Graduate Diploma</h3>
-                                    <p class="text-sm font-medium text-text-muted">Langara College</p>
-                                </div>
-                            </div>
-                            <p class="text-text-muted text-sm leading-relaxed">Focused on UI/UX design, mobile apps, and
-                                web experiences through
-                                hands on academic projects.</p>
-                        </div>
-                        <div class="timeline-dot"></div>
-                    </div>
-
-                    <!-- Timeline Item 4 -->
-                    <div class="timeline-item timeline-right">
-                        <div class="timeline-content group">
-                            <div class="flex items-center gap-6 mb-6">
-                                <div class="text-left w-full">
-                                    <span class="text-xs font-bold text-primary uppercase tracking-widest">2025 –
-                                        Present</span>
-                                    <h3 class="text-xl font-bold text-text-main mt-1">UI/UX Designer</h3>
-                                    <p class="text-sm font-medium text-text-muted">Independent Projects</p>
-                                </div>
-                                <div
-                                    class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary hidden lg:flex">
-                                    <i class="fa-solid fa-palette"></i>
-                                </div>
-                            </div>
-                            <p class="text-text-muted text-sm leading-relaxed text-left">Designing thoughtful digital
-                                experiences while continuously
-                                improving skills in UI/UX, visual design, and interactive web design.</p>
-                        </div>
-                        <div class="timeline-dot"></div>
-                    </div>
+                <!-- Section Header (Centered) -->
+                <div class="text-center max-w-2xl mx-auto mb-16">
+                    <span
+                        class="text-xs font-mono font-medium tracking-wider text-slate-500 uppercase block mb-2">Experience</span>
+                    <h2 class="text-3xl sm:text-4xl font-semibold text-slate-950 tracking-tight mb-3">Career Journey
+                    </h2>
+                    <p class="text-base sm:text-lg text-slate-600 leading-relaxed max-w-[640px] mx-auto">
+                        Design roles, specialized education, and systems background.
+                    </p>
                 </div>
 
-                <p class="text-center font-semibold text-lg text-text-main mt-16 max-w-2xl mx-auto italic">"I bring
-                    structure from engineering, clarity from operations, and creativity
-                    from design into everything I build."</p>
+                <div class="timeline-alternating">
+
+                    <!-- Timeline Item 1: Mercor (Left) -->
+                    <div class="timeline-entry timeline-entry-left">
+                        <span class="timeline-node-dot" aria-hidden="true"></span>
+                        <div class="timeline-card-col">
+                            <div class="timeline-card timeline-card--mercor">
+                                <div class="flex items-center justify-between gap-3 mb-2">
+                                    <span class="timeline-year">May 2026 – Present</span>
+                                    <span
+                                        class="px-2.5 py-0.5 rounded-full bg-blue-50 border border-blue-200/60 text-[11px] font-mono font-semibold text-blue-700">Active</span>
+                                </div>
+                                <h3 class="timeline-title">Product Design / UX Expert (Contract)</h3>
+                                <div class="timeline-org">
+                                    <img src="./assets/icons/mercor-logo.webp" alt="Mercor logo"
+                                        class="timeline-org-logo" width="44" height="44" loading="lazy">
+                                    <span>Mercor Intelligence</span>
+                                </div>
+                                <p class="timeline-desc">
+                                    Engaged as a subject-matter expert by Mercor Intelligence to evaluate AI-generated design work against usability heuristics and interaction design principles, raising outputs to a human-expert quality bar.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Timeline Item 2: Langara College (Right) -->
+                    <div class="timeline-entry timeline-entry-right">
+                        <span class="timeline-node-dot" aria-hidden="true"></span>
+                        <div class="timeline-card-col">
+                            <div class="timeline-card timeline-card--langara">
+                                <div class="flex items-center justify-between gap-3 mb-2">
+                                    <span class="timeline-year">2024 – 2025</span>
+                                    <span
+                                        class="px-2.5 py-0.5 rounded-full bg-slate-100 border border-slate-200/60 text-[11px] font-mono font-medium text-slate-600">Graduated</span>
+                                </div>
+                                <h3 class="timeline-title">Postgraduate Diploma, Web &amp; Mobile App Design</h3>
+                                <div class="timeline-org">
+                                    <img src="./assets/icons/langara-logo.webp" alt="Langara College logo"
+                                        class="timeline-org-logo" width="44" height="44" loading="lazy">
+                                    <span>Langara College · Vancouver, BC</span>
+                                </div>
+                                <p class="timeline-desc">
+                                    Specialized in UI/UX design, mobile application architecture, design systems, and responsive web experiences through collaborative projects.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Timeline Item 3: Pan Orobica Steel Structures (Left) -->
+                    <div class="timeline-entry timeline-entry-left">
+                        <span class="timeline-node-dot" aria-hidden="true"></span>
+                        <div class="timeline-card-col">
+                            <div class="timeline-card timeline-card--panorobica">
+                                <div class="flex items-center justify-between gap-3 mb-2">
+                                    <span class="timeline-year">Nov 2019 – Dec 2023</span>
+                                    <span
+                                        class="px-2.5 py-0.5 rounded-full bg-slate-100 border border-slate-200/60 text-[11px] font-mono font-medium text-slate-600">Engineering</span>
+                                </div>
+                                <h3 class="timeline-title">Structural Engineer &amp; Quality Control Lead</h3>
+                                <div class="timeline-org">
+                                    <img src="./assets/icons/pan-orobica-clean.webp"
+                                        alt="Pan Orobica Steel Structures logo" class="timeline-org-logo" width="44"
+                                        height="44" loading="lazy">
+                                    <span>Pan Orobica Steel Structures Ltd</span>
+                                </div>
+                                <p class="timeline-desc">
+                                    Led quality control across fabrication workflows for structural steel projects: developed inspection checklists, enforced tolerances, and managed production schedules.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Timeline Item 4: Ahmadu Bello University (Right) -->
+                    <div class="timeline-entry timeline-entry-right">
+                        <span class="timeline-node-dot" aria-hidden="true"></span>
+                        <div class="timeline-card-col">
+                            <div class="timeline-card timeline-card--abu">
+                                <div class="flex items-center justify-between gap-3 mb-2">
+                                    <span class="timeline-year">2014 – 2018</span>
+                                    <span
+                                        class="px-2.5 py-0.5 rounded-full bg-slate-100 border border-slate-200/60 text-[11px] font-mono font-medium text-slate-600">Degree</span>
+                                </div>
+                                <h3 class="timeline-title">B.Eng. Mechanical Engineering</h3>
+                                <div class="timeline-org">
+                                    <img src="./assets/icons/abu-logo-clean.webp" alt="Ahmadu Bello University logo"
+                                        class="timeline-org-logo" width="44" height="44" loading="lazy">
+                                    <span>Ahmadu Bello University · Zaria, Nigeria</span>
+                                </div>
+                                <p class="timeline-desc">
+                                    Built a rigorous engineering foundation in systems thinking, precision tolerances, stress analysis, and structured problem framing.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
             </div>
         </section>
 
-        <!-- CTA Section -->
-        <section class="section-spacing bg-white text-center reveal">
-            <div class="container">
-                <h2 class="text-3xl md:text-4xl lg:text-5xl font-black mb-6">Let's create something amazing together
+        <!-- ══════════════════════════════════════════════════════════════════ -->
+        <!-- 6. CTA (Clean Light Section, Distinct from Dark Footer)            -->
+        <!-- ══════════════════════════════════════════════════════════════════ -->
+        <section class="py-20 lg:py-28 bg-[#FBFBFA] border-t border-slate-200/70 text-center">
+            <div class="max-w-3xl mx-auto px-6 lg:px-12 space-y-6">
+
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-slate-950">
+                    Let's collaborate on thoughtful products.
                 </h2>
-                <p class="text-lg text-text-muted mb-8 max-w-2xl mx-auto">I'm always open to discussing new projects,
-                    creative ideas, or opportunities to be part of your
-                    vision.</p>
-                <a href="mailto:attarahman406@gmail.com"
-                    class="text-2xl lg:text-4xl font-bold text-primary hover:opacity-80 transition-opacity mb-12 block">attarahman406@gmail.com</a>
-                <div class="flex flex-wrap justify-center gap-6">
-                    <a href="index.html#contact" class="btn btn-primary">Get in Touch</a>
-                    <a href="projects.html" class="btn btn-secondary">View My Work</a>
+                <p class="text-slate-600 text-base sm:text-lg max-w-xl mx-auto leading-relaxed">
+                    Available for Product Design roles, contract collaborations, or design systems consulting in
+                    Vancouver, remote, or hybrid.
+                </p>
+                <div class="flex flex-wrap justify-center gap-4 pt-4">
+                    <a href="projects.html" id="about-cta-work" class="btn btn-secondary">
+                        View All Projects
+                    </a>
+                    <a href="index.html#contact" id="about-cta-contact" class="btn btn-primary">
+                        Get in Touch
+                    </a>
+
                 </div>
             </div>
         </section>
     </main>
 
-    <footer class="bg-[#111827] text-white pt-20 pb-10" role="contentinfo">
-        <div class="container grid lg:grid-cols-4 gap-12 mb-16">
-            <div class="space-y-6 col-span-1 lg:col-span-1">
-                <a href="index.html" class="font-heading text-3xl font-bold tracking-tighter"
-                    aria-label="Atta Rahman Home">Atta.</a>
-                <p class="text-gray-400">Product Designer crafting meaningful digital experiences in Vancouver, BC.</p>
-            </div>
-            <div class="space-y-6">
-                <h2 class="text-lg font-bold uppercase tracking-widest text-white">Quick Links</h2>
-                <nav class="flex flex-col gap-3" aria-label="Footer Navigation">
-                    <a href="index.html" class="text-gray-400 hover:text-white transition-colors">Home</a>
-                    <a href="about.html" class="text-gray-400 hover:text-white transition-colors">About</a>
-                    <a href="projects.html" class="text-gray-400 hover:text-white transition-colors">Portfolio</a>
-                    <a href="index.html#contact" class="text-gray-400 hover:text-white transition-colors">Contact</a>
-                </nav>
-            </div>
-            <div class="space-y-6">
-                <h2 class="text-lg font-bold uppercase tracking-widest text-white">Connect</h2>
-                <div class="flex gap-4">
-                    <a href="https://www.linkedin.com/in/atta-rahman-/" target="_blank" rel="noopener noreferrer"
-                        class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition-all duration-300"
-                        aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a>
-                    <a href="https://www.behance.net/attarahman" target="_blank" rel="noopener noreferrer"
-                        class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition-all duration-300"
-                        aria-label="Behance"><i class="fa-brands fa-behance" aria-hidden="true"></i></a>
-                    <a href="https://www.instagram.com/atta____rahman/" target="_blank" rel="noopener noreferrer"
-                        class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition-all duration-300"
-                        aria-label="Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
-                </div>
-            </div>
-            <div class="space-y-6">
-                <h2 class="text-lg font-bold uppercase tracking-widest text-white">Get in Touch</h2>
-                <div class="space-y-4 text-gray-400">
-                    <p><a href="mailto:attarahman406@gmail.com"
-                            class="hover:text-white transition-colors">attarahman406@gmail.com</a></p>
-                    <p>Vancouver, BC, Canada</p>
-                    <p
-                        class="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase text-white">
-                        Willing to relocate</p>
-                </div>
-            </div>
-        </div>
-        <div class="border-t border-gray-800 pt-10 text-center text-sm text-gray-500">
-            <div class="container">
-                <p>&copy; 2026 Atta Rahman. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
+    <!-- Shared Footer -->
+    <div id="site-footer"></div>
 
-    <script src="JS/script.js"></script>
 </body>
 
 </html>

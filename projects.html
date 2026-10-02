@@ -1,533 +1,283 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio | Atta Rahman - Product Designer</title>
+    <title>All Projects | Atta Rahman — Product Designer &amp; UI/UX Designer</title>
     <meta name="description"
-        content="View selected work by Atta Rahman, a Product Designer specializing in UI/UX design, design systems, and user-centered digital experiences.">
+        content="Complete project archive by Atta Rahman: Product design case studies, SaaS platforms, design systems, luxury branding, and editorial visual craft.">
 
-    <!-- Google Fonts -->
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Antonio:wght@100..700&family=Baumans&family=Inter:wght@300;400;500;600;700&family=Lexend:wght@100..900&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Geist:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Styles & Scripts -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="shortcut icon" href="favicon.svg">
 
-    <!-- Custom CSS (Tailwind Output) -->
-    <link rel="stylesheet" href="CSS/output.css">
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@1" type="module"></script>
+    <link rel="stylesheet" href="CSS/output.css?v=58">
+    <script src="JS/components.js?v=57" defer></script>
+    <script src="JS/script.js?v=57" defer></script>
 </head>
 
-<body class="bg-white">
+<body class="bg-white text-slate-900 antialiased selection:bg-slate-900 selection:text-white" style="font-family:'Geist','Plus Jakarta Sans',sans-serif;">
 
-    <!-- Sticky Navigation -->
-    <header class="header !p-0 !h-auto">
-        <nav
-            class="relative w-full bg-white/50 backdrop-blur-md after:pointer-events-none after:absolute after:inset-x-0 after:bottom-0 after:h-px after:bg-black/10 z-[1000]">
-            <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-12">
-                <div class="relative flex h-20 items-center justify-between">
-                    <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
-                        <!-- Mobile menu button-->
-                        <button type="button" command="--toggle" commandfor="mobile-menu"
-                            class="relative inline-flex items-center justify-center rounded-md p-2 text-text-muted hover:bg-primary/5 hover:text-primary focus:outline-2 focus:-outline-offset-1 focus:outline-primary">
-                            <span class="absolute -inset-0.5"></span>
-                            <span class="sr-only">Open main menu</span>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
-                                data-slot="icon" aria-hidden="true" class="size-6 in-aria-expanded:hidden">
-                                <path d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" stroke-linecap="round"
-                                    stroke-linejoin="round" />
-                            </svg>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
-                                data-slot="icon" aria-hidden="true" class="size-6 not-in-aria-expanded:hidden">
-                                <path d="M6 18 18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" />
-                            </svg>
-                        </button>
-                    </div>
-                    <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
-                        <div class="flex shrink-0 items-center">
-                            <a href="index.html" class="logo group" aria-label="Atta Rahman Portfolio Home">
-                                <span class="group-hover:text-primary transition-colors">Atta.</span>
-                            </a>
-                        </div>
-                        <div class="hidden sm:ml-10 sm:block">
-                            <div class="flex space-x-8">
-                                <a href="index.html"
-                                    class="text-text-main font-medium hover:text-primary transition-colors py-2">Home</a>
-                                <a href="about.html"
-                                    class="text-text-main font-medium hover:text-primary transition-colors py-2">About</a>
-                                <a href="projects.html" 
-                                    class="text-text-main font-medium hover:text-primary transition-colors py-2">Portfolio</a>
-                                <a href="index.html#contact"
-                                    class="text-text-main font-medium hover:text-primary transition-colors py-2">Contact</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div
-                        class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-                        <a href="https://drive.google.com/file/d/1zv_Ai-XOlH-R0xOE9M2oAXe98I34TUYf/view?usp=sharing"
-                            target="_blank" rel="noopener noreferrer"
-                            class="btn btn-secondary !py-2 !px-6 text-sm hidden sm:block"
-                            aria-label="View Resume">Resume</a>
-
-                        <!-- Profile image -->
-                        <div class="relative ml-4">
-                            <img src="./images/profile_new.webp" alt=""
-                                class="size-8 rounded-full bg-bg-card outline -outline-offset-1 outline-border" />
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <el-disclosure id="mobile-menu" hidden
-                class="block sm:hidden bg-white/95 backdrop-blur-xl border-t border-border">
-                <div class="space-y-4 px-6 pt-6 pb-8">
-                    <a href="index.html"
-                        class="block text-2xl font-medium text-text-main hover:text-primary transition-colors">Home</a>
-                    <a href="about.html"
-                        class="block text-2xl font-medium text-text-main hover:text-primary transition-colors">About</a>
-                    <a href="projects.html" class="block text-2xl font-medium text-text-main hover:text-primary transition-colors">Portfolio</a>
-                    <a href="index.html#contact"
-                        class="block text-2xl font-medium text-text-main hover:text-primary transition-colors">Contact</a>
-                    <div class="pt-4 border-t border-border mt-6">
-                        <a href="https://drive.google.com/file/d/1zv_Ai-XOlH-R0xOE9M2oAXe98I34TUYf/view?usp=sharing"
-                            target="_blank" rel="noopener noreferrer" class="btn btn-primary w-full text-center"
-                            aria-label="View Resume">Resume</a>
-                    </div>
-                </div>
-            </el-disclosure>
-        </nav>
-    </header>
+    <!-- Shared Navigation -->
+    <div id="site-nav"></div>
 
     <main>
-        <!-- Projects Section -->
-        <section class="section-spacing reveal">
-            <div class="container">
-                <div class="flex flex-col items-center text-center mb-20 lg:mb-24 mt-8">
-                    <!-- <span class="text-primary font-bold tracking-[0.3em] uppercase text-sm mb-6 block">Portfolio</span> -->
-                    <h1
-                        class="text-[clamp(4rem,10vw,8rem)] font-black leading-[0.9] uppercase tracking-tighter mb-12 text-text-main">
-                        Selected Work
-                    </h1>
+        <!-- ══════════════════════════════════════════════════════════════════ -->
+        <!-- ARCHIVE HEADER                                                     -->
+        <!-- ══════════════════════════════════════════════════════════════════ -->
+        <section class="pt-36 pb-16 lg:pt-44 lg:pb-20 bg-white border-b border-slate-100">
+            <div class="max-w-6xl mx-auto px-6 lg:px-12 text-center space-y-4">
+                <span class="section-label-accent">Portfolio Archive</span>
+                <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold text-slate-950 tracking-tight"
+                    style="letter-spacing:-0.035em;">
+                    Selected Work &amp; Archive
+                </h1>
+                <p class="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
+                    Digital product case studies, SaaS architectures, branding systems, and visual design craft.
+                </p>
 
-                    <div class="flex flex-wrap justify-center gap-3 lg:gap-4 max-w-3xl">
-                        <button class="filter-btn active" data-filter="all">All Projects</button>
-                        <button class="filter-btn" data-filter="ui-ux">UI/UX Design</button>
-                        <button class="filter-btn" data-filter="graphic">Graphic Design</button>
-                        <!-- <button class="filter-btn" data-filter="motion">Motion Design</button> -->
-                        <button class="filter-btn" data-filter="branding">Branding</button>
-                    </div>
+                <!-- Category Filters -->
+                <div class="flex flex-wrap justify-center gap-2.5 sm:gap-3 pt-6 filter-container">
+                    <button class="filter-btn active" data-filter="all">All Projects</button>
+                    <button class="filter-btn" data-filter="ui-ux">UI/UX Design</button>
+                    <button class="filter-btn" data-filter="graphic">Graphic Design</button>
+                    <button class="filter-btn" data-filter="branding">Branding</button>
                 </div>
+            </div>
+        </section>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
-                    <!-- Project 1: Loopin -->
-                    <article class="work-item group" data-category="ui-ux">
-                        <a href="loopin.html"
-                            class="block bg-bg-card shadow-elevation hover:shadow-elevation-hover rounded-[2.5rem] border border-border p-4 lg:p-6 transition-all duration-500 hover:-translate-y-2 h-full flex flex-col">
-                            <div class="relative aspect-[4/3] rounded-[1.5rem] overflow-hidden bg-gray-100">
-                                <img src="images/loopin_thumb.webp"
-                                    alt="Loopin - mobile app for parents of neurodivergent kids"
-                                    class="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-700"
-                                    loading="lazy" width="800" height="600">
-                                <div
-                                    class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
-                                    <div
-                                        class="text-center p-8 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                                        <p
-                                            class="text-primary font-bold text-sm uppercase tracking-widest mb-2 text-white">
-                                            View Case Study</p>
-                                        <span
-                                            class="w-12 h-12 rounded-full bg-white flex items-center justify-center mx-auto">
-                                            <i class="fa-solid fa-arrow-right text-black"></i>
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="p-4 lg:p-6 flex flex-col flex-grow">
-                                <div class="flex items-center gap-3 mb-2">
-                                    <span class="text-xs font-bold text-primary uppercase tracking-widest">UI/UX
-                                        Design</span>
-                                </div>
-                                <h2 class="text-2xl lg:text-3xl font-bold group-hover:text-primary transition-colors">
-                                    Loopin</h2>
-                                <p class="text-text-muted mt-2 line-clamp-2">It’s a mobile app designed to support
-                                    parents who are raising children that are neurodivergent.</p>
-                            </div>
-                        </a>
-                    </article>
+        <!-- ══════════════════════════════════════════════════════════════════ -->
+        <!-- PROJECTS GRID                                                      -->
+        <!-- ══════════════════════════════════════════════════════════════════ -->
+        <section class="py-20 lg:py-28 bg-[#FBFBFA]">
+            <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
+                <!-- RESPONSIVE PROJECT CARDS GRID (Desktop: 3 cols, Tablet: 2 cols, Mobile: 1 col) -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7 lg:gap-8 projects-responsive-grid" id="projects-grid">
 
-                    <!-- Project 2: Receiptly -->
-                    <article class="work-item group" data-category="graphic">
-                        <a href="receiptly.html"
-                            class="block bg-bg-card shadow-elevation hover:shadow-elevation-hover rounded-[2.5rem] border border-border p-4 lg:p-6 transition-all duration-500 hover:-translate-y-2 h-full flex flex-col">
-                            <div class="relative aspect-[4/3] rounded-[1.5rem] overflow-hidden bg-gray-100">
-                                <img src="images/receiptly_thumb.webp" alt="Receiptly App Mockup"
-                                    class="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-700"
-                                    loading="lazy" width="800" height="600">
-                                <div
-                                    class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
-                                    <div
-                                        class="text-center p-8 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                                        <p
-                                            class="text-primary font-bold text-sm uppercase tracking-widest mb-2 text-white">
-                                            View Case Study</p>
-                                        <span
-                                            class="w-12 h-12 rounded-full bg-white flex items-center justify-center mx-auto">
-                                            <i class="fa-solid fa-arrow-right text-black"></i>
-                                        </span>
-                                    </div>
+                    <!-- PROJECT 1: Loopin -->
+                    <a href="loopin.html" class="project-card group" data-category="ui-ux" aria-label="Loopin — UI/UX Design Case Study">
+                        <div class="project-card-visual">
+                            <img src="images/cards/card-loopin.webp"
+                                alt="Loopin — Mobile App for neurodivergent children routines"
+                                class="project-card-image"
+                                loading="lazy" width="960" height="1200">
+                            <div class="project-card-panel">
+                                <div class="project-card-meta">
+                                    <span class="project-card-tag">UI/UX Design</span>
                                 </div>
+                                <h3 class="project-card-title">
+                                    Loopin
+                                </h3>
+                                <p class="project-card-desc">
+                                    A mobile app that helps parents of neurodivergent children build routines and emotional connection.
+                                </p>
                             </div>
-                            <div class="p-4 lg:p-6 flex flex-col flex-grow">
-                                <div class="flex items-center gap-3 mb-2">
-                                    <span class="text-xs font-bold text-primary uppercase tracking-widest">UI/UX &
-                                        Graphic Design</span>
-                                </div>
-                                <h2 class="text-2xl lg:text-3xl font-bold group-hover:text-primary transition-colors">
-                                    Receiptly</h2>
-                                <p class="text-text-muted mt-2 line-clamp-2">A digital receipt management app that helps
-                                    small businesses capture, organize, and track expenses in one place.</p>
-                            </div>
-                        </a>
-                    </article>
+                        </div>
+                    </a>
 
-                    <!-- Project 3: MemoTrip -->
-                    <article class="work-item group" data-category="ui-ux">
-                        <a href="memotrip.html"
-                            class="block bg-bg-card shadow-elevation hover:shadow-elevation-hover rounded-[2.5rem] border border-border p-4 lg:p-6 transition-all duration-500 hover:-translate-y-2 h-full flex flex-col">
-                            <div class="relative aspect-[4/3] rounded-[1.5rem] overflow-hidden bg-gray-900">
-                                <img src="images/memotrip_thumb.webp" alt="MemoTrip App Mockup"
-                                    class="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-700"
-                                    loading="lazy" width="800" height="600">
-                                <div
-                                    class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
-                                    <div
-                                        class="text-center p-8 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                                        <p
-                                            class="text-primary font-bold text-sm uppercase tracking-widest mb-2 text-white">
-                                            View Case Study</p>
-                                        <span
-                                            class="w-12 h-12 rounded-full bg-white flex items-center justify-center mx-auto">
-                                            <i class="fa-solid fa-arrow-right text-black"></i>
-                                        </span>
-                                    </div>
+                    <!-- PROJECT 2: Receiptly -->
+                    <a href="receiptly.html" class="project-card group" data-category="ui-ux graphic" aria-label="Receiptly — UI/UX &amp; Graphic Design Case Study">
+                        <div class="project-card-visual">
+                            <img src="images/cards/card-receiptly.webp"
+                                alt="Receiptly — AI-powered expense tracking platform"
+                                class="project-card-image"
+                                loading="lazy" width="960" height="1200">
+                            <div class="project-card-panel">
+                                <div class="project-card-meta">
+                                    <span class="project-card-tag">UI/UX &amp; Graphic Design</span>
                                 </div>
+                                <h3 class="project-card-title">
+                                    Receiptly
+                                </h3>
+                                <p class="project-card-desc">
+                                    A digital receipt management app that helps small businesses capture, organize, and track expenses in one place.
+                                </p>
                             </div>
-                            <div class="p-4 lg:p-6 flex flex-col flex-grow">
-                                <div class="flex items-center gap-3 mb-2">
-                                    <span class="text-xs font-bold text-primary uppercase tracking-widest">UI/UX
-                                        Design</span>
-                                </div>
-                                <h2 class="text-2xl lg:text-3xl font-bold group-hover:text-primary transition-colors">
-                                    MemoTrip</h2>
-                                <p class="text-text-muted mt-2 line-clamp-2">A travel companion app that helps users
-                                    document and share their journey in real-time.</p>
-                            </div>
-                        </a>
-                    </article>
+                        </div>
+                    </a>
 
-                    <!-- Project 4: Veura -->
-                    <article class="work-item group" data-category="branding">
-                        <a href="veura.html"
-                            class="block bg-bg-card shadow-elevation hover:shadow-elevation-hover rounded-[2.5rem] border border-border p-4 lg:p-6 transition-all duration-500 hover:-translate-y-2 h-full flex flex-col">
-                            <div class="relative aspect-[4/3] rounded-[1.5rem] overflow-hidden bg-gray-100">
-                                <img src="images/veura_thumb.webp"
-                                    alt="Veura - Luxury skincare brand identity and packaging"
-                                    class="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-700"
-                                    loading="lazy" width="800" height="600">
-                                <div
-                                    class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
-                                    <div
-                                        class="text-center p-8 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                                        <p
-                                            class="text-primary font-bold text-sm uppercase tracking-widest mb-2 text-white">
-                                            View
-                                            Case Study</p>
-                                        <span
-                                            class="w-12 h-12 rounded-full bg-white flex items-center justify-center mx-auto">
-                                            <i class="fa-solid fa-arrow-right text-black"></i>
-                                        </span>
-                                    </div>
+                    <!-- PROJECT 3: MemoTrip -->
+                    <a href="memotrip.html" class="project-card group" data-category="ui-ux" aria-label="MemoTrip — UI/UX Design Case Study">
+                        <div class="project-card-visual">
+                            <img src="images/cards/card-memotrip.webp"
+                                alt="MemoTrip — Travel Companion App"
+                                class="project-card-image"
+                                loading="lazy" width="960" height="1200">
+                            <div class="project-card-panel">
+                                <div class="project-card-meta">
+                                    <span class="project-card-tag">UI/UX Design</span>
                                 </div>
+                                <h3 class="project-card-title">
+                                    MemoTrip
+                                </h3>
+                                <p class="project-card-desc">
+                                    A travel companion app that helps users document and share their journey in real-time.
+                                </p>
                             </div>
-                            <div class="p-4 lg:p-6 flex flex-col flex-grow">
-                                <div class="flex items-center gap-3 mb-2">
-                                    <span
-                                        class="text-xs font-bold text-primary uppercase tracking-widest">Branding</span>
-                                </div>
-                                <h2 class="text-2xl lg:text-3xl font-bold group-hover:text-primary transition-colors">
-                                    Veura</h2>
-                                <p class="text-text-muted mt-2 line-clamp-2">Veura is a luxury fragrance brand that
-                                    blends elegant brand storytelling with smooth, user-friendly e-commerce.</p>
-                            </div>
-                        </a>
-                    </article>
+                        </div>
+                    </a>
 
-                    <!-- Project 5: Rahmani -->
-                    <article class="work-item group" data-category="branding">
-                        <a href="rahmani-wine.html"
-                            class="block bg-bg-card shadow-elevation hover:shadow-elevation-hover rounded-[2.5rem] border border-border p-4 lg:p-6 transition-all duration-500 hover:-translate-y-2 h-full flex flex-col">
-                            <div class="relative aspect-[4/3] rounded-[1.5rem] overflow-hidden bg-gray-100">
-                                <img src="images/rahmani_thumb.webp" alt="Rahmani - Non-Alcoholic Wine brand identity"
-                                    class="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-700"
-                                    loading="lazy" width="800" height="600">
-                                <div
-                                    class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
-                                    <div
-                                        class="text-center p-8 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                                        <p
-                                            class="text-primary font-bold text-sm uppercase tracking-widest mb-2 text-white">
-                                            View
-                                            Case Study</p>
-                                        <span
-                                            class="w-12 h-12 rounded-full bg-white flex items-center justify-center mx-auto">
-                                            <i class="fa-solid fa-arrow-right text-black"></i>
-                                        </span>
-                                    </div>
+                    <!-- PROJECT 4: Veura -->
+                    <a href="veura.html" class="project-card group" data-category="branding" aria-label="Veura — Luxury Fragrance Branding Case Study">
+                        <div class="project-card-visual">
+                            <img src="images/cards/card-veura.webp"
+                                alt="Veura — Luxury Fragrance Identity"
+                                class="project-card-image"
+                                loading="lazy" width="960" height="1200">
+                            <div class="project-card-panel">
+                                <div class="project-card-meta">
+                                    <span class="project-card-tag">Branding</span>
                                 </div>
+                                <h3 class="project-card-title">
+                                    Veura
+                                </h3>
+                                <p class="project-card-desc">
+                                    Veura is a luxury fragrance brand that blends elegant brand storytelling with smooth, user-friendly e-commerce.
+                                </p>
                             </div>
-                            <div class="p-4 lg:p-6 flex flex-col flex-grow">
-                                <div class="flex items-center gap-3 mb-2">
-                                    <span
-                                        class="text-xs font-bold text-primary uppercase tracking-widest">Branding</span>
-                                </div>
-                                <h2 class="text-2xl lg:text-3xl font-bold group-hover:text-primary transition-colors">
-                                    Rahmani</h2>
-                                <p class="text-text-muted mt-2 line-clamp-2">Premium non-alcoholic wine brand identity
-                                    and packaging design.</p>
-                            </div>
-                        </a>
-                    </article>
+                        </div>
+                    </a>
 
-                    <!-- Graphic Design 1: Wildlife Warning Poster -->
-                    <article class="work-item group" data-category="graphic">
-                        <a href="images/graphic design/Wildlife Warning Poster.webp" target="_blank"
-                            class="block bg-bg-card shadow-elevation hover:shadow-elevation-hover rounded-[2.5rem] border border-border p-4 lg:p-6 transition-all duration-500 hover:-translate-y-2 h-full flex flex-col">
-                            <div class="relative aspect-[4/3] rounded-[1.5rem] overflow-hidden bg-gray-100 shrink-0">
-                                <img src="images/graphic design/Wildlife Warning Poster.webp"
-                                    alt="Wildlife Warning Poster"
-                                    class="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-700"
-                                    loading="lazy">
-                                <div
-                                    class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
-                                    <div
-                                        class="text-center p-8 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                                        <p
-                                            class="text-primary font-bold text-sm uppercase tracking-widest mb-2 text-white">
-                                            View Design</p>
-                                        <span
-                                            class="w-12 h-12 rounded-full bg-white flex items-center justify-center mx-auto">
-                                            <i class="fa-solid fa-arrow-right text-black"></i>
-                                        </span>
-                                    </div>
+                    <!-- PROJECT 5: Rahmani -->
+                    <a href="rahmani-wine.html" class="project-card group" data-category="branding" aria-label="Rahmani — Premium Non-Alcoholic Wine Packaging">
+                        <div class="project-card-visual">
+                            <img src="images/cards/card-rahmani.webp"
+                                alt="Rahmani — Premium Non-Alcoholic Wine Packaging"
+                                class="project-card-image"
+                                loading="lazy" width="960" height="1200">
+                            <div class="project-card-panel">
+                                <div class="project-card-meta">
+                                    <span class="project-card-tag">Branding</span>
                                 </div>
+                                <h3 class="project-card-title">
+                                    Rahmani
+                                </h3>
+                                <p class="project-card-desc">
+                                    Brand identity and packaging design for a premium non-alcoholic wine.
+                                </p>
                             </div>
-                            <div class="p-4 lg:p-6 flex flex-col flex-grow">
-                                <div class="flex items-center gap-2 mb-3 flex-wrap">
-                                    <span class="text-xs font-bold text-primary uppercase tracking-widest">Graphic Design</span>
-                                    <span class="text-[10px] font-bold text-text-muted uppercase tracking-widest px-2 py-1 bg-gray-200 rounded-md">Illustrator &bull; Photoshop</span>
-                                </div>
-                                <h2 class="text-xl lg:text-2xl font-bold group-hover:text-primary transition-colors">
-                                    Wildlife Warning Poster</h2>
-                                <p class="text-text-muted mt-2 text-sm leading-relaxed">This poster was designed as a warning sign for protected wildlife areas. The aggressive bear illustration combined with bold red typography creates a sense of danger and urgency.</p>
-                            </div>
-                        </a>
-                    </article>
+                        </div>
+                    </a>
 
-                    <!-- Graphic Design 2: Fitness Podcast Promotion -->
-                    <article class="work-item group" data-category="graphic">
-                        <a href="images/graphic design/Fitness Podcast Poster.webp" target="_blank"
-                            class="block bg-bg-card shadow-elevation hover:shadow-elevation-hover rounded-[2.5rem] border border-border p-4 lg:p-6 transition-all duration-500 hover:-translate-y-2 h-full flex flex-col">
-                            <div class="relative aspect-[4/3] rounded-[1.5rem] overflow-hidden bg-gray-100 shrink-0">
-                                <img src="images/graphic design/Fitness Podcast Poster.webp" alt="Fitness Podcast Promotion"
-                                    class="w-full h-full object-cover object-top group-hover:scale-[1.02] transition-transform duration-700"
-                                    loading="lazy">
-                                <div
-                                    class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
-                                    <div
-                                        class="text-center p-8 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                                        <p
-                                            class="text-primary font-bold text-sm uppercase tracking-widest mb-2 text-white">
-                                            View Design</p>
-                                        <span
-                                            class="w-12 h-12 rounded-full bg-white flex items-center justify-center mx-auto">
-                                            <i class="fa-solid fa-arrow-right text-black"></i>
-                                        </span>
-                                    </div>
+                    <!-- PROJECT 6: Wildlife Warning Poster -->
+                    <a href="images/graphic design/Wildlife Warning Poster.webp" target="_blank" rel="noopener noreferrer" class="project-card group lightbox-trigger" data-category="graphic" data-src="images/graphic design/Wildlife Warning Poster.webp" data-caption="Wildlife Warning Poster — Graphic Design &amp; Urgency Illustration" aria-label="Wildlife Warning Poster — Graphic Design">
+                        <div class="project-card-visual">
+                            <img src="images/graphic design/Wildlife Warning Poster.webp"
+                                alt="Wildlife Warning Poster"
+                                class="project-card-image"
+                                loading="lazy" width="960" height="1200">
+                            <div class="project-card-panel">
+                                <div class="project-card-meta">
+                                    <span class="project-card-tag">Graphic Design</span>
                                 </div>
+                                <h3 class="project-card-title">
+                                    Wildlife Warning Poster
+                                </h3>
+                                <p class="project-card-desc">
+                                    This poster was designed as a warning sign for protected wildlife areas. The aggressive bear illustration combined with bold red typography creates a sense of danger and urgency.
+                                </p>
                             </div>
-                            <div class="p-4 lg:p-6 flex flex-col flex-grow">
-                                <div class="flex items-center gap-2 mb-3 flex-wrap">
-                                    <span class="text-xs font-bold text-primary uppercase tracking-widest">Graphic Design</span>
-                                    <span class="text-[10px] font-bold text-text-muted uppercase tracking-widest px-2 py-1 bg-gray-200 rounded-md">Photoshop</span>
-                                </div>
-                                <h2 class="text-xl lg:text-2xl font-bold group-hover:text-primary transition-colors">
-                                    Fitness Podcast Promotion</h2>
-                                <p class="text-text-muted mt-2 text-sm leading-relaxed">This promotional poster was created to advertise a fitness podcast episode. Bold typography and strong color contrast were used to attract attention and emphasize the title. The microphone icon and portrait help establish the podcast theme while keeping the layout clean and focused.</p>
-                            </div>
-                        </a>
-                    </article>
+                        </div>
+                    </a>
 
-                    <!-- Graphic Design 3: Beverage Advertising Poster -->
-                    <article class="work-item group" data-category="graphic">
-                        <a href="images/graphic design/Orange Beverage Advertisement.webp" target="_blank"
-                            class="block bg-bg-card shadow-elevation hover:shadow-elevation-hover rounded-[2.5rem] border border-border p-4 lg:p-6 transition-all duration-500 hover:-translate-y-2 h-full flex flex-col">
-                            <div class="relative aspect-[4/3] rounded-[1.5rem] overflow-hidden bg-gray-100 shrink-0">
-                                <img src="images/graphic design/Orange Beverage Advertisement.webp" alt="Beverage Advertising Poster"
-                                    class="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-700"
-                                    loading="lazy">
-                                <div
-                                    class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
-                                    <div
-                                        class="text-center p-8 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                                        <p
-                                            class="text-primary font-bold text-sm uppercase tracking-widest mb-2 text-white">
-                                            View Design</p>
-                                        <span
-                                            class="w-12 h-12 rounded-full bg-white flex items-center justify-center mx-auto">
-                                            <i class="fa-solid fa-arrow-right text-black"></i>
-                                        </span>
-                                    </div>
+                    <!-- PROJECT 7: Fitness Podcast Promotion -->
+                    <a href="images/graphic design/Fitness Podcast Poster.webp" target="_blank" rel="noopener noreferrer" class="project-card group lightbox-trigger" data-category="graphic" data-src="images/graphic design/Fitness Podcast Poster.webp" data-caption="Fitness Podcast Promotion — Graphic Design &amp; Typography" aria-label="Fitness Podcast Promotion — Graphic Design">
+                        <div class="project-card-visual project-card-visual--contain">
+                            <img src="images/graphic design/Fitness Podcast Poster.webp"
+                                alt="Fitness Podcast Promotion Poster"
+                                class="project-card-image project-card-image--contain"
+                                loading="lazy" width="960" height="1200">
+                            <div class="project-card-panel">
+                                <div class="project-card-meta">
+                                    <span class="project-card-tag">Graphic Design</span>
                                 </div>
+                                <h3 class="project-card-title">
+                                    Fitness Podcast Promotion
+                                </h3>
+                                <p class="project-card-desc">
+                                    This promotional poster was created to advertise a fitness podcast episode. Bold typography and strong color contrast were used to attract attention and emphasize the title. The microphone icon and portrait help establish the podcast theme while keeping the layout clean and focused.
+                                </p>
                             </div>
-                            <div class="p-4 lg:p-6 flex flex-col flex-grow">
-                                <div class="flex items-center gap-2 mb-3 flex-wrap">
-                                    <span class="text-xs font-bold text-primary uppercase tracking-widest">Graphic Design</span>
-                                    <span class="text-[10px] font-bold text-text-muted uppercase tracking-widest px-2 py-1 bg-gray-200 rounded-md">Photoshop</span>
-                                </div>
-                                <h2 class="text-xl lg:text-2xl font-bold group-hover:text-primary transition-colors">
-                                    Beverage Advertising Poster</h2>
-                                <p class="text-text-muted mt-2 text-sm leading-relaxed">This poster was designed as a product advertisement for an orange flavored beverage. The composition highlights freshness using vibrant oranges, splash effects, and warm color tones. The goal was to create an energetic and refreshing visual that emphasizes the drink’s vitamin content and flavor.</p>
-                            </div>
-                        </a>
-                    </article>
+                        </div>
+                    </a>
 
-                    <!-- Graphic Design 4: City Event Poster -->
-                    <article class="work-item group" data-category="graphic">
-                        <a href="images/graphic design/Vancouver Event Poster.webp" target="_blank"
-                            class="block bg-bg-card shadow-elevation hover:shadow-elevation-hover rounded-[2.5rem] border border-border p-4 lg:p-6 transition-all duration-500 hover:-translate-y-2 h-full flex flex-col">
-                            <div class="relative aspect-[4/3] rounded-[1.5rem] overflow-hidden bg-gray-100 shrink-0">
-                                <img src="images/graphic design/Vancouver Event Poster.webp" alt="City Event Poster"
-                                    class="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-700"
-                                    loading="lazy">
-                                <div
-                                    class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
-                                    <div
-                                        class="text-center p-8 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                                        <p
-                                            class="text-primary font-bold text-sm uppercase tracking-widest mb-2 text-white">
-                                            View Design</p>
-                                        <span
-                                            class="w-12 h-12 rounded-full bg-white flex items-center justify-center mx-auto">
-                                            <i class="fa-solid fa-arrow-right text-black"></i>
-                                        </span>
-                                    </div>
+                    <!-- PROJECT 8: Beverage Advertising Poster -->
+                    <a href="images/graphic design/Orange Beverage Advertisement.webp" target="_blank" rel="noopener noreferrer" class="project-card group lightbox-trigger" data-category="graphic" data-src="images/graphic design/Orange Beverage Advertisement.webp" data-caption="Beverage Advertising Poster — Graphic Design &amp; Visual Freshness" aria-label="Beverage Advertising Poster — Graphic Design">
+                        <div class="project-card-visual project-card-visual--contain">
+                            <img src="images/graphic design/Orange Beverage Advertisement.webp"
+                                alt="Orange Beverage Advertisement Poster"
+                                class="project-card-image project-card-image--contain"
+                                loading="lazy" width="960" height="1200">
+                            <div class="project-card-panel">
+                                <div class="project-card-meta">
+                                    <span class="project-card-tag">Graphic Design</span>
                                 </div>
+                                <h3 class="project-card-title">
+                                    Beverage Advertising Poster
+                                </h3>
+                                <p class="project-card-desc">
+                                    This poster was designed as a product advertisement for an orange flavored beverage. The composition highlights freshness using vibrant oranges, splash effects, and warm color tones. The goal was to create an energetic and refreshing visual that emphasizes the drink’s vitamin content and flavor.
+                                </p>
                             </div>
-                            <div class="p-4 lg:p-6 flex flex-col flex-grow">
-                                <div class="flex items-center gap-2 mb-3 flex-wrap">
-                                    <span class="text-xs font-bold text-primary uppercase tracking-widest">Graphic Design</span>
-                                    <span class="text-[10px] font-bold text-text-muted uppercase tracking-widest px-2 py-1 bg-gray-200 rounded-md">Illustrator</span>
-                                </div>
-                                <h2 class="text-xl lg:text-2xl font-bold group-hover:text-primary transition-colors">
-                                    City Event Poster</h2>
-                                <p class="text-text-muted mt-2 text-sm leading-relaxed">This event poster promotes a fictional city event in Vancouver. A minimal layout combined with a grayscale skyline image creates a modern and clean visual style. The flowing shape helps guide the viewer’s eye through the information while keeping the focus on the city atmosphere.</p>
-                            </div>
-                        </a>
-                    </article>
+                        </div>
+                    </a>
 
-                    <!-- Graphic Design 5: Men's Grooming Product Poster -->
-                    <article class="work-item group" data-category="graphic">
-                        <a href="images/graphic design/Men's Face Wash Product Ad.webp" target="_blank"
-                            class="block bg-bg-card shadow-elevation hover:shadow-elevation-hover rounded-[2.5rem] border border-border p-4 lg:p-6 transition-all duration-500 hover:-translate-y-2 h-full flex flex-col">
-                            <div class="relative aspect-[4/3] rounded-[1.5rem] overflow-hidden bg-gray-100 shrink-0">
-                                <img src="images/graphic design/Men's Face Wash Product Ad.webp" alt="Men's Grooming Product Poster"
-                                    class="w-full h-full object-cover object-top group-hover:scale-[1.02] transition-transform duration-700"
-                                    loading="lazy">
-                                <div
-                                    class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
-                                    <div
-                                        class="text-center p-8 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                                        <p
-                                            class="text-primary font-bold text-sm uppercase tracking-widest mb-2 text-white">
-                                            View Design</p>
-                                        <span
-                                            class="w-12 h-12 rounded-full bg-white flex items-center justify-center mx-auto">
-                                            <i class="fa-solid fa-arrow-right text-black"></i>
-                                        </span>
-                                    </div>
+                    <!-- PROJECT 9: City Event Poster -->
+                    <a href="images/graphic design/Vancouver Event Poster.webp" target="_blank" rel="noopener noreferrer" class="project-card group lightbox-trigger" data-category="graphic" data-src="images/graphic design/Vancouver Event Poster.webp" data-caption="City Event Poster — Vancouver Typographic &amp; Editorial Design" aria-label="City Event Poster — Graphic Design">
+                        <div class="project-card-visual project-card-visual--contain">
+                            <img src="images/graphic design/Vancouver Event Poster.webp"
+                                alt="Vancouver City Event Poster"
+                                class="project-card-image project-card-image--contain"
+                                loading="lazy" width="960" height="1200">
+                            <div class="project-card-panel">
+                                <div class="project-card-meta">
+                                    <span class="project-card-tag">Graphic Design</span>
                                 </div>
+                                <h3 class="project-card-title">
+                                    City Event Poster
+                                </h3>
+                                <p class="project-card-desc">
+                                    This event poster promotes a fictional city event in Vancouver. A minimal layout combined with a grayscale skyline image creates a modern and clean visual style. The flowing shape helps guide the viewer’s eye through the information while keeping the focus on the city atmosphere.
+                                </p>
                             </div>
-                            <div class="p-4 lg:p-6 flex flex-col flex-grow">
-                                <div class="flex items-center gap-2 mb-3 flex-wrap">
-                                    <span class="text-xs font-bold text-primary uppercase tracking-widest">Graphic Design</span>
-                                    <span class="text-[10px] font-bold text-text-muted uppercase tracking-widest px-2 py-1 bg-gray-200 rounded-md">Photoshop</span>
+                        </div>
+                    </a>
+
+                    <!-- PROJECT 10: Men's Grooming Product Poster -->
+                    <a href="images/graphic design/Men's Face Wash Product Ad.webp" target="_blank" rel="noopener noreferrer" class="project-card group lightbox-trigger" data-category="graphic" data-src="images/graphic design/Men's Face Wash Product Ad.webp" data-caption="Men's Grooming Product Poster — Product Advertisement Design" aria-label="Men's Grooming Product Poster — Graphic Design">
+                        <div class="project-card-visual project-card-visual--contain">
+                            <img src="images/graphic design/Men's Face Wash Product Ad.webp"
+                                alt="Men's Grooming Product Face Wash Advertisement Poster"
+                                class="project-card-image project-card-image--contain"
+                                loading="lazy" width="960" height="1200">
+                            <div class="project-card-panel">
+                                <div class="project-card-meta">
+                                    <span class="project-card-tag">Graphic Design</span>
                                 </div>
-                                <h2 class="text-xl lg:text-2xl font-bold group-hover:text-primary transition-colors">
-                                    Men's Grooming Product Poster</h2>
-                                <p class="text-text-muted mt-2 text-sm leading-relaxed">This poster promotes a men's facial cleanser product. The design focuses on freshness and performance using water splashes, citrus elements, and cool color tones. The layout highlights key product benefits such as oil removal and skin freshness while keeping the product as the central focus.</p>
+                                <h3 class="project-card-title">
+                                    Men's Grooming Product Poster
+                                </h3>
+                                <p class="project-card-desc">
+                                    This poster promotes a men's facial cleanser product. The design focuses on freshness and performance using water splashes, citrus elements, and cool color tones. The layout highlights key product benefits such as oil removal and skin freshness while keeping the product as the central focus.
+                                </p>
                             </div>
-                        </a>
-                    </article>
+                        </div>
+                    </a>
+
                 </div>
             </div>
         </section>
     </main>
 
-    <footer class="bg-[#111827] text-white pt-20 pb-10" role="contentinfo">
-        <div class="container grid lg:grid-cols-4 gap-12 mb-16">
-            <div class="space-y-6 col-span-1 lg:col-span-1">
-                <a href="index.html" class="font-heading text-3xl font-bold tracking-tighter"
-                    aria-label="Atta Rahman Home">Atta.</a>
-                <p class="text-gray-400">Product Designer crafting meaningful digital experiences in Vancouver, BC.</p>
-            </div>
-            <div class="space-y-6">
-                <h2 class="text-lg font-bold uppercase tracking-widest text-white">Quick Links</h2>
-                <nav class="flex flex-col gap-3" aria-label="Footer Navigation">
-                    <a href="index.html" class="text-gray-400 hover:text-white transition-colors">Home</a>
-                    <a href="about.html" class="text-gray-400 hover:text-white transition-colors">About</a>
-                    <a href="projects.html" class="text-gray-400 hover:text-white transition-colors">Portfolio</a>
-                    <a href="index.html#contact" class="text-gray-400 hover:text-white transition-colors">Contact</a>
-                </nav>
-            </div>
-            <div class="space-y-6">
-                <h2 class="text-lg font-bold uppercase tracking-widest text-white">Connect</h2>
-                <div class="flex gap-4">
-                    <a href="https://www.linkedin.com/in/atta-rahman-/" target="_blank" rel="noopener noreferrer"
-                        class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition-all duration-300"
-                        aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a>
-                    <a href="https://www.behance.net/attarahman" target="_blank" rel="noopener noreferrer"
-                        class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition-all duration-300"
-                        aria-label="Behance"><i class="fa-brands fa-behance" aria-hidden="true"></i></a>
-                    <a href="https://www.instagram.com/atta____rahman/" target="_blank" rel="noopener noreferrer"
-                        class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition-all duration-300"
-                        aria-label="Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
-                </div>
-            </div>
-            <div class="space-y-6">
-                <h2 class="text-lg font-bold uppercase tracking-widest text-white">Get in Touch</h2>
-                <div class="space-y-4 text-gray-400">
-                    <p><a href="mailto:attarahman406@gmail.com"
-                            class="hover:text-white transition-colors">attarahman406@gmail.com</a></p>
-                    <p>Vancouver, BC, Canada</p>
-                    <p
-                        class="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase text-white">
-                        Willing to relocate</p>
-                </div>
-            </div>
-        </div>
-        <div class="border-t border-gray-800 pt-10 text-center text-sm text-gray-500">
-            <div class="container">
-                <p>&copy; 2026 Atta Rahman. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
+    <!-- Shared Footer -->
+    <div id="site-footer"></div>
 
-    <script src="JS/script.js"></script>
 </body>
 
 </html>
